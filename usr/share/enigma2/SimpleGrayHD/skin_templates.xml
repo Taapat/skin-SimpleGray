@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin>
+
+	<!-- Templates -->
+
+	<screen name="CancelOKTemplate">
+		<eLabel position="10,e-50" size="150,40" zPosition="-5" backgroundColor="red"/>
+		<eLabel position="164,e-50" size="150,40" zPosition="-5" backgroundColor="green"/>
+
+		<widget name="canceltext" position="12,e-48" size="146,36" font="Regular;22" halign="center" valign="center"/>
+		<widget name="oktext" position="166,e-48" size="146,36" font="Regular;22" halign="center" valign="center"/>
+	</screen>
+
+	<screen name="ConfigIntroductionLabelTemplate">
+		<widget name="config" position="0,10" size="520,100" scrollbarMode="showOnDemand"/>
+		<widget source="introduction" render="Label" position="15,130" size="490,25" font="Regular;22"/>
+	</screen>
+
+	<screen name="ConfigIntroductionTemplate">
+		<widget name="config" position="0,10" size="620,300" enableWrapAround="1" scrollbarMode="showOnDemand"/>
+		<widget name="introduction" position="15,330" size="590,50" font="Regular;22"/>
+	</screen>
+
+	<screen name="DefaultWizardTemplate">
+		<panel name="RCTemplate"/>
+		<eLabel position="30,535" size="15,15" backgroundColor="red"/>
+		<eLabel position="32,537" size="11,11"/>
+		<widget name="languagetext" position="55,530" size="200,25" font="Regular;20"/>
+		<widget name="text" position="200,50" size="940,200" font="Regular;23"/>
+		<widget source="list" render="Listbox" position="200,250" size="550,250" scrollbarMode="showOnDemand">
+			<convert type="StringList"/>
+		</widget>
+		<widget name="config" position="200,250" size="450,250" scrollbarMode="showOnDemand"/>
+		<widget name="wizard" pixmap="SimpleGrayHD/picon_default.png" position="40,650" size="100,60" alphatest="on"/>
+	</screen>
+
+	<screen name="DynamicButtonsTemplate">
+		<panel position="bottom" size="*,55">
+			<widget objectTypes="key_red,StaticText" source="key_red" render="FixedLabel" position="15,0" size="(e-36)/4,40" backgroundColor="red">
+				<convert type="ConditionalShowHide"/>
+			</widget>
+			<widget objectTypes="key_green,StaticText" source="key_green" render="FixedLabel" position="(e-36)/4+17,0" size="(e-36)/4,40" backgroundColor="green">
+				<convert type="ConditionalShowHide"/>
+			</widget>
+			<widget objectTypes="key_yellow,StaticText" source="key_yellow" render="FixedLabel" position="c+1,0" size="(e-36)/4,40" backgroundColor="yellow">
+				<convert type="ConditionalShowHide"/>
+			</widget>
+			<widget objectTypes="key_blue,StaticText" source="key_blue" render="FixedLabel" position="(e-36)*0.75+21,0" size="(e-36)/4,40" backgroundColor="blue">
+				<convert type="ConditionalShowHide"/>
+			</widget>
+
+			<eLabel objectTypes="key_red,Button,Label" position="15,0" size="(e-36)/4,40" zPosition="-5" backgroundColor="red"/>
+			<eLabel objectTypes="key_green,Button,Label" position="(e-36)/4+17,0" size="(e-36)/4,40" zPosition="-5" backgroundColor="green"/>
+			<eLabel objectTypes="key_yellow,Button,Label" position="c+1,0" size="(e-36)/4,40" zPosition="-5" backgroundColor="yellow"/>
+			<eLabel objectTypes="key_blue,Button,Label" position="(e-36)*0.75+21,0" size="(e-36)/4,40" zPosition="-5" backgroundColor="blue"/>
+
+			<widget objectTypes="key_red,StaticText" source="key_red" render="Label" position="17,2" size="(e-36)/4-4,36" font="Regular;22" halign="center" valign="center"/>
+			<widget objectTypes="key_green,StaticText" source="key_green" render="Label" position="(e-36)/4+19,2" size="(e-36)/4-4,36" font="Regular;22" halign="center" valign="center"/>
+			<widget objectTypes="key_yellow,StaticText" source="key_yellow" render="Label" position="c+3,2" size="(e-35)/4-4,36" font="Regular;22" halign="center" valign="center"/>
+			<widget objectTypes="key_blue,StaticText" source="key_blue" render="Label" position="(e-36)*0.75+23,2" size="(e-36)/4-4,36" font="Regular;22" halign="center" valign="center"/>
+
+			<widget objectTypes="key_red,Label,Button" name="key_red" position="17,2" size="(e-36)/4-4,36" font="Regular;22" halign="center" valign="center"/>
+			<widget objectTypes="key_green,Label,Button" name="key_green" position="(e-36)/4+19,2" size="(e-36)/4-4,36" font="Regular;22" halign="center" valign="center"/>
+			<widget objectTypes="key_yellow,Label,Button" name="key_yellow" position="c+3,2" size="(e-36)/4-4,36" font="Regular;22" halign="center" valign="center"/>
+			<widget objectTypes="key_blue,Label,Button" name="key_blue" position="(e-36)*0.75+23,2" size="(e-36)/4-4,36" font="Regular;22" halign="center" valign="center"/>
+		</panel>
+	</screen>
+
+	<screen name="InfoBarTemplate">
+		<widget source="session.CurrentService" render="Label" position="5,e-142" size="245,35" font="Replacement;25" foregroundColor="grey" noWrap="1" halign="right">
+			<convert type="ServiceName">Provider</convert>
+		</widget>
+		<widget source="session.CurrentService" render="ChannelNumber" position="260,e-147" size="70,45" font="Replacement;30" foregroundColor="grey" halign="right"/>
+		<widget source="session.CurrentService" render="Label" position="340,e-147" size="390,45" font="Replacement;30" foregroundColor="grey" noWrap="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="DOLBY" position="730,e-126" size="52,18" font="Regular;15">
+				<convert type="ServiceInfo">IsMultichannel</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="TEXT" position="783,e-126" size="39,18" font="Regular;15">
+				<convert type="ServiceInfo">HasTelext</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.RecordState" render="FixedLabel" text="REC" position="823,e-130" size="35,25" font="Regular;20" foregroundColor="red">
+				<convert type="ConditionalShowHide"/>
+		</widget>
+
+		<widget source="global.CurrentTime" render="Label" position="1010,e-130" size="104,25" font="Regular;20" foregroundColor="grey">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1120,e-142" size="140,45" font="Replacement;30">
+			<convert type="ClockToText">Format:%H:%M:%S</convert>
+		</widget>
+
+		<widget source="session.Event_Now" render="Label" position="148,e-90" size="52,25" halign="right" font="Replacement;20">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default;Proportional</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="200,e-90" size="60,25" font="Replacement;20">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:-%H:%M</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="270,e-105" size="680,40" font="Replacement;30" noWrap="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="950,e-90" size="100,25" halign="right" font="Replacement;20">
+			<convert type="EventTime">Remaining</convert>
+			<convert type="RemainingToText">InMinutes</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Progress" position="150,e-60" size="900,5" borderWidth="1" borderColor="grey">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+
+		<widget source="session.Event_Next" render="Label" position="148,e-53" size="52,25" halign="right" font="Replacement;20" foregroundColor="grey">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default;Proportional</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="200,e-53" size="60,25" font="Replacement;20" foregroundColor="grey">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:-%H:%M</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="270,e-53" size="660,35" font="Replacement;25" noWrap="1" foregroundColor="grey">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="930,e-53" size="120,25" halign="right" font="Replacement;20" foregroundColor="grey">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+	
+		<eLabel text="SNR:" position="1060,e-93" size="50,20" font="Regular;18" foregroundColor="grey" halign="right"/>
+		<widget source="session.FrontendStatus" render="Label" position="1115,e-93" size="50,20" font="Regular;18">
+			<convert type="FrontendInfo">SNRdB</convert>
+		</widget>
+		<widget source="session.FrontendStatus" render="Progress" position="1165,e-86" size="80,10" borderWidth="1" borderColor="grey">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+		<eLabel text="AGC:" position="1060,e-68" size="50,20" font="Regular;18" foregroundColor="grey" halign="right"/>
+		<widget source="session.FrontendStatus" render="Label" position="1115,e-68" size="50,20" font="Regular;18">
+			<convert type="FrontendInfo">AGC</convert>
+		</widget>
+		<widget source="session.FrontendStatus" render="Progress" position="1165,e-62" size="80,10" borderWidth="1" borderColor="grey">
+			<convert type="FrontendInfo">AGC</convert>
+		</widget>
+		<eLabel text="BER:" position="1060,e-43" size="50,20" font="Regular;18" foregroundColor="grey" halign="right"/>
+		<widget source="session.FrontendStatus" render="Label" position="1115,e-43" size="50,20" font="Regular;18">
+			<convert type="FrontendInfo">BER</convert>
+		</widget>
+		<widget source="session.FrontendInfo" render="Label" position="1165,e-43" size="115,20" font="Regular;18">
+			<convert type="FrontendInfo">STRING</convert>
+		</widget>
+	</screen>
+
+	<screen name="InfoBarVideoInfoTemplate">
+		<widget source="session.CurrentService" render="Picon" position="30,e-90" size="100,60" transparent="1" alphatest="blend">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="  4K" position="860,e-130" size="40,25" font="Regular;20">
+				<convert type="ServiceInfo">Is4K</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="  HD" position="860,e-130" size="40,25" font="Regular;20">
+				<convert type="ServiceInfo">IsHD</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="16:9" position="860,e-130" size="40,25" font="Regular;20">
+				<convert type="ServiceInfo">IsSDAndWidescreen</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="4:3" position="860,e-130" size="40,25" font="Regular;20">
+				<convert type="ServiceInfo">IsSDAndNotWidescreen</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget render="VideoSize" source="session.CurrentService" position="905,e-130" size="100,25" font="Regular;20"/>
+	</screen>
+
+	<screen name="LeftButtonsTemplate">
+		<panel position="bottom" size="*,55">
+			<eLabel position="15,0" size="170,40" zPosition="-5" backgroundColor="red"/>
+			<eLabel position="189,0" size="170,40" zPosition="-5" backgroundColor="green"/>
+			<eLabel position="363,0" size="170,40" zPosition="-5" backgroundColor="yellow"/>
+			<eLabel position="537,0" size="170,40" zPosition="-5" backgroundColor="blue"/>
+
+			<widget name="key_red" position="17,2" size="166,36" font="Regular;22" halign="center" valign="center"/>
+			<widget name="key_green" position="191,2" size="166,36" font="Regular;22" halign="center" valign="center"/>
+			<widget name="key_yellow" position="365,2" size="166,36" font="Regular;22" halign="center" valign="center"/>
+			<widget name="key_blue" position="539,2" size="166,36" font="Regular;22" halign="center" valign="center"/>
+		</panel>
+	</screen>
+
+	<screen name="IpkDownloadTemplate">
+		<widget name="activityslider" position="15,20" size="590,10" foregroundColor="grey" borderWidth="1"/>
+		<widget source="package" render="Label" position="15,50" size="590,40" font="Regular;20"/>
+		<widget source="status" render="Label" position="15,100" size="590,40" font="Regular;20"/>
+		<widget name="slider" position="15,160" size="590,30" foregroundColor="grey" borderWidth="1"/>
+	</screen>
+
+	<screen name="MessageBox_Template">
+		<widget name="text" position="71,0" size="514,50" font="Regular;22"/>
+		<widget name="ErrorPixmap" pixmap="SimpleGrayHD/skin_default/icons/input_error.png" position="10,0" size="53,53" alphatest="on"/>
+		<widget name="QuestionPixmap" pixmap="SimpleGrayHD/skin_default/icons/input_question.png" position="10,0" size="53,53" alphatest="on"/>
+		<widget name="InfoPixmap" pixmap="SimpleGrayHD/skin_default/icons/input_info.png" position="10,0" size="53,53" alphatest="on"/>
+		<widget name="WarningPixmap" pixmap="SimpleGrayHD/skin_default/icons/input_warning.png" position="10,0" size="53,53" alphatest="on"/>
+		<widget name="list" position="15,60" size="0,0"/>
+		<applet type="onLayoutFinish">
+from enigma import eSize, ePoint
+textsize = self["text"].getSize()
+textsize = (int(textsize[0] * 1.03), int(textsize[1] * 1.03))
+wsizex = textsize[0] + 86
+wsizey = textsize[1] + 15
+if 65 > wsizey:
+	wsizey = 65
+if self.type == self.TYPE_YESNO:
+	listlen = len(self.list) * 25
+	if listlen > 125:
+		listlen = 125
+	wsizey += listlen + 10
+elif 230 > wsizex:
+	wsizex = 230
+if self.type == self.TYPE_MESSAGE:
+	self["text"].instance.move(ePoint(15,0))
+	wsizex -= 56
+elif 50 > textsize[1]:
+	self["text"].instance.move(ePoint(71,14))
+self["text"].instance.resize(eSize(*textsize))
+if self.type == self.TYPE_YESNO:
+	self["list"].instance.move(ePoint(15, wsizey-listlen-10))
+	self["list"].instance.resize(eSize(*(wsizex-30, listlen)))
+self.instance.move(ePoint((1280-wsizex)/2, (690-wsizey)/2))
+self.instance.resize(eSize(*(wsizex, wsizey)))
+		</applet>
+	</screen>
+
+	<screen name="MountConfigTemplate">
+		<widget name="config" position="0,15" size="600,300" scrollbarMode="showOnDemand"/>
+		<widget source="introduction" render="Label" position="15,325" size="570,50" font="Regular;22"/>
+		<widget name="HelpWindow" position="400,355" size="1,1" zPosition="1"/>
+	</screen>
+
+	<screen name="PinInput_Template">
+		<widget name="service" position="15,10" size="470,25" font="Regular;20"/>
+		<widget name="text" position="15,40" size="470,25" font="Regular;20"/>
+		<widget name="tries" position="15,70" size="470,25" font="Regular;20"/>
+		<widget name="input" position="15,110" size="470,40" font="Regular;50"/>
+	</screen>
+
+	<screen name="PlayerTemplate">
+		<widget source="session.CurrentService" render="Label" position="10,e-107" size="750,40" font="Replacement;30" foregroundColor="grey" halign="center" noWrap="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="DOLBY" position="770,e-86" size="52,18" font="Regular;15">
+				<convert type="ServiceInfo">IsMultichannel</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.RecordState" render="FixedLabel" text="REC" position="823,e-90" size="35,25" font="Regular;20" foregroundColor="red">
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="  4K" position="860,e-90" size="40,25" font="Regular;20">
+				<convert type="ServiceInfo">Is4K</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="  HD" position="860,e-90" size="40,25" font="Regular;20">
+				<convert type="ServiceInfo">IsHD</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="16:9" position="860,e-90" size="40,25" font="Regular;20">
+				<convert type="ServiceInfo">IsSDAndWidescreen</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget source="session.CurrentService" render="FixedLabel" text="4:3" position="860,e-90" size="40,25" font="Regular;20">
+				<convert type="ServiceInfo">IsSDAndNotWidescreen</convert>
+				<convert type="ConditionalShowHide"/>
+		</widget>
+		<widget render="VideoSize" source="session.CurrentService" position="905,e-90" size="100,25" font="Regular;20"/>
+		<widget source="global.CurrentTime" render="Label" position="1010,e-90" size="104,25" font="Regular;20" foregroundColor="grey">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1120,e-102" size="140,45" font="Replacement;30">
+			<convert type="ClockToText">Format:%H:%M:%S</convert>
+		</widget>
+
+		<widget source="session.CurrentService" render="Label" position="200,e-60" size="200,25" font="Replacement;20">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="640,e-60" size="200,25" font="Replacement;20">
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="880,e-60" size="200,25" font="Replacement;20" halign="right">
+			<convert type="ServicePosition">Remaining</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" position="200,e-30" size="880,5" borderWidth="1" borderColor="grey">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="PositionGauge" position="200,e-33" size="880,10" zPosition="2" transparent="1">
+			<convert type="ServicePosition">Gauge</convert>
+		</widget>
+	</screen>
+
+	<screen name="RCTemplate">
+		<widget name="rc" position="15,15" size="154,500" pixmaps="skin_default/rc.png,skin_default/rcold.png" alphatest="on"/>
+		<widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+		<widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+		<widget name="arrowup" pixmap="skin_default/arrowup.png" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+		<widget name="arrowup2" pixmap="skin_default/arrowup.png" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+	</screen>
+
+	<screen name="VKeyIconTemplate">
+		<widget source="VKeyIcon" render="FixedLabel" text="TEXT" position="e-65,e+15" size="50,25" halign="center" font="Regular;20" backgroundColor="grey">
+			<convert type="ConditionalShowHide"/>
+		</widget>
+	</screen>
+</skin>
+
