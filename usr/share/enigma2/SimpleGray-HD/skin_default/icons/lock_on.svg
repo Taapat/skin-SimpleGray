@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg">
+  <rect y="22.551" width="21" height="1.5" style="fill: rgb(170, 170, 170);"/>
+  <rect y="29.299" width="18" height="1.5" style="fill: rgb(170, 170, 170);" x="6.491" transform="matrix(0, 1, -1, 0, 30.799, -1.94)"/>
+  <rect y="29.299" width="18" height="1.5" style="fill: rgb(170, 170, 170);" x="6.491" transform="matrix(0, 1, -1, 0, 50.299, -1.94)"/>
+  <rect y="3.051" width="21" height="1.5" style="fill: rgb(170, 170, 170);"/>
+  <polygon style="fill: rgb(0, 255, 0); stroke: rgb(0, 255, 0);" points="10.938 23.225 24.284 9.279 24.209 2.006 22.26 2.081 10.488 17.377 7.339 11.978 2.315 15.427"/>
+</svg>

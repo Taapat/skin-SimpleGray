@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<skin>
+	<output id="0">
+		<!--resolution xres="1280" yres="720" bpp="32"/-->
+		<resolution xres="1920" yres="1080" bpp="32"/>
+	</output>
+
+	<parameters>
+		<parameter name="ConfigListSlider" value="31,3"/>
+		<parameter name="ChoicelistName" value="68,3,1000,31"/>
+		<parameter name="ExpandableListIcon" value="0,0,55,38"/>
+		<parameter name="ExpandableListDescr" value="55,2,1000,45"/>
+		<parameter name="FcFileListIcon" value="10,4,30,30"/>
+		<parameter name="FcFileListMultiIcon" value="45,4,30,30"/>
+		<parameter name="FcFileListMultiLock" value="2,0,30,30"/>
+		<parameter name="FcFileListMultiName" value="90,3,1000,32"/>
+		<parameter name="FcFileListName" value="68,4,1000,34"/>
+		<parameter name="ImsSelectionListDescr" value="46,4,1000,45"/>
+		<parameter name="ImsSelectionListLock" value="0,2,36,36"/>
+		<parameter name="VirtualKeyBoard" value="69,68"/>
+	</parameters>
+
+	<include filename="SimpleGray-HD/skin_screens.xml"/>
+</skin>
+
