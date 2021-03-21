@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 35 25" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <rect x="9" y="4" width="17" height="17" style="fill: rgb(143, 143, 143); stroke-width: 0px;"/>
+  <path style="fill: rgb(255, 255, 255); stroke-width: 0px;" transform="matrix(1, -0.000004, 0.000004, 1.009916, -286.47699, -235.884506)" d="M 304.23 240.673 A 5.467 5.467 0 0 1 304.23 251.327 A 10.187 10.187 0 0 0 304.23 240.673 Z" bx:shape="crescent 303 246 5.467 154 0.75 1@360fe92a"/>
+  <path style="fill: rgb(255, 255, 255); stroke-width: 0px;" transform="matrix(-1, -0.000004, -0.000004, 1.009916, 321.040314, -235.884506)" d="M 304.23 240.673 A 5.467 5.467 0 0 1 304.23 251.327 A 10.187 10.187 0 0 0 304.23 240.673 Z" bx:shape="crescent 303 246 5.467 154 0.75 1@360fe92a"/>
+  <path style="fill: rgb(255, 255, 255); stroke-width: 0px;" transform="matrix(-0.000002, 0.562023, 0.416284, 0.000002, -85.148468, -155.391068)" d="M 300.267 241.265 A 5.467 5.467 0 1 1 300.267 250.735 A 4.989 4.989 0 1 0 300.267 241.265 Z" bx:shape="crescent 303 246 5.467 240 0.85 1@3ed6b8b9"/>
+  <path style="fill: rgb(255, 255, 255); stroke-width: 0px;" transform="matrix(-0.000002, -0.562023, 0.416284, -0.000002, -85.148468, 180.465881)" d="M 300.267 241.265 A 5.467 5.467 0 1 1 300.267 250.735 A 4.989 4.989 0 1 0 300.267 241.265 Z" bx:shape="crescent 303 246 5.467 240 0.85 1@3ed6b8b9"/>
+</svg>

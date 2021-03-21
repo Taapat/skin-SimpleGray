@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 35 25" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <rect x="9" y="4" width="17" height="17" style="fill: rgb(143, 143, 143); stroke-width: 0px;"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 15.607 16.566"/>
+  <path style="fill: rgb(255, 255, 255);" transform="matrix(1.244502, -0.000056, 0.000053, 1.171709, -438.881958, -429.078033)" d="M 365.827 376.967 A 2.347 2.347 0 1 1 365.827 381.033 A 2.044 2.044 0 0 0 365.827 376.967 Z" bx:shape="crescent 367 379 2.347 240 0.64 1@9f55bed1"/>
+  <path style="fill: rgb(255, 255, 255);" transform="matrix(1.244502, -0.000056, 0.000053, 1.172951, -438.881958, -434.394745)" d="M 365.827 376.967 A 2.347 2.347 0 1 1 365.827 381.033 A 2.044 2.044 0 0 0 365.827 376.967 Z" bx:shape="crescent 367 379 2.347 240 0.64 1@9f55bed1"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="13.621123890679481" y1="16.56599998474121" x2="14.316599461179006" y2="17.30805515335741"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="14.31659984588623" y1="17.308055877685547" x2="15.196" y2="17.729"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="15.196" y1="17.73" x2="16.947" y2="17.771"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="17.2" y1="17.77" x2="18.736" y2="17.096"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="15.345" y1="12.562" x2="18.746" y2="12.623"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="14.236" y1="8.585" x2="15.116" y2="7.943"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="15.132" y1="7.943" x2="16.195" y2="7.572"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="16.211" y1="7.571" x2="17.701" y2="7.563"/>
+  <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke: rgb(255, 255, 255);" x1="17.956" y1="7.563" x2="18.996" y2="8.128"/>
+</svg>

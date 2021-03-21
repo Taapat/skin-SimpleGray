@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 35 25" xmlns="http://www.w3.org/2000/svg">
+  <rect width="35" height="25" style="fill: rgb(143, 143, 143);"/>
+  <polygon style="stroke-miterlimit: 1; fill: rgb(255, 255, 255);" points="17.511 7.522 22.759 17.556 24.934 17.578 19.698 7.519" transform="matrix(-1, 0, 0, -1, 42.445, 25.096999)"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 15.607 16.566"/>
+  <rect x="0.962" y="7.5" width="8" height="1" style="fill: rgb(255, 255, 255);"/>
+  <rect x="3.801" y="7.5" width="2.206" height="10" style="fill: rgb(255, 255, 255);"/>
+  <rect x="26.221" y="7.5" width="8" height="1" style="fill: rgb(255, 255, 255);"/>
+  <rect x="29.06" y="7.5" width="2.206" height="10" style="fill: rgb(255, 255, 255);"/>
+  <rect x="9.891" y="7.5" width="2.206" height="10" style="fill: rgb(255, 255, 255);"/>
+  <rect x="9.891" y="16.566" width="6.5" height="1" style="fill: rgb(255, 255, 255);"/>
+  <rect x="9.891" y="7.5" width="6.5" height="1" style="fill: rgb(255, 255, 255);"/>
+  <rect x="9.891" y="11.903" width="6" height="1" style="fill: rgb(255, 255, 255);"/>
+  <polygon style="stroke-miterlimit: 1; fill: rgb(255, 255, 255);" points="17.51099967956543 17.575000762939453 22.759000778198242 7.540999889373779 24.93400001525879 7.519000053405762 19.697999954223633 17.577999114990234"/>
+</svg>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 35 25" xmlns="http://www.w3.org/2000/svg">
+  <rect width="35" height="25" style="fill: rgb(143, 143, 143);"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 15.607 16.566"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="12.5" y1="17" x2="22.5" y2="12.5" transform="matrix(-1, 0, 0, -1, 35, 29.5)"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="22.5" y1="12.5" x2="12.5" y2="8" transform="matrix(-1, 0, 0, -1, 35, 20.5)"/>
+</svg>

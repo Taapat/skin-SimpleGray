@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 35 25" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <rect x="9" y="4" width="17" height="17" style="fill: rgb(143, 143, 143); stroke-width: 0px;"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 15.607 16.566"/>
+  <path style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke-miterlimit: 1;" transform="matrix(0.001858, 0.082526, -0.079338, 0, 57.916172, -10.544689)" d="M 260.7662092 541.402182482 A 45.222 45.222 0 1 1 335.259424281 565.606495298 L 326.34258982 555.703347353 A 31.896 31.896 0 1 0 273.801004127 538.63155129 Z" bx:shape="pie 305 532 31.896 45.222 258 138 1@424806b3"/>
+  <path style="fill: rgb(255, 255, 255); stroke-miterlimit: 1;" transform="matrix(1.509292, 0.000023, -0.000021, 1.329442, -414.730591, -413.449463)" d="M 285.13 319.322 A 2.816 2.816 0 1 1 285.13 324.678 A 2.681 2.681 0 0 0 285.13 319.322 Z" bx:shape="crescent 286 322 2.816 216 0.8 1@67c472fb"/>
+  <rect x="13.811" y="7.413" width="2" height="4.679" style="fill: rgb(255, 255, 255); stroke-miterlimit: 1;"/>
+  <rect x="13.811" y="6.993" width="6.653" height="1" style="fill: rgb(255, 255, 255); stroke-miterlimit: 1;"/>
+</svg>

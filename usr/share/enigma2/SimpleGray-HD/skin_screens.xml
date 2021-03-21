@@ -29,6 +29,7 @@
 
 	<parameters>
 		<parameter name="AboutHddSplit" value="1"/>
+		<parameter name="ChoicelistIcon" value="5*f,0,35*f,25*f"/>
 		<parameter name="LanguageSelectionFlags" value="60*f,40*f"/>
 		<parameter name="PluginBrowserDownloadIcon" value="10*f,0,60*f,50*f"/>
 		<parameter name="VirtualKeyBoardButtons" value="22*f,1*f,22*f,45*f"/>
@@ -66,35 +67,37 @@
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="AdapterSetup" position="center,center" size="600,520">
-		<widget source="Adaptertext" render="Label" position="15,15" size="100,25" font="Regular;22"/>
-		<widget source="Adapter" render="Label" position="115,15" size="470,25" font="Regular;22"/>
-		<widget name="config" position="0,45" size="600,150"/>
-		<widget source="introduction" render="Label" position="15,215" size="560,25" font="Regular;20"/>
-		<widget source="IPtext" render="Label" position="15,245" size="270,22" font="Regular;20"/>
-		<widget source="IP" render="Label" position="305,245" size="280,22" font="Regular;15" halign="right"/>
-		<widget source="Netmasktext" render="Label" position="15,270" size="270,22" font="Regular;20"/>
-		<widget source="Mask" render="Label" position="305,270" size="280,22" font="Regular;15" halign="right"/>
-		<widget source="Gatewaytext" render="Label" position="15,295" size="285,22" font="Regular;20"/>
-		<widget source="Gateway" render="Label" position="305,295" size="280,22" font="Regular;15" halign="right"/>
-		<widget source="DNS1text" render="Label" position="15,320" size="285,22" font="Regular;20"/>
-		<widget source="DNS1" render="Label" position="305,320" size="280,22" font="Regular;15" halign="right"/>
-		<widget source="DNS2text" render="Label" position="15,345" size="285,22" font="Regular;20"/>
-		<widget source="DNS2" render="Label" position="305,345" size="280,22" font="Regular;15" halign="right"/>
-		<widget source="introduction2" render="Label" position="15,400" size="570,25" font="Regular;22"/>
+	<!--from Screens.NetworkSetup-->
+	<screen name="AdapterSetup" position="center,center" size="600*f,520*f">
+		<widget source="Adaptertext" render="Label" position="15*f,15*f" size="100*f,25*f" font="Regular;22*f"/>
+		<widget source="Adapter" render="Label" position="115*f,15*f" size="470*f,25*f" font="Regular;22*f"/>
+		<widget name="config" position="0,45*f" size="600*f,150*f" itemHeight="25*f" font="Regular;18*f"/>
+		<widget source="introduction" render="Label" position="15*f,215*f" size="560*f,25*f" font="Regular;20*f"/>
+		<widget source="IPtext" render="Label" position="15*f,245*f" size="270*f,22*f" font="Regular;20*f"/>
+		<widget source="IP" render="Label" position="305*f,245*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="Netmasktext" render="Label" position="15*f,270*f" size="270*f,22*f" font="Regular;20*f"/>
+		<widget source="Mask" render="Label" position="305*f,270*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="Gatewaytext" render="Label" position="15*f,295*f" size="285*f,22*f" font="Regular;20*f"/>
+		<widget source="Gateway" render="Label" position="305*f,295*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="DNS1text" render="Label" position="15*f,320*f" size="285*f,22*f" font="Regular;20*f"/>
+		<widget source="DNS1" render="Label" position="305*f,320*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="DNS2text" render="Label" position="15*f,345*f" size="285*f,22*f" font="Regular;20*f"/>
+		<widget source="DNS2" render="Label" position="305*f,345*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="introduction2" render="Label" position="15*f,400*f" size="570*f,25v" font="Regular;22*f"/>
 
 		<widget name="HelpWindow" position="center,425" size="1,1"/>
 		<panel name="DynamicButtonsTemplate"/>
 		<panel name="VKeyIconTemplate"/>
 	</screen>
 
-	<screen name="AdapterSetupConfiguration" position="center,center" size="600,460">
-		<widget source="IFtext" render="Label" position="15,10" size="100,25" font="Regular;22"/>
-		<widget source="IF" render="Label" position="115,10" size="470,25" font="Regular;22"/>
-		<widget name="menulist" position="15,45" size="570,200" scrollbarMode="showOnDemand"/>
-		<widget name="statuspic" position="15,265" size="15,16" pixmaps="SimpleGrayHD/skin_default/buttons/button_green.png,SimpleGrayHD/skin_default/buttons/button_green_off.png" alphatest="on"/>
-		<widget source="Statustext" render="Label" position="45,260" size="535,25" font="Regular;22"/>
-		<widget source="description" render="Label" position="15,305" size="570,75" font="Regular;22"/>
+	<!--from Screens.NetworkSetup-->
+	<screen name="AdapterSetupConfiguration" position="center,center" size="600*f,460*f">
+		<widget source="IFtext" render="Label" position="15*f,10*f" size="100*f,25*f" font="Regular;22*f"/>
+		<widget source="IF" render="Label" position="115*f,10*f" size="470*f,25*f" font="Regular;22*f"/>
+		<widget name="menulist" position="15*f,45*f" size="570*f,200*f" scrollbarMode="showOnDemand"/>
+		<widget name="statuspic" position="15*f,265*f" size="15*f,16*f" pixmaps="SimpleGray-HD/skin_default/buttons/button_green.svg,SimpleGray-HD/skin_default/buttons/button_green_off.svg" alphatest="on"/>
+		<widget source="Statustext" render="Label" position="45*f,260*f" size="535*f,25*f" font="Regular;22*f"/>
+		<widget source="description" render="Label" position="15*f,305*f" size="570*f,75*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -216,8 +219,9 @@
 		<widget name="menu" position="10,10" size="350,400" scrollbarMode="showOnDemand"/>
 	</screen>
 
-	<screen name="BufferIndicator" position="center,15" size="200,34" backgroundColor="transparent" flags="wfNoBorder" zPosition="100">
-		<widget name="status" position="0,0" size="200,34" backgroundColor="transparent" transparent="1" font="Replacement;26" borderColor="grey" borderWidth="2" valign="center" halign="center"/>
+	<!--from Screens.InfoBarGenerics-->
+	<screen name="BufferIndicator" position="center,15*f" size="200*f,34*f" backgroundColor="transparent" flags="wfNoBorder" zPosition="100">
+		<widget name="status" position="0,0" size="200*f,34*f" backgroundColor="transparent" transparent="1" font="Replacement;26" borderColor="grey" borderWidth="2" valign="center" halign="center"/>
 	</screen>
 
 	<screen name="CIselectMainMenu" position="center,center" size="740,565">
@@ -225,11 +229,12 @@
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="ChannelContextMenu" position="center,center" size="500,260" backgroundColor="back">
-		<widget name="menu" position="0,10" size="500,250" scrollbarMode="showOnDemand"/>
+	<!--from Screens.ChannelSelection-->
+	<screen name="ChannelContextMenu" position="center,center" size="500*f,260*f" backgroundColor="back">
+		<widget name="menu" position="0,10*f" size="500*f,250*f" scrollbarMode="showOnDemand"/>
 	</screen>
 
-	<!--from ChannelSelection-->
+	<!--from Screens.ChannelSelection-->
 	<screen name="ChannelSelection" position="center,100*f" size="1085*f,585*f">
 		<panel name="LeftButtonsTemplate"/>
 		<widget name="list" position="15*f,10*f" size="692*f,498*f" scrollbarMode="showOnDemand" serviceItemHeight="31*f" serviceNumberFont="Regular;20*f" serviceNameFont="Regular;20*f" serviceInfoFont="Regular;18*f" foregroundColorServiceNotAvail="grey" colorEventProgressbar="grey" colorServiceDescription="grey" colorEventProgressbarBorder="grey" colorServiceDescriptionSelected="white" colorEventProgressbarSelected="white" progressBarWidth="40*f" progressbarHeight="6*f"/>
@@ -868,63 +873,66 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<ePixmap pixmap="SimpleGray-HD/window/mute.svg" position="0,0" size="64*f,64*f"/>
 	</screen>
 
-	<screen name="NameserverSetup" position="center,center" size="520,240">
+	<!--from Screens.NetworkSetup-->
+	<screen name="NameserverSetup" position="center,center" size="520*f,240*f">
 		<panel name="ConfigIntroductionLabelTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="NetworkAdapterSelection" position="center,center" size="600,450">
-		<widget source="list" render="Listbox" position="10,15" size="580,280" scrollbarMode="showOnDemand">
+	<!--from Screens.NetworkSetup-->
+	<screen name="NetworkAdapterSelection" position="center,center" size="600*f,450*f">
+		<widget source="list" render="Listbox" position="10*f,15*f" size="580*f,280*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryText(pos=(90,6), size=(490,28), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_TOP, text=1), # index 1 is the interfacename
-					MultiContentEntryText(pos=(90,43), size=(490,20), font=1, flags=RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, text=2), # index 2 is the description
-					MultiContentEntryPixmapAlphaTest(pos=(5,8), size=(54,54), png=3), # index 3 is the interface pixmap
-					MultiContentEntryPixmapAlphaTest(pos=(67,46), size=(15,16), png=4), # index 4 is the default pixmap
+					MultiContentEntryText(pos=(90*f, 6*f), size=(490*f, 28*f), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_TOP, text=1), # interfacename
+					MultiContentEntryText(pos=(90*f, 43*f), size=(490*f, 20*f), font=1, flags=RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, text=2), # description
+					MultiContentEntryPixmapAlphaTest(pos=(5*f, 8*f), size=(54*f, 54*f), png=3), # iinterface pixmap
+					MultiContentEntryPixmapAlphaTest(pos=(67*f, 46*f), size=(15*f, 16*f), png=4), # default pixmap
 				],
-				"fonts": [gFont("Regular",22), gFont("Regular",20)],
-				"itemHeight": 70}
+				"fonts": [gFont("Regular", 22*f), gFont("Regular", 20*f)],
+				"itemHeight": 70*f}
 			</convert>
 		</widget>
-		<widget source="introduction" render="Label" position="15,325" size="570,50" font="Regular;22"/>
+		<widget source="introduction" render="Label" position="15*f,325*f" size="570*f,50*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="NetworkAdapterTest" position="center,center" size="740,380">
-		<widget name="Adaptertext" position="15,25" size="200,25" font="Regular;20"/>
-		<widget name="Adapter" position="200,25" size="315,25" font="Regular;20" foregroundColors="white,red,green" halign="right"/>
-		<widget name="AdapterInfo_OK" position="530,22" size="38,31" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="AdapterInfo" position="580,17" size="140,40" pixmaps="SimpleGrayHD/skin_default/buttons/grey.png,SimpleGrayHD/skin_default/buttons/white.png"/>
-		<widget name="AdapterInfo_Text" position="582,19" size="136,36" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20" zPosition="1"/>
+	<!--from Screens.NetworkSetup-->
+	<screen name="NetworkAdapterTest" position="center,center" size="740*f,380*f">
+		<widget name="Adaptertext" position="15*f,25*f" size="200*f,25*f" font="Regular;20*f"/>
+		<widget name="Adapter" position="200*f,25*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
+		<widget name="AdapterInfo_OK" position="530*f,22*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
+		<widget name="AdapterInfo" position="580*f,17*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGrayHD/skin_default/buttons/white.svg"/>
+		<widget name="AdapterInfo_Text" position="582*f,19*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
-		<widget name="Networktext" position="15,75" size="200,25" font="Regular;20"/>
-		<widget name="Network" position="200,75" size="315,25" font="Regular;20" foregroundColors="white,red,green" halign="right"/>
-		<widget name="NetworkInfo_Check" position="530,72" size="38,31" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="NetworkInfo" position="580,67" size="140,40" pixmaps="SimpleGrayHD/skin_default/buttons/grey.png,SimpleGrayHD/skin_default/buttons/white.png"/>
-		<widget name="NetworkInfo_Text" position="582,69" size="136,36" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20" zPosition="1"/>
+		<widget name="Networktext" position="15*f,75*f" size="200*f,25*f" font="Regular;20*f"/>
+		<widget name="Network" position="200*f,75*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
+		<widget name="NetworkInfo_Check" position="530*f,72*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
+		<widget name="NetworkInfo" position="580*f,67*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="NetworkInfo_Text" position="582*f,69*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
-		<widget name="Dhcptext" position="15,125" size="200,25" font="Regular;20"/>
-		<widget name="Dhcp" position="200,125" size="315,25" font="Regular;20" foregroundColors="white,red,green" halign="right"/>
-		<widget name="DhcpInfo_Check" position="530,122" size="38,31" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="DhcpInfo" position="580,117" size="140,40" pixmaps="SimpleGrayHD/skin_default/buttons/grey.png,SimpleGrayHD/skin_default/buttons/white.png"/>
-		<widget name="DhcpInfo_Text" position="582,119" size="136,36" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20" zPosition="1"/>
+		<widget name="Dhcptext" position="15*f,125*f" size="200*f,25*f" font="Regular;20*f"/>
+		<widget name="Dhcp" position="200*f,125*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
+		<widget name="DhcpInfo_Check" position="530*f,122*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
+		<widget name="DhcpInfo" position="580*f,117*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="DhcpInfo_Text" position="582*f,119*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
-		<widget name="IPtext" position="15,175" size="200,25" font="Regular;20"/>
-		<widget name="IP" position="200,175" size="315,25" font="Regular;20" foregroundColors="white,red,green" halign="right"/>
-		<widget name="IPInfo_Check" position="530,172" size="38,31" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="IPInfo" position="580,167" size="140,40" pixmaps="SimpleGrayHD/skin_default/buttons/grey.png,SimpleGrayHD/skin_default/buttons/white.png"/>
-		<widget name="IPInfo_Text" position="582,169" size="136,36" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20" zPosition="1"/>
+		<widget name="IPtext" position="15*f,175*f" size="200*f,25*f" font="Regular;20*f"/>
+		<widget name="IP" position="200*f,175*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
+		<widget name="IPInfo_Check" position="530*f,172*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
+		<widget name="IPInfo" position="580*f,167*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="IPInfo_Text" position="582*f,169*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
-		<widget name="DNStext" position="15,225" size="200,25" font="Regular;20"/>
-		<widget name="DNS" position="200,225" size="315,25" font="Regular;20" foregroundColors="white,red,green" halign="right"/>
-		<widget name="DNSInfo_Check" position="530,222" size="38,31" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="DNSInfo" position="580,217" size="140,40" pixmaps="SimpleGrayHD/skin_default/buttons/grey.png,SimpleGrayHD/skin_default/buttons/white.png"/>
-		<widget name="DNSInfo_Text" position="582,219" size="136,36" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20" zPosition="1"/>
+		<widget name="DNStext" position="15*f,225*f" size="200*f,25*f" font="Regular;20*f"/>
+		<widget name="DNS" position="200*f,225*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
+		<widget name="DNSInfo_Check" position="530*f,222*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
+		<widget name="DNSInfo" position="580*f,217*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="DNSInfo_Text" position="582*f,219*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
-		<widget name="EditSettingsButton" position="580,267" size="140,40" pixmaps="SimpleGrayHD/skin_default/buttons/grey.png,SimpleGrayHD/skin_default/buttons/white.png"/>
-		<widget name="EditSettings_Text" position="582,269" size="136,36" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20" zPosition="1"/>
+		<widget name="EditSettingsButton" position="580*f,267*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="EditSettings_Text" position="582*f,269*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
-		<widget name="InfoText" position="15,17" size="710,370" font="Regular;22" zPosition="3"/>
+		<widget name="InfoText" position="15*f,17*f" size="710*f,370*f" font="Regular;22*f" zPosition="3"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
