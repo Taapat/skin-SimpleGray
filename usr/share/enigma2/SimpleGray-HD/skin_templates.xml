@@ -12,13 +12,13 @@
 	</screen>
 
 	<screen name="ConfigIntroductionLabelTemplate">
-		<widget name="config" position="0,10" size="520,100" scrollbarMode="showOnDemand"/>
-		<widget source="introduction" render="Label" position="15,130" size="490,25" font="Regular;22"/>
+		<widget name="config" position="0,10*f" size="520*f,100*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget source="introduction" render="Label" position="15*f,130*f" size="490*f,25*f" font="Regular;22"/>
 	</screen>
 
 	<screen name="ConfigIntroductionTemplate">
-		<widget name="config" position="0,10" size="620,300" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget name="introduction" position="15,330" size="590,50" font="Regular;22"/>
+		<widget name="config" position="0,10*f" size="620*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget name="introduction" position="15*f,330*f" size="590*f,50*f" font="Regular;22*f"/>
 	</screen>
 
 	<screen name="DefaultWizardTemplate">
@@ -211,10 +211,10 @@
 	</screen>
 
 	<screen name="IpkDownloadTemplate">
-		<widget name="activityslider" position="15,20" size="590,10" foregroundColor="grey" borderWidth="1"/>
-		<widget source="package" render="Label" position="15,50" size="590,40" font="Regular;20"/>
-		<widget source="status" render="Label" position="15,100" size="590,40" font="Regular;20"/>
-		<widget name="slider" position="15,160" size="590,30" foregroundColor="grey" borderWidth="1"/>
+		<widget name="activityslider" position="15*f,20*f" size="590*f,10*f" foregroundColor="grey" borderWidth="1"/>
+		<widget source="package" render="Label" position="15*f,50*f" size="590*f,40*f" font="Regular;20*f"/>
+		<widget source="status" render="Label" position="15*f,100*f" size="590*f,40*f" font="Regular;20*f"/>
+		<widget name="slider" position="15*f,160*f" size="590*f,30*f" foregroundColor="grey" borderWidth="1"/>
 	</screen>
 
 	<screen name="Menu_Template">
@@ -266,9 +266,9 @@ self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
 	</screen>
 
 	<screen name="MountConfigTemplate">
-		<widget name="config" position="0,15" size="600,300" scrollbarMode="showOnDemand"/>
-		<widget source="introduction" render="Label" position="15,325" size="570,50" font="Regular;22"/>
-		<widget name="HelpWindow" position="400,355" size="1,1" zPosition="1"/>
+		<widget name="config" position="0,15*f" size="600*f,300*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget source="introduction" render="Label" position="15*f,325*f" size="570*f,50*f" font="Regular;22*f"/>
+		<widget name="HelpWindow" position="400*f,355*f" size="1,1" zPosition="1"/>
 	</screen>
 
 	<screen name="PinInput_Template">

@@ -3,37 +3,25 @@
 	<colors>
 		<color name="back" value="#001b1b1b"/>
 		<color name="black" value="#00000000"/>
-		<color name="blue" value="#000070eb"/>
-		<color name="green" value="#00389416"/>
+		<color name="blue" value="#000000ff"/>
+		<color name="green" value="#0000ff00"/>
 		<color name="grey" value="#008f8f8f"/>
-		<color name="red" value="#00ff2525"/>
+		<color name="red" value="#00ff0000"/>
 		<color name="selection" value="#00494949"/>
 		<color name="transparent" value="#ffffffff"/>
 		<color name="transpBack" value="#411b1b1b"/>
 		<color name="white" value="#00ffffff"/>
-		<color name="yellow" value="#00bab329"/>
+		<color name="yellow" value="#00ffff00"/>
 	</colors>
 
 	<fonts>
 		<font filename="lcd.ttf" name="LCD" scale="100"/>
-		<font filename="SGOpenSansRegular.ttf" name="Replacement" scale="100" replacement="1"/>
-		<font filename="SGDroidSans.ttf" name="Regular" scale="100"/>
-		<alias name="Body" font="Regular" size="20*f" height="25*f" />
-		<alias name="ChoiceList" font="Regular" size="20*f" height="25*f" />
-		<alias name="FileList" font="Regular" size="18*f" height="25*f" />
-		<alias name="PluginBrowser0" font="Regular" size="20*f" height="50*f"/>
-		<alias name="PluginBrowser1" font="Regular" size="14*f"/>
-		<alias name="TextNormal" font="Regular" size="20*f" height="25*f" />
-		<alias name="VirtualKeyBoard" font="Regular" size="28*f" height="45*f"/>
+		<font filename="SG-OpenSansRegular.ttf" name="Replacement" scale="100" replacement="1"/>
+		<font filename="SG-DroidSans.ttf" name="Regular" scale="100"/>
 	</fonts>
 
 	<parameters>
 		<parameter name="AboutHddSplit" value="1"/>
-		<parameter name="ChoicelistIcon" value="5*f,0,35*f,25*f"/>
-		<parameter name="LanguageSelectionFlags" value="60*f,40*f"/>
-		<parameter name="PluginBrowserDownloadIcon" value="10*f,0,60*f,50*f"/>
-		<parameter name="VirtualKeyBoardButtons" value="22*f,1*f,22*f,45*f"/>
-		<parameter name="VirtualKeyBoardShiftColors" value="0x00ffffff,0x00ffffff,0x00ffffff,0x00ffffff"/>
 	</parameters>
 
 	<windowstyle type="skinned" id="0">
@@ -101,122 +89,130 @@
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="AltCamManager" position="center,center" size="660,410">
-		<widget source="list" render="Listbox" position="10,10" size="355,300" enableWrapAround="1" scrollbarMode="showOnDemand">
+	<!--Plugins.Extensions.AlternativeSoftCamManager.Manager-->
+	<screen name="AltCamManager" position="center,center" size="660*f,410*f">
+		<widget source="list" render="Listbox" position="10*f,10*f" size="355*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 			{
-				"template": [MultiContentEntryText(pos=(65,10), size=(275,40), font=0, flags=RT_HALIGN_LEFT, text=0),
-					MultiContentEntryPixmapAlphaTest(pos=(5,5), size=(51,40), png=1),
-					MultiContentEntryText(pos=(5,25), size=(51,16), font=1, flags=RT_HALIGN_CENTER, text=2),],
-				"fonts": [gFont("Regular",26), gFont("Regular",12)],
-				"itemHeight": 50
+				"template": [MultiContentEntryText(pos=(65*f, 10*f), size=(275*f, 40*f), font=0, flags=RT_HALIGN_LEFT, text=0),
+					MultiContentEntryPixmapAlphaTest(pos=(5*f, 5*f), size=(51*f, 40*f), png=1, flags=BT_SCALE),
+					MultiContentEntryText(pos=(5*f, 25*f), size=(51*f, 16*f), font=1, flags=RT_HALIGN_CENTER, text=2),],
+				"fonts": [gFont("Regular", 26*f), gFont("Regular", 12*f)],
+				"itemHeight": 50*f
 			}
 			</convert>
 		</widget>
-		<eLabel text="Ecm info" position="385,0" size="260,35" font="Regular;26"/>
-		<widget name="status" position="385,40" size="260,280" font="Regular;18"/>
+		<eLabel text="Ecm info" position="385*f,0" size="260*f,35*f" font="Regular;26*f"/>
+		<widget name="status" position="385*f,40*f" size="260*f,280*f" font="Regular;18*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="AudioSelection" position="center,center" size="550,280">
-		<widget source="key_red" render="FixedLabel" position="15,15" size="15,15" backgroundColor="red">
+	<!--from Screens.AudioSelection-->
+	<screen name="AudioSelection" position="center,center" size="550*f,280*f">
+		<widget source="key_red" render="FixedLabel" position="15*f,15*f" size="15*f,15*f" backgroundColor="red">
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<eLabel position="17,17" size="11,11"/>
-		<widget source="key_green" render="FixedLabel" position="15,40" size="15,15" backgroundColor="green">
+		<eLabel position="17*f,17*f" size="11*f,11*f"/>
+		<widget source="key_green" render="FixedLabel" position="15*f,40*f" size="15*f,15*f" backgroundColor="green">
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<eLabel position="17,42" size="11,11"/>
-		<widget source="key_yellow" render="FixedLabel" position="15,65" size="15,15" backgroundColor="yellow">
+		<eLabel position="17*f,42*f" size="11*f,11*f"/>
+		<widget source="key_yellow" render="FixedLabel" position="15*f,65*f" size="15*f,15*f" backgroundColor="yellow">
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<eLabel position="17,67" size="11,11"/>
-		<widget source="key_blue" render="FixedLabel" position="15,90" size="15,15" backgroundColor="blue">
+		<eLabel position="17*f,67*f" size="11*f,11*f"/>
+		<widget source="key_blue" render="FixedLabel" position="15*f,90*f" size="15*f,15*f" backgroundColor="blue">
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<eLabel position="17,92" size="11,11"/>
-		<widget name="config" position="40,10" size="500,110" scrollbarMode="showOnDemand"/>
-		<widget source="streams" render="Listbox" position="12,140" size="530,125" scrollbarMode="showOnDemand">
+		<eLabel position="17*f,92*f" size="11*f,11*f"/>
+		<widget name="config" position="40*f,10*f" size="500*f,110*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget source="streams" render="Listbox" position="12*f,140*f" size="530*f,125*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"templates":
-					{"default": (25, [
-						MultiContentEntryText(pos=(30,0), size=(20,25), font=0, flags=RT_HALIGN_RIGHT, text=1), # key,
-						MultiContentEntryText(pos=(55,0), size=(40,25), font=0, flags=RT_HALIGN_LEFT, text=2), # number,
-						MultiContentEntryText(pos=(100,0), size=(200,25), font=0, flags=RT_HALIGN_LEFT, text=3), # description,
-						MultiContentEntryText(pos=(305,0), size=(220,25), font=0, flags=RT_HALIGN_LEFT, text=4), # language,
-						MultiContentEntryText(pos=(5,0), size=(20,25), font=0, flags=RT_HALIGN_LEFT, text=5), # selection,
+					{"default": (25*f, [
+						MultiContentEntryText(pos=(30*f, 0), size=(20*f, 25*f), font=0, flags=RT_HALIGN_RIGHT, text=1), # key,
+						MultiContentEntryText(pos=(55*f, 0), size=(40*f, 25*f), font=0, flags=RT_HALIGN_LEFT, text=2), # number,
+						MultiContentEntryText(pos=(100*f, 0), size=(200*f, 25*f), font=0, flags=RT_HALIGN_LEFT, text=3), # description,
+						MultiContentEntryText(pos=(305*f, 0), size=(220*f, 25*f), font=0, flags=RT_HALIGN_LEFT, text=4), # language,
+						MultiContentEntryText(pos=(5*f, 0), size=(20*f, 25*f), font=0, flags=RT_HALIGN_LEFT, text=5), # selection,
 					], True),
-					"notselected": (25, [
-						MultiContentEntryText(pos=(30,0), size=(20,25), font=0, flags=RT_HALIGN_RIGHT, text=1), # key,
-						MultiContentEntryText(pos=(55,0), size=(40,25), font=0, flags=RT_HALIGN_LEFT, text=2), # number,
-						MultiContentEntryText(pos=(100,0), size=(200,25), font=0, flags=RT_HALIGN_LEFT, text=3), # description,
-						MultiContentEntryText(pos=(305,0), size=(220,25), font=0, flags=RT_HALIGN_LEFT, text=4), # language,
-						MultiContentEntryText(pos=(5,0), size=(20,25), font=0, flags=RT_HALIGN_LEFT, text=5), # selection,
+					"notselected": (25*f, [
+						MultiContentEntryText(pos=(30*f, 0), size=(20*f, 25*f), font=0, flags=RT_HALIGN_RIGHT, text=1), # key,
+						MultiContentEntryText(pos=(55*f, 0), size=(40*f, 25*f), font=0, flags=RT_HALIGN_LEFT, text=2), # number,
+						MultiContentEntryText(pos=(100*f, 0), size=(200*f, 25*f), font=0, flags=RT_HALIGN_LEFT, text=3), # description,
+						MultiContentEntryText(pos=(305*f, 0), size=(220*f, 25*f), font=0, flags=RT_HALIGN_LEFT, text=4), # language,
+						MultiContentEntryText(pos=(5*f, 0), size=(20*f, 25*f), font=0, flags=RT_HALIGN_LEFT, text=5), # selection,
 					], False)
 				},
-				"fonts": [gFont("Regular",20)],
-				"itemHeight": 25}
+				"fonts": [gFont("Regular", 20*f)],
+				"itemHeight": 25*f}
 			</convert>
 		</widget>
 	</screen>
 
-	<screen name="AutoMountEdit" position="center,center" size="600,450">
+	<!--Plugins.SystemPlugins.NetworkBrowser.MountEdit-->
+	<screen name="AutoMountEdit" position="center,center" size="600*f,450*f">
 		<panel name="MountConfigTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 		<panel name="VKeyIconTemplate"/>
 	</screen>
 
-	<screen name="AutoMountManager" position="center,center" size="600,450">
-		<widget source="config" render="Listbox" position="10,15" size="580,300" scrollbarMode="showOnDemand">
+	<!--Plugins.SystemPlugins.NetworkBrowser.MountManager-->
+	<screen name="AutoMountManager" position="center,center" size="600*f,450*f">
+		<widget source="config" render="Listbox" position="10*f,15*f" size="580*f,300*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-						MultiContentEntryText(pos=(50,5), size=(510,28), font=0, flags=RT_HALIGN_LEFT, text=0), # index 2 is the Menu Titel
-						MultiContentEntryText(pos=(60,35), size=(500,20), font=1, flags=RT_HALIGN_LEFT, text=2), # index 3 is the Description
-						MultiContentEntryPixmapAlphaTest(pos=(0,6), size=(48,48), png=3), # index 4 is the pixmap
+						MultiContentEntryText(pos=(50*f, 5*f), size=(510*f, 28*f), font=0, flags=RT_HALIGN_LEFT, text=0), # index 2 is the Menu Titel
+						MultiContentEntryText(pos=(60*f, 35*f), size=(500*f, 20*f), font=1, flags=RT_HALIGN_LEFT, text=2), # index 3 is the Description
+						MultiContentEntryPixmapAlphaTest(pos=(0, 6*f), size=(48*f, 48*f), png=3), # index 4 is the pixmap
 					],
-				"fonts": [gFont("Regular",22),gFont("Regular",17)],
-				"itemHeight": 60
+				"fonts": [gFont("Regular", 22*f),gFont("Regular", 17*f)],
+				"itemHeight": 60*f
 				}
 			</convert>
 		</widget>
-		<widget source="introduction" render="Label" position="15,325" size="570,50" font="Regular;22"/>
+		<widget source="introduction" render="Label" position="15*f,325*f" size="570*f,50*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="AutoMountView" position="center,center" size="600,450">
-		<widget source="legend1" render="Label" position="15,15" size="130,25" font="Regular;20"/>
-		<widget source="legend2" render="Label" position="145,15" size="340,25" font="Regular;20"/>
-		<widget source="legend3" render="Label" position="505,13" size="70,25" font="Regular;20"/>
-		<widget source="config" render="Listbox" position="10,40" size="580,300" scrollbarMode="showOnDemand">
+	<!--Plugins.SystemPlugins.NetworkBrowser.MountView-->
+	<screen name="AutoMountView" position="center,center" size="600*f,450*f">
+		<widget source="legend1" render="Label" position="15*f,15*f" size="130*f,25*f" font="Regular;20*f"/>
+		<widget source="legend2" render="Label" position="145*f,15*f" size="340*f,25*f" font="Regular;20*f"/>
+		<widget source="legend3" render="Label" position="505*f,13*f" size="70*f,25*f" font="Regular;20*f"/>
+		<widget source="config" render="Listbox" position="10*f,40*f" size="580*f,300*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-						MultiContentEntryPixmapAlphaTest(pos=(0,6), size=(48,48), png=0), # index 0 is the isMounted pixmap
-						MultiContentEntryText(pos=(135,5), size=(120,28), font=0, flags=RT_HALIGN_LEFT, text=1), # index 1 is the sharename
-						MultiContentEntryText(pos=(255,8), size=(220,20), font=0, flags=RT_HALIGN_LEFT, text=2), # index 2 is the IPdescription
-						MultiContentEntryText(pos=(135,35), size=(340,20), font=1, flags=RT_HALIGN_LEFT, text=3), # index 3 is the DIRdescription
-						MultiContentEntryPixmapAlphaTest(pos=(495,15), size=(48,48), png=4), # index 4 is the activepng pixmap
-						MultiContentEntryPixmapAlphaTest(pos=(515,6), size=(48,48), png=5), # index 4 is the mounttype pixmap
+						MultiContentEntryPixmapAlphaTest(pos=(0, 6*f), size=(48*f, 48*f), png=0), # index 0 is the isMounted pixmap
+						MultiContentEntryText(pos=(135*f, 5*f), size=(120*f, 28*f), font=0, flags=RT_HALIGN_LEFT, text=1), # index 1 is the sharename
+						MultiContentEntryText(pos=(255*f, 8*f), size=(220*f, 20*f), font=0, flags=RT_HALIGN_LEFT, text=2), # index 2 is the IPdescription
+						MultiContentEntryText(pos=(135*f, 35*f), size=(340*f, 20*f), font=1, flags=RT_HALIGN_LEFT, text=3), # index 3 is the DIRdescription
+						MultiContentEntryPixmapAlphaTest(pos=(495*f, 15*f), size=(48*f, 48*f), png=4), # index 4 is the activepng pixmap
+						MultiContentEntryPixmapAlphaTest(pos=(515*f, 6*f), size=(48*f, 48*f), png=5), # index 4 is the mounttype pixmap
 					],
-				"fonts": [gFont("Regular",22), gFont("Regular",17)],
-				"itemHeight": 60
+				"fonts": [gFont("Regular", 22*f), gFont("Regular", 17*f)],
+				"itemHeight": 60*f
 				}
 			</convert>
 		</widget>
-		<widget source="introduction" position="15,325" size="570,50" font="Regular;22"/>
+		<widget source="introduction" position="15*f,325*f" size="570*f,50*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="BackupScreen" position="center,center" size="800,445">
-		<widget name="config" position="0,10" size="800,425" scrollbarMode="showOnDemand"/>
+	<!--from Plugins.SystemPlugins.SoftwareManager.BackupRestore-->
+	<screen name="BackupScreen" position="center,center" size="800*f,445*f">
+		<widget name="config" position="0,10*f" size="800*f,425*f" scrollbarMode="showOnDemand" temHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
-	<screen name="BackupSelection" position="center,center" size="640,490">
-		<widget name="checkList" position="15,10" size="670,400" scrollbarMode="showOnDemand"/>
+	<!--from Plugins.SystemPlugins.SoftwareManager.BackupRestore-->
+	<screen name="BackupSelection" position="center,center" size="640*f,490*f">
+		<widget name="checkList" position="15*f,10*f" size="670*f,400*f" scrollbarMode="showOnDemand"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="BouquetSelector" position="center,center" size="370,420">
-		<widget name="menu" position="10,10" size="350,400" scrollbarMode="showOnDemand"/>
+	<!--from Screens.ChannelSelection-->
+	<screen name="BouquetSelector" position="center,center" size="370*f,420*f">
+		<widget name="menu" position="10*f,10*f" size="350*f,400*f" scrollbarMode="showOnDemand"/>
 	</screen>
 
 	<!--from Screens.InfoBarGenerics-->
@@ -224,8 +220,9 @@
 		<widget name="status" position="0,0" size="200*f,34*f" backgroundColor="transparent" transparent="1" font="Replacement;26" borderColor="grey" borderWidth="2" valign="center" halign="center"/>
 	</screen>
 
-	<screen name="CIselectMainMenu" position="center,center" size="740,565">
-		<widget name="CiList" position="center,45" size="631,300" scrollbarMode="showOnDemand"/>
+	<!--from Plugins.SystemPlugins.CommonInterfaceAssignment.plugin-->
+	<screen name="CIselectMainMenu" position="center,center" size="740*f,565*f">
+		<widget name="CiList" position="center,45*f" size="631*f,300*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -276,14 +273,16 @@
 		</widget>
 	</screen>
 
-	<screen name="ChannelSelectionRadio" position="10,60" size="1265,470">
+	<!--from Screens.ChannelSelection-->
+	<screen name="ChannelSelectionRadio" position="10*f,60*f" size="1265*f,470*f">
 		<panel name="LeftButtonsTemplate"/>
-		<widget name="list" position="15,10" size="690,372" scrollbarMode="showOnDemand" serviceItemHeight="31" serviceNumberFont="Regular;20" serviceNameFont="Regular;20" serviceInfoFont="Regular;18" foregroundColorServiceNotAvail="grey" colorEventProgressbar="grey" colorServiceDescription="grey" colorEventProgressbarBorder="grey" colorServiceDescriptionSelected="white" colorEventProgressbarSelected="white"/>
+		<widget name="list" position="15*f,10*f" size="690*f,372*f" scrollbarMode="showOnDemand" serviceItemHeight="31*f" serviceNumberFont="Regular;20*f" serviceNameFont="Regular;20*f" serviceInfoFont="Regular;18*f" foregroundColorServiceNotAvail="grey" colorEventProgressbar="grey" colorServiceDescription="grey" colorEventProgressbarBorder="grey" colorServiceDescriptionSelected="white" colorEventProgressbarSelected="white"/>
 	</screen>
 
-	<screen name="ChapterZap" position="center,center" size="280,60">
-		<widget name="chapter" position="35,15" size="110,25" font="Regular;23"/>
-		<widget name="number" position="145,15" size="80,25" halign="right" font="Regular;23"/>
+	<!--from Screens.DVD-->
+	<screen name="ChapterZap" position="center,center" size="280*f,60*f">
+		<widget name="chapter" position="35*f,15*f" size="110*f,25*f" font="Regular;23*f"/>
+		<widget name="number" position="145*f,15*f" size="80*f,25*f" halign="right" font="Regular;23*f"/>
 	</screen>
 
 	<!--from Screens.ChoiceBox-->
@@ -330,31 +329,35 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		</applet>
 	</screen>
 
-	<screen name="CiSelection" position="center,center" size="740,565">
-		<widget name="text" position="center,45" size="631,30" font="Regular;24" halign="center" valign="center"/>
-		<widget name="entries" position="center,95" size="631,300" scrollbarMode="showOnDemand"/>
+	<!--from Screens.Ci-->
+	<screen name="CiSelection" position="center,center" size="740*f,565*f">
+		<widget name="text" position="center,45*f" size="631*f,30*f" font="Regular;24*f" halign="center" valign="center"/>
+		<widget name="entries" position="center,95*f" size="631*f,300*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
-	<screen name="CommitInfo" position="center,center" size="530,460">
-		<widget name="AboutScrollLabel" position="15,10" size="500,370" font="Regular;20" halign="left"/>
+	<!--from Screens.About-->
+	<screen name="CommitInfo" position="center,center" size="530*f,460*f">
+		<widget name="AboutScrollLabel" position="15*f,10*f" size="500*f,370*f" font="Regular;20*f" halign="left"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="Config" position="center,center" size="580,350">
-		<widget name="config" position="0,10" size="580,200" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget name="statusbar" position="15,210" size="650,25" font="Regular;20"/>
-		<widget name="status" position="15,235" size="650,50" font="Regular;20"/>
+	<screen name="Config" position="center,center" size="580*f,350*f">
+		<widget name="config" position="0,10*f" size="580*f,200*f" enableWrapAround="1" scrollbarMode="showOnDemand"/>
+		<widget name="statusbar" position="15*f,210*f" size="650*f,25*f" font="Regular;20*f"/>
+		<widget name="status" position="15*f,235*f" size="650*f,50*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="ConfigEdit" position="center,center" size="640,410">
-		<widget name="config" position="0,10" size="640,150" scrollbarMode="showOnDemand"/>
-		<widget name="HelpWindow" position="400,370" size="1,1" zPosition="5" pixmap="skin_default/vkey_icon.png" transparent="1" alphatest="on"/>
+	<!--Plugins.Extensions.AlternativeSoftCamManager.Manager-->
+	<screen name="ConfigEdit" position="center,center" size="640*f,410*f">
+		<widget name="config" position="0,10*f" size="640*f,150*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget name="HelpWindow" position="400*f,370*f" size="1,1" zPosition="5" pixmap="skin_default/vkey_icon.png" transparent="1" alphatest="on"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="Console" position="center,center" size="740,556">
-		<widget name="text" position="15,10" size="710,476" font="Regular;20" scrollbarMode="showOnDemand"/>
+	<!--from Screens.Console-->
+	<screen name="Console" position="center,center" size="740*f,556*f">
+		<widget name="text" position="15*f,10*f" size="710*f,476*f" font="Regular;20*f" scrollbarMode="showOnDemand"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -419,34 +422,35 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="EPGSelection" position="center,100" size="770,580">
-		<widget source="Event" render="Label" position="15,10" size="740,30" font="Replacement;26">
+	<!--from Screens.EPGSelection-->
+	<screen name="EPGSelection" position="center,100*f" size="770*f,580*f">
+		<widget source="Event" render="Label" position="15*f,10*f" size="740*f,30*f" font="Replacement;26*f">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget name="list" position="10,50" size="750,327" setColWidths="60,130" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget source="Event" render="Label" position="15,400" size="740,70" font="Regular;20">
+		<widget name="list" position="10*f,50*f" size="750*f,327*f" setColWidths="60*f,130*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f"/>
+		<widget source="Event" render="Label" position="15*f,400*f" size="740*f,70*f" font="Regular;20*f">
 			<convert type="EventName">FullDescription</convert>
 		</widget>
-		<widget source="Event" render="Label" position="15,480" size="60,25" font="Regular;20">
+		<widget source="Event" render="Label" position="15*f,480*f" size="60*f,25*f" font="Regular;20*f">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText">ShortDate</convert>
 		</widget>
-		<widget source="Event" render="Label" position="80,480" size="80,25" font="Regular;20" halign="right">
+		<widget source="Event" render="Label" position="80*f,480*f" size="80*f,25*f" font="Regular;20*f" halign="right">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText">Format:%H:%M</convert>
 		</widget>
-		<widget source="Event" render="Label" position="160,480" size="60,25" font="Regular;20">
+		<widget source="Event" render="Label" position="160*f,480*f" size="60*f,25*f" font="Regular;20*f">
 			<convert type="EventTime">EndTime</convert>
 			<convert type="ClockToText">Format:-%H:%M</convert>
 		</widget>
-		<widget source="Event" render="Label" position="250,480" size="110,25" font="Regular;20">
+		<widget source="Event" render="Label" position="250*f,480*f" size="110*f,25*f" font="Regular;20*f">
 			<convert type="EventTime">Duration</convert>
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="520,480" size="104,25" font="Regular;20">
+		<widget source="global.CurrentTime" render="Label" position="520*f,480*f" size="104*f,25*f" font="Regular;20*f">
 			<convert type="ClockToText">Format:%d.%m.%Y</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="630,468" size="140,40" font="Replacement;30">
+		<widget source="global.CurrentTime" render="Label" position="630*f,468*f" size="140*f,40*f" font="Replacement;30*f">
 			<convert type="ClockToText">Format:%H:%M:%S</convert>
 		</widget>
 		<panel name="DynamicButtonsTemplate"/>
@@ -485,35 +489,32 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget source="key_blue" render="Label" position="629,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
 	</screen>
 
-	<screen name="EventView" position="center,100" size="770,580">
-		<widget name="channel" position="15,10" size="740,30" font="Replacement;26"/>
-		<widget name="datetime" position="15,50" size="740,25" font="Regular;20"/>
-		<widget name="duration" position="15,80" size="740,25" font="Regular;20"/>
-		<widget name="epg_description" position="15,110" size="740,290" font="Regular;20"/>
-		<widget source="session.Event_Now" render="Label" position="15,410" size="740,25" font="Regular;20">
+	<!--from Screens.EventView-->
+	<screen name="EventView" position="center,100*f" size="770*f,580*f">
+		<widget name="channel" position="15*f,10*f" size="740*f,30*f" font="Replacement;26*f"/>
+		<widget name="datetime" position="15*f,50*f" size="740*f,25*f" font="Regular;20*f"/>
+		<widget name="duration" position="15*f,80*f" size="740*f,25*f" font="Regular;20*f"/>
+		<widget name="epg_description" position="15*f,110*f" size="740*f,290*f" font="Regular;20*f"/>
+		<widget source="session.Event_Now" render="Label" position="15*f,410*f" size="740*f,25*f" font="Regular;20*f">
 			<convert type="EventName">Genre</convert>
 		</widget>
-		<widget source="session.Event_Now" render="Label" position="15,440" size="450,25" font="Regular;20">
+		<widget source="session.Event_Now" render="Label" position="15*f,440*f" size="450*f,25*f" font="Regular;20*f">
 			<convert type="EventName">Rating</convert>
 		</widget>
-		<widget source="session.Event_Next" render="Label" position="15,470" size="445,25" font="Regular;20">
+		<widget source="session.Event_Next" render="Label" position="15*f,470*f" size="445*f,25*f" font="Regular;20*f">
 			<convert type="EventName">NameNext</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="520,470" size="104,25" font="Regular;20">
+		<widget source="global.CurrentTime" render="Label" position="520*f,470*f" size="104*f,25*f" font="Regular;20*f">
 			<convert type="ClockToText">Format:%d.%m.%Y</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="630,458" size="140,40" font="Replacement;30">
+		<widget source="global.CurrentTime" render="Label" position="630*f,458*f" size="140*f,40*f" font="Replacement;30*f">
 			<convert type="ClockToText">Format:%H:%M:%S</convert>
 		</widget>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="FancontrolConfiguration" position="center,center" size="570,300">
-		<widget name="config" position="0,10" size="550,200" scrollbarMode="showOnDemand"/>
-		<panel name="DynamicButtonsTemplate"/>
-	</screen>
-
-	<screen name="FastScanScreen" position="center,center" size="620,460">
+	<!--from Plugins.SystemPlugins.FastScan.plugin-->
+	<screen name="FastScanScreen" position="center,center" size="620*f,460*f">
 		<panel name="ConfigIntroductionTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
@@ -672,12 +673,14 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="InputDeviceSetup" position="center,center" size="520,240">
+	<!--from Screens.InputDeviceSetup-->
+	<screen name="InputDeviceSetup" position="center,center" size="520*f,240*f">
 		<panel name="ConfigIntroductionLabelTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="Ipkg" position="center,center" size="620,200">
+	<!--from Screens.Opkg-->
+	<screen name="Opkg" position="center,center" size="620*f,200*f">
 		<panel name="IpkDownloadTemplate"/>
 	</screen>
 
@@ -763,21 +766,23 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		</widget>
 	</screen>
 
-	<screen name="MediaPlayerSettings" position="center,center" size="620,390">
-		<widget name="config" position="0,10" size="620,300" enableWrapAround="1" scrollbarMode="showOnDemand"/>
+	<!--from Plugins.Extensions.MediaPlayer.settings-->
+	<screen name="MediaPlayerSettings" position="center,center" size="620*f,390*f">
+		<widget name="config" position="0,10*f" size="620*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="MemoryInfo" position="center,center" size="750,565">
-		<widget name="pused" position="85,15" size="150,25" font="Regular;20" halign="right"/>
-		<widget name="slide" position="center,17" size="250,20" foregroundColor="grey" borderWidth="1"/>
-		<widget name="pfree" position="515,15" size="150,25" font="Regular;20"/>
-		<widget name="lmemtext" position="15,45" size="230,450" font="Regular;16"/>
-		<widget name="lmemvalue" position="250,45" size="115,450" font="Regular;16" halign="right"/>
-		<widget name="rmemtext" position="385,45" size="230,360" font="Regular;16"/>
-		<widget name="rmemvalue" position="620,45" size="115,360" font="Regular;16" halign="right"/>
-		<widget name="info" position="385,410" size="370,80" font="Regular;16"/>
-		<widget name="params" rowsincolumn="23"/>
+	<!--from Screens.About-->
+	<screen name="MemoryInfo" position="center,center" size="750*f,565*f">
+		<widget name="pused" position="85*f,15*f" size="150*f,25*f" font="Regular;20*f" halign="right"/>
+		<widget name="slide" position="center,17*f" size="250*f,20*f" foregroundColor="grey" borderWidth="1"/>
+		<widget name="pfree" position="515*f,15*f" size="150*f,25*f" font="Regular;20*f"/>
+		<widget name="lmemtext" position="15*f,45*f" size="230*f,450*f" font="Regular;16*f"/>
+		<widget name="lmemvalue" position="250*f,45*f" size="115*f,450*f" font="Regular;16*f" halign="right"/>
+		<widget name="rmemtext" position="385*f,45*f" size="230*f,360*f" font="Regular;16*f"/>
+		<widget name="rmemvalue" position="620*f,45*f" size="115*f,360*f" font="Regular;16*f" halign="right"/>
+		<widget name="info" position="385*f,410*f" size="370*f,80*f" font="Regular;16*f"/>
+		<widget name="params" rowsincolumn="23*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -1245,7 +1250,8 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="ScanSetup" position="center,center" size="620,460">
+	<!--from Plugins.SystemPlugins.FastScan.plugin-->
+	<screen name="ScanSetup" position="center,center" size="620*f,460*f">
 		<panel name="ConfigIntroductionTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
@@ -1517,14 +1523,16 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="TranslationInfo" position="center,center" size="600,340">
-		<widget source="TranslatorName" render="Label" position="15,10" size="570,40" font="Regular;26"/>
-		<widget source="TranslationInfo" render="Label" position="15,60" size="570,200" font="Regular;22"/>
+	<!--from Screens.About-->
+	<screen name="TranslationInfo" position="center,center" size="600*f,340*f">
+		<widget source="TranslatorName" render="Label" position="15*f,10*f" size="570*f,40*f" font="Regular;26*f"/>
+		<widget source="TranslationInfo" render="Label" position="15*f,60*f" size="570*f,200*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="Troubleshoot" position="center,center" size="740,565">
-		<widget name="AboutScrollLabel" position="15,25" size="710,470" font="Regular;16"/>
+	<!--from Screens.About-->
+	<screen name="Troubleshoot" position="center,center" size="740*f,565*f">
+		<widget name="AboutScrollLabel" position="15*f,25*f" size="710*f,470*f" font="Regular;16*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -1533,69 +1541,77 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="UnhandledKeyPixmap" pixmap="SimpleGray-HD/window/unhandled_key.svg" position="0,0" size="55*f,55*f"/>
 	</screen>
 
-	<screen name="UpdatePlugin" position="center,center" size="620,200">
+	<!--from Screens.SoftwareUpdate-->
+	<screen name="UpdatePlugin" position="center,center" size="620*f,200*f">
 		<panel name="IpkDownloadTemplate"/>
 	</screen>
 
-	<screen name="UpdatePluginMenu" position="center,center" size="640,500">
-		<widget source="menu" render="Listbox" position="10,15" size="620,245" scrollbarMode="showOnDemand">
+	<!--from Plugins.SystemPlugins.SoftwareManager.plugin-->
+	<screen name="UpdatePluginMenu" position="center,center" size="640*f,500*f">
+		<widget source="menu" render="Listbox" position="10*f,15*f" size="620,*f245*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryText(pos=(5,4), size=(610,30), flags=RT_HALIGN_LEFT, text=1), # index 0 is the MenuText,
+					MultiContentEntryText(pos=(5*f, 4*f), size=(610*f, 30*f), flags=RT_HALIGN_LEFT, text=1), # index 0 is the MenuText,
 				],
-				"fonts": [gFont("Regular",22)],
-				"itemHeight": 35}
+				"fonts": [gFont("Regular", 22*f)],
+				"itemHeight": 35*f}
 			</convert>
 		</widget>
-		<widget source="menu" render="Listbox" position="15,275" size="610,160" scrollbarMode="showNever" selectionDisabled="1">
+		<widget source="menu" render="Listbox" position="15*f,275*f" size="610*f,160*f" scrollbarMode="showNever" selectionDisabled="1">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryText(pos=(0,0), size=(610,160), flags=RT_HALIGN_LEFT|RT_WRAP, text=2), # index 2 is the Description,
+					MultiContentEntryText(pos=(0, 0), size=(610*f, 160*f), flags=RT_HALIGN_LEFT|RT_WRAP, text=2), # index 2 is the Description,
 				],
-				"fonts": [gFont("Regular",22)],
-				"itemHeight": 160}
+				"fonts": [gFont("Regular", 22*f)],
+				"itemHeight": 160*f}
 			</convert>
 		</widget>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="UserDialog" position="center,center" size="600,450">
+	<!--Plugins.SystemPlugins.NetworkBrowser.UserDialog-->
+	<screen name="UserDialog" position="center,center" size="600*f,450*f">
 		<panel name="MountConfigTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 		<panel name="VKeyIconTemplate"/>
 	</screen>
 
-	<screen name="UserManager" position="center,center" size="600,450">
-		<widget source="config" render="Listbox" position="10,15" size="580,300" scrollbarMode="showOnDemand">
+	<!--Plugins.SystemPlugins.NetworkBrowser.UserManager-->
+	<screen name="UserManager" position="center,center" size="600*f,450*f">
+		<widget source="config" render="Listbox" position="10*f,15*f" size="580*f,300*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryText(pos=(80,7), size=(650,50), font=0, flags=RT_HALIGN_LEFT, text=0), # index 0 is the name
-					MultiContentEntryPixmapAlphaTest(pos=(5,6), size=(48,48), png=3), # index 4 is the status pixmap
+					MultiContentEntryText(pos=(80*f, 7*f), size=(650*f, 50*f), font=0, flags=RT_HALIGN_LEFT, text=0), # index 0 is the name
+					MultiContentEntryPixmapAlphaTest(pos=(5*f, 6*f), size=(48*f, 48*f), png=3), # index 4 is the status pixmap
 				],
-				"fonts": [gFont("Regular",22)],
-				"itemHeight": 60}
+				"fonts": [gFont("Regular", 22*f)],
+				"itemHeight": 60*f}
 			</convert>
 		</widget>
-		<widget source="introduction" render="Label" position="15,325" size="570,50" font="Regular;22"/>
+		<widget source="introduction" render="Label" position="15*f,325*f" size="570*f,50*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="VideoEnhancementPreview" position="center,center" size="520,240">
+	<!--from Plugins.SystemPlugins.VideoEnhancement.plugin-->
+	<screen name="VideoEnhancementPreview" position="center,center" size="520*f,240*f">
 		<panel name="ConfigIntroductionLabelTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="VideoEnhancementSetup" position="center,center" size="620,460">
+	<!--from Plugins.SystemPlugins.VideoEnhancement.plugin-->
+	<screen name="VideoEnhancementSetup" position="center,center" size="620*f,460*f">
 		<panel name="ConfigIntroductionTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="VideoFinetune" position="0,0" size="1280,720">
-		<widget source="Canvas" render="Canvas" position="0,0" size="1280,720"/>
+	<!--from Plugins.SystemPlugins.VideoTune.VideoFinetune-->
+	<screen name="VideoFinetune" position="fill">
+		<widget source="Canvas" render="Canvas" position="fill"/>
 	</screen>
 
-	<screen name="VideoMode" position="85,45" size="400,50" backgroundColor="transparent" flags="wfNoBorder">
-		<widget name="videomode" position="0,0" size="400,50" backgroundColor="transparent" transparent="1" font="Regular;22" borderColor="black" borderWidth="2" valign="center"/>
+	<!--from Screens.InfoBarGenerics-->
+	<screen name="VideoMode" position="85*f,45*f" size="400*f,50*f" backgroundColor="transparent" flags="wfNoBorder">
+		<widget name="videomode" position="0,0" size="400*f,50*f" backgroundColor="transparent" transparent="1" font="Regular;22*f" borderColor="black" borderWidth="2" valign="center"/>
 	</screen>
 
 	<!--from Screens.VirtualKeyBoard-->
@@ -1613,22 +1629,24 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="VolumeText" position="250*f,0" size="50*f,30*f" font="Replacement;26*f" halign="center"/>
 	</screen>
 
-	<screen name="YouTubeDownloadList" position="center,center" size="580,260">
-		<widget source="list" render="Listbox" position="0,10" size="580,180" scrollbarMode="showOnDemand">
+	<!--Plugins.Extensions.YouTube.YouTubeDownload-->
+	<screen name="YouTubeDownloadList" position="center,center" size="580*f,260*f">
+		<widget source="list" render="Listbox" position="0,10*f" size="580*f,180*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryText(pos=(15,2), size=(285,26), font=0, flags=RT_HALIGN_LEFT, text=1), # Title
-					MultiContentEntryText(pos=(300,2), size=(80,26), font=0, flags=RT_HALIGN_RIGHT, text=2), # State
-					MultiContentEntryProgress(pos=(390,6), size=(100,18), percent=-3), # Progress
-					MultiContentEntryText(pos=(500,2), size=(80,26), font=0, flags=RT_HALIGN_LEFT, text=4), # Percentage
+					MultiContentEntryText(pos=(15*f, 2*f), size=(285*f, 26*f), font=0, flags=RT_HALIGN_LEFT, text=1), # Title
+					MultiContentEntryText(pos=(300*f, 2*f), size=(80*f, 26*f), font=0, flags=RT_HALIGN_RIGHT, text=2), # State
+					MultiContentEntryProgress(pos=(390*f, 6*f), size=(100*f, 18*f), percent=-3), # Progress
+					MultiContentEntryText(pos=(500*f, 2*f), size=(80*f, 26*f), font=0, flags=RT_HALIGN_LEFT, text=4), # Percentage
 				],
-				"fonts": [gFont("Regular",20)],
-				"itemHeight": 30}
+				"fonts": [gFont("Regular", 20*f)],
+				"itemHeight": 30*f}
 			</convert>
 		</widget>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
+	<!--Plugins.Extensions.YouTube.YouTubeUi-->
 	<screen name="YouTubeInfo" position="center,center" size="720*f,445*f">
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="10*f,5*f" size="100*f,40*f" transparent="1" alphatest="on"/>
 		<widget name="title" position="125*f,10*f" size="590*f,60*f" font="Regular;24*f"/>
@@ -1642,6 +1660,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
+	<!--Plugins.Extensions.YouTube.YouTubeUi-->
 	<screen name="YouTubeMain" position="center,center" size="720*f,490*f">
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="15*f,0" size="100*f,40*f" alphatest="on"/>
 		<widget source="list" render="Listbox" position="15*f,50*f" size="690*f,360*f" scrollbarMode="showOnDemand">
@@ -1662,6 +1681,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="thumbnail" position="0,0" size="100*f,72*f"/>
 	</screen>
 
+	<!--Plugins.Extensions.YouTube.YouTubeUi-->
 	<screen name="YouTubeSearch" position="center,120*f" size="620*f,490*f">
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="0,2*f" size="100*f,40*f" transparent="1" alphatest="on" />
 		<widget name="config" position="110*f,10*f" size="510*f,30*f" scrollbarMode="showNever"/>
