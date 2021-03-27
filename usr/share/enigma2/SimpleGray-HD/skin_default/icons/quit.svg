@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0.026" y="0" width="100" height="100"/>
+  </defs>
+  <rect width="35" height="20" style="fill: rgb(143, 143, 143);"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 15.607 16.566" transform="matrix(1, 0, 0, 1, 52.092405, 36.092992)"/>
+  <line style="stroke-width: 2px; stroke-linecap: round; stroke: rgb(253, 253, 253);" x1="13.738" y1="5.507" x2="13.738" y2="14.493"/>
+  <line style="stroke-width: 2px; stroke-linecap: round; stroke: rgb(253, 253, 253);" x1="5.178" y1="14.427" x2="11.326" y2="9.967"/>
+  <line style="stroke-width: 2px; stroke-linecap: round; stroke: rgb(253, 253, 253);" x1="5.179" y1="5.507" x2="11.328" y2="9.967"/>
+  <line style="stroke-width: 3px; stroke-linecap: square; stroke: rgb(255, 255, 255);" x1="18.622" y1="14.198" x2="29.058" y2="14.135"/>
+  <line style="stroke-linecap: square; stroke-width: 1.5px; stroke: rgb(252, 252, 252);" x1="17.889" y1="5.76" x2="29.757" y2="5.698"/>
+  <line style="stroke-linecap: square; stroke-width: 1.5px; stroke: rgb(252, 252, 252);" x1="13.637" y1="10.012" x2="22.074" y2="9.946" transform="matrix(0, -1, 1, 0, 7.8765, 27.8345)"/>
+  <line style="stroke-linecap: square; stroke-width: 1.5px; stroke: rgb(252, 252, 252);" x1="25.634" y1="10.074" x2="33.945" y2="10.01" transform="matrix(0, -1, 1, 0, 19.7475, 39.831501)"/>
+</svg>

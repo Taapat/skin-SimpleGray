@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="-0.2" y="-0.2" width="100" height="100"/>
+  </defs>
+  <rect width="35" height="20" style="fill: rgb(143, 143, 143);"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 15.607 16.566" transform="matrix(1, 0, 0, 1, 52.092405, 36.092992)"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="16.748" y1="14.262" x2="14.097" y2="14.293"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="17.061" y1="5.738" x2="14.097" y2="5.707"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="14.097" y1="14.293" x2="14.097" y2="5.707"/>
+  <path style="stroke-linecap: round; stroke-miterlimit: 1; fill: rgb(252, 252, 252);" transform="matrix(-0.060116, 0, 0, 0.071545, 39.057423, -8.887883)" d="M 372.507 330.915 A 67.007 67.007 0 1 1 369 196.993 L 369 211.297 A 52.703 52.703 0 1 0 371.758 316.63 Z" bx:shape="pie 369 264 52.703 67.007 177 360 1@66d01ae2"/>
+</svg>

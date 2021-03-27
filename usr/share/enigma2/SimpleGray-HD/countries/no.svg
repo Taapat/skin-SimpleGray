@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 16"><path fill="#ba0c2f" d="M0 0h22v16H0z"/><g fill="#fff"><path d="M6 0h4v16H6z"/><path d="M0 6h22v4H0z"/></g><g fill="#00205b"><path d="M7 0h2v16H7z"/><path d="M0 7h22v2H0z"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+  <path fill="#ba0c2f" d="M 0 0 L 60 0 L 60 40 L 0 40 Z"/>
+  <g fill="#fff" transform="matrix(2.727273, 0, 0, 2.5, 0, 0)">
+    <path d="M6 0h4v16H6z"/>
+    <path d="M0 6h22v4H0z"/>
+  </g>
+  <g fill="#00205b" transform="matrix(2.727273, 0, 0, 2.5, 0, 0)">
+    <path d="M7 0h2v16H7z"/>
+    <path d="M0 7h22v2H0z"/>
+  </g>
+</svg>

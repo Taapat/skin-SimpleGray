@@ -236,8 +236,8 @@
 		<widget name="list" position="15*f,60*f" size="0,0" font="Regular;22*f" itemHeight="30*f"/>
 		<applet type="onLayoutFinish">
 from enigma import eSize, ePoint
-from skin import getSkinFactor
-f = getSkinFactor()
+from Tools.SkinFactor import SKIN_FACTOR
+f = SKIN_FACTOR
 textsize = self["text"].getSize()
 textsize = (int(textsize[0] * 1.03), int(textsize[1] * 1.03))
 wsizex = textsize[0] + 86 * f

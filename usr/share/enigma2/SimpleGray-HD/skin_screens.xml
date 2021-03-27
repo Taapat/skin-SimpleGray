@@ -292,8 +292,8 @@
 		<widget name="description" position="15*f,0" size="0,0" font="Regular;20*f"/>
 		<applet type="onLayoutFinish">
 from enigma import eSize, ePoint
-from skin import getSkinFactor
-f = getSkinFactor()
+from Tools.SkinFactor import SKIN_FACTOR
+f = SKIN_FACTOR
 textsize = self["text"].getSize()
 textsize = (int(textsize[0] * 1.03), int(textsize[1] * 1.03))
 wsizex = textsize[0] + 30 * f
@@ -310,9 +310,9 @@ for x in range(listlen):
 		wsizex = lensizex
 	if len(self.list[x][0]) > 2 and isinstance(self.list[x][0][2], str) and len(self.list[x][0][2]) > len(descr):
 		descr = self.list[x][0][2]
-listlen = listlen * 25 * f
-if listlen > 250 * f:
-	listlen = 250 * f
+listlen = listlen * 30 * f
+if listlen > 300 * f:
+	listlen = 300 * f
 wsizey += listlen
 self["text"].instance.resize(eSize(*textsize))
 self["list"].instance.move(ePoint(int(3 * f), int(wsizey - listlen - 5 * f)))
@@ -839,9 +839,9 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="waitingtext" position="15*f,10*f" size="692*f,500*f" zPosition="4" font="Regular;24*f"/>
 		<widget name="chosenletter" position="15*f,10*f" size="692*f,500*f" zPosition="4" font="Regular;24*f"/>
 		<widget name="list" position="15*f,10*f" size="692*f,447*f" scrollbarMode="showOnDemand" fontSizesOriginal="22*f,18*f,16*f" fontSizesCompact="20*f,14*f" fontSizesMinimal="20*f,16*f" itemHeights="75*f,37*f,26*f" pbarShift="5*f" pbarHeight="16*f" pbarLargeWidth="48*f"
-		partIconeShiftMinimal="5*f" partIconeShiftCompact="4*f" partIconeShiftOriginal="5*f" spaceRight="2*f" spaceIconeText="2*f" iconsWidth="22*f" trashShift="1*f" dirShift="1*f" columnsOriginal="180,200*f" columnsCompactDescription="120,140,154*f" compactColumn="200*f" treeDescription="165*f"/>
-		<widget name="movie_sort" position="15*f,476*f" size="35*f,20*f" pixmaps="skin_default/icons/az.png,skin_default/icons/newtop.png,skin_default/icons/shuffle.png,skin_default/icons/za.png,skin_default/icons/oldtop.png,skin_default/icons/faz.png,skin_default/icons/fza.png,skin_default/icons/default.png" transparent="1" alphatest="on" scale="on"/>
-		<widget name="movie_off" position="55*f,476*f" size="35*f,20*f" pixmaps="skin_default/icons/ask.png,skin_default/icons/movielist.png,skin_default/icons/quit.png,skin_default/icons/pause.png,skin_default/icons/playlist.png,skin_default/icons/playlistquit.png,skin_default/icons/loop.png,skin_default/icons/rep.png" transparent="1" alphatest="on" scale="on"/>
+		partIconeShiftMinimal="5*f" partIconeShiftCompact="4*f" partIconeShiftOriginal="5*f" spaceRight="2*f" spaceIconeText="2*f" iconsWidth="22*f" trashShift="1" dirShift="1" columnsOriginal="180,200*f" columnsCompactDescription="120,140,154*f" compactColumn="200*f" treeDescription="165*f"/>
+		<widget name="movie_sort" position="15*f,476*f" size="35*f,20*f" pixmaps="SimpleGray-HD/skin_default/icons/az.svg,SimpleGray-HD/skin_default/icons/newtop.svg,SimpleGray-HD/skin_default/icons/shuffle.svg,SimpleGray-HD/skin_default/icons/za.svg,SimpleGray-HD/skin_default/icons/oldtop.svg,SimpleGray-HD/skin_default/icons/faz.svg,SimpleGray-HD/skin_default/icons/fza.svg,SimpleGray-HD/skin_default/icons/default.svg" transparent="1" alphatest="on" scale="on"/>
+		<widget name="movie_off" position="55*f,476*f" size="35*f,20*f" pixmaps="SimpleGray-HD/skin_default/icons/ask.svg,SimpleGray-HD/skin_default/icons/movielist.svg,SimpleGray-HD/skin_default/icons/quit.svg,SimpleGray-HD/skin_default/icons/pause.svg,SimpleGray-HD/skin_default/icons/playlist.svg,SimpleGray-HD/skin_default/icons/playlistquit.svg,SimpleGray-HD/skin_default/icons/loop.svg,SimpleGray-HD/skin_default/icons/rep.svg" transparent="1" alphatest="on" scale="on"/>
 		<widget name="freeDiskSpace" position="105*f,475*f" size="602*f,25*f" font="Regular;20*f"/>
 		<widget name="DescriptionBorder" position="0,0" size="0,0"/>
 

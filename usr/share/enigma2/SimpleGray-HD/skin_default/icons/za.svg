@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="-0.2" y="-0.2" width="100" height="100"/>
+  </defs>
+  <rect width="35" height="20" style="fill: rgb(143, 143, 143);"/>
+  <path style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" d="M 15.607 16.566" transform="matrix(1, 0, 0, 1, 52.092405, 36.092992)"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="13.075" y1="11.298" x2="15.863" y2="11.298"/>
+  <path d="M 7.641 -0.114 H 15.674 L 15.674 -1.78 L 19.641 0.72 L 15.674 3.22 L 15.674 1.554 H 7.641 V -0.114 Z" style="stroke-width: 0px; stroke: rgb(255, 255, 255); fill: rgb(255, 255, 255);" transform="matrix(-0.000046, 1, -1, -0.000046, 28.54022, -3.640967)" bx:shape="arrow 7.641 -1.78 12 5 1.667 3.967 0 1@b2652960"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="12.055000305175781" y1="13.793000221252438" x2="5.598554134368895" y2="13.793000221252438"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="12.055" y1="5.207" x2="5.599" y2="5.207"/>
+  <line style="stroke-linecap: round; stroke: rgb(255, 255, 255);" x1="5.598999977111815" y1="13.793000221252438" x2="12.055000305175781" y2="5.206999778747557"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="21.551" y1="13.793" x2="21.551" y2="8.123"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="17.948489403438472" y1="8.12257099151611" x2="18.83221072566281" y2="7.374806954224859"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="21.55135345458984" y1="8.12257099151611" x2="20.87156762310359" y2="7.374806880950924"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="18.83221054077148" y1="7.374806880950924" x2="20.871566772460934" y2="7.374806880950924"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="17.948490142822262" y1="11.298000335693356" x2="17.948490142822262" y2="12.949049140562995"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="17.948490142822262" y1="12.949048995971676" x2="18.83221054077148" y2="13.793000221252438"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="18.832" y1="13.793" x2="20.402" y2="13.793"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="20.402" y1="13.793" x2="21.339" y2="12.949"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="17.948490142822262" y1="11.298000335693356" x2="18.83221054077148" y2="10.501820863634055"/>
+  <line style="stroke-linecap: round; stroke: rgb(249, 249, 249);" x1="18.832" y1="10.502" x2="21.551" y2="10.502"/>
+</svg>
