@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="Layer_1" data-name="Layer 1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style>.cls-1{fill:#141f38;}</style>
+  </defs>
+  <title>antenna-tower-outline</title>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="4.453 19.682"/>
+  <path d="M 8.205 7.458 L 14.205 13.458 L 2.205 13.458 L 8.205 7.458 Z" style="fill: rgb(0, 0, 255);" transform="matrix(0, 1, -1, 0, 15.958, -0.205)" bx:shape="triangle 2.205 7.458 12 6 0.5 0 1@3cfc41a8"/>
+  <path d="M 8.205 7.458 L 14.205 13.458 L 2.205 13.458 L 8.205 7.458 Z" style="fill: rgb(0, 0, 255);" transform="matrix(0, 1, -1, 0, 21.958, -0.205)" bx:shape="triangle 2.205 7.458 12 6 0.5 0 1@3cfc41a8"/>
+</svg>

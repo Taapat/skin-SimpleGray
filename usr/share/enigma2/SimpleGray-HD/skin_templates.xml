@@ -279,53 +279,53 @@ self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
 	</screen>
 
 	<screen name="PlayerTemplate">
-		<widget source="session.CurrentService" render="Label" position="10,e-107" size="750,40" font="Replacement;30" foregroundColor="grey" halign="center" noWrap="1">
+		<widget source="session.CurrentService" render="Label" position="10*f,e-107*f" size="750*f,40*f" font="Replacement;30*f" foregroundColor="grey" halign="center" noWrap="1">
 			<convert type="ServiceName">Name</convert>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="DOLBY" position="770,e-86" size="52,18" font="Regular;15">
+		<widget source="session.CurrentService" render="FixedLabel" text="DOLBY" position="770*f,e-86*f" size="52*f,18*f" font="Regular;15*f">
 				<convert type="ServiceInfo">IsMultichannel</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.RecordState" render="FixedLabel" text="REC" position="823,e-90" size="35,25" font="Regular;20" foregroundColor="red">
+		<widget source="session.RecordState" render="FixedLabel" text="REC" position="823*f,e-90*f" size="35*f,25*f" font="Regular;20*f" foregroundColor="red">
 				<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="  4K" position="860,e-90" size="40,25" font="Regular;20">
+		<widget source="session.CurrentService" render="FixedLabel" text="  4K" position="860*f,e-90*f" size="40*f,25*f" font="Regular;20*f">
 				<convert type="ServiceInfo">Is4K</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="  HD" position="860,e-90" size="40,25" font="Regular;20">
+		<widget source="session.CurrentService" render="FixedLabel" text="  HD" position="860*f,e-90*f" size="40*f,25*f" font="Regular;20*f">
 				<convert type="ServiceInfo">IsHD</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="16:9" position="860,e-90" size="40,25" font="Regular;20">
+		<widget source="session.CurrentService" render="FixedLabel" text="16:9" position="860*f,e-90*f" size="40*f,25*f" font="Regular;20*f">
 				<convert type="ServiceInfo">IsSDAndWidescreen</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="4:3" position="860,e-90" size="40,25" font="Regular;20">
+		<widget source="session.CurrentService" render="FixedLabel" text="4:3" position="860*f,e-90*f" size="40*f,25*f" font="Regular;20*f">
 				<convert type="ServiceInfo">IsSDAndNotWidescreen</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget render="VideoSize" source="session.CurrentService" position="905,e-90" size="100,25" font="Regular;20"/>
-		<widget source="global.CurrentTime" render="Label" position="1010,e-90" size="104,25" font="Regular;20" foregroundColor="grey">
+		<widget render="VideoSize" source="session.CurrentService" position="905*f,e-90*f" size="100*f,25*f" font="Regular;20*f"/>
+		<widget source="global.CurrentTime" render="Label" position="1010*f,e-90*f" size="104*f,25*f" font="Regular;20*f" foregroundColor="grey">
 			<convert type="ClockToText">Format:%d.%m.%Y</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1120,e-102" size="140,45" font="Replacement;30">
+		<widget source="global.CurrentTime" render="Label" position="1120*f,e-102*f" size="140*f,45*f" font="Replacement;30*f">
 			<convert type="ClockToText">Format:%H:%M:%S</convert>
 		</widget>
 
-		<widget source="session.CurrentService" render="Label" position="200,e-60" size="200,25" font="Replacement;20">
+		<widget source="session.CurrentService" render="Label" position="200*f,e-60*f" size="200*f,25*f" font="Replacement;20*f">
 			<convert type="ServicePosition">Position</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Label" position="640,e-60" size="200,25" font="Replacement;20">
+		<widget source="session.CurrentService" render="Label" position="640*f,e-60*f" size="200*f,25*f" font="Replacement;20*f">
 			<convert type="ServicePosition">Length</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Label" position="880,e-60" size="200,25" font="Replacement;20" halign="right">
+		<widget source="session.CurrentService" render="Label" position="880*f,e-60*f" size="200*f,25*f" font="Replacement;20*f" halign="right">
 			<convert type="ServicePosition">Remaining</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Progress" position="200,e-30" size="880,5" borderWidth="1" borderColor="grey">
+		<widget source="session.CurrentService" render="Progress" position="200*f,e-30*f" size="880*f,5*f" borderWidth="1" borderColor="grey">
 			<convert type="ServicePosition">Position</convert>
 		</widget>
-		<widget source="session.CurrentService" render="PositionGauge" position="200,e-33" size="880,10" zPosition="2" transparent="1">
+		<widget source="session.CurrentService" render="PositionGauge" position="200*f,e-33*f" size="880*f,10*f" zPosition="2" transparent="1">
 			<convert type="ServicePosition">Gauge</convert>
 		</widget>
 	</screen>

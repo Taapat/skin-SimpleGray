@@ -43,7 +43,7 @@
 			<pixmap pos="bpTop" filename="window/bs_back.png"/>
 			<pixmap pos="bpLeft" filename="window/bs_back.png"/>
 			<pixmap pos="bpRight" filename="window/bs_back.png"/>
-			<pixmap pos="bpBottom" filename="SimpleGray-HD/window/bs_bottom.png"/>
+			<pixmap pos="bpBottom" filename="skin_default/bs_bottom.png"/>
 		</borderset>
 	</windowstyle>
 
@@ -83,7 +83,7 @@
 		<widget source="IFtext" render="Label" position="15*f,10*f" size="100*f,25*f" font="Regular;22*f"/>
 		<widget source="IF" render="Label" position="115*f,10*f" size="470*f,25*f" font="Regular;22*f"/>
 		<widget name="menulist" position="15*f,45*f" size="570*f,200*f" scrollbarMode="showOnDemand"/>
-		<widget name="statuspic" position="15*f,265*f" size="15*f,16*f" pixmaps="SimpleGray-HD/skin_default/buttons/button_green.svg,SimpleGray-HD/skin_default/buttons/button_green_off.svg" alphatest="on"/>
+		<widget name="statuspic" position="15*f,265*f" size="15*f,16*f" pixmaps="buttons/button_green.svg,buttons/button_green_off.svg" alphatest="on"/>
 		<widget source="Statustext" render="Label" position="45*f,260*f" size="535*f,25*f" font="Regular;22*f"/>
 		<widget source="description" render="Label" position="15*f,305*f" size="570*f,75*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
@@ -212,7 +212,7 @@
 
 	<!--from Screens.ChannelSelection-->
 	<screen name="BouquetSelector" position="center,center" size="370*f,420*f">
-		<widget name="menu" position="10*f,10*f" size="350*f,400*f" scrollbarMode="showOnDemand"/>
+		<widget name="menu" position="10*f,10*f" size="350*f,400*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
 	<!--from Screens.InfoBarGenerics-->
@@ -227,14 +227,14 @@
 	</screen>
 
 	<!--from Screens.ChannelSelection-->
-	<screen name="ChannelContextMenu" position="center,center" size="500*f,260*f" backgroundColor="back">
-		<widget name="menu" position="0,10*f" size="500*f,250*f" scrollbarMode="showOnDemand"/>
+	<screen name="ChannelContextMenu" position="center,center" size="500*f,290*f" backgroundColor="back">
+		<widget name="menu" position="0,10*f" size="500*f,270*f" scrollbarMode="showOnDemand"/>
 	</screen>
 
 	<!--from Screens.ChannelSelection-->
 	<screen name="ChannelSelection" position="center,100*f" size="1085*f,585*f">
 		<panel name="LeftButtonsTemplate"/>
-		<widget name="list" position="15*f,10*f" size="692*f,498*f" scrollbarMode="showOnDemand" serviceItemHeight="31*f" serviceNumberFont="Regular;20*f" serviceNameFont="Regular;20*f" serviceInfoFont="Regular;18*f" foregroundColorServiceNotAvail="grey" colorEventProgressbar="grey" colorServiceDescription="grey" colorEventProgressbarBorder="grey" colorServiceDescriptionSelected="white" colorEventProgressbarSelected="white" progressBarWidth="40*f" progressbarHeight="6*f"/>
+		<widget name="list" position="15*f,10*f" size="692*f,493*f" scrollbarMode="showOnDemand" serviceItemHeight="31*f" serviceNumberFont="Regular;20*f" serviceNameFont="Regular;20*f" serviceInfoFont="Regular;18*f" foregroundColorServiceNotAvail="grey" colorEventProgressbar="grey" colorServiceDescription="grey" colorEventProgressbarBorder="grey" colorServiceDescriptionSelected="white" colorEventProgressbarSelected="white" progressBarWidth="40*f" progressbarHeight="6*f"/>
 		<widget source="ServiceEvent" render="Label" position="735*f,10*f" size="340*f,35*f" font="Replacement;26*f" noWrap="1">
 			<convert type="ServiceName">Name</convert>
 		</widget>
@@ -264,7 +264,7 @@
 		<widget source="ServiceEvent" render="Label" position="735*f,205*f" size="340*f,229*f" font="Regular;20*f">
 			<convert type="EventName">FullDescription</convert>
 		</widget>
-		<widget source="ServiceEvent" render="NextEpgInfo" position="735,440" size="340,73" font="Regular;20" foregroundColor="grey" NumberOfItems="2"/>
+		<widget source="ServiceEvent" render="NextEpgInfo" position="735*f,440*f" size="340*f,73*f" font="Regular;20*f" foregroundColor="grey" NumberOfItems="2"/>
 		<widget source="global.CurrentTime" render="Label" position="835*f,542*f" size="104*f,25*f" font="Regular;20*f" foregroundColor="grey">
 			<convert type="ClockToText">Format:%d.%m.%Y</convert>
 		</widget>
@@ -351,7 +351,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	<!--Plugins.Extensions.AlternativeSoftCamManager.Manager-->
 	<screen name="ConfigEdit" position="center,center" size="640*f,410*f">
 		<widget name="config" position="0,10*f" size="640*f,150*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
-		<widget name="HelpWindow" position="400*f,370*f" size="1,1" zPosition="5" pixmap="skin_default/vkey_icon.png" transparent="1" alphatest="on"/>
+		<widget name="HelpWindow" position="400*f,370*f" size="1,1" zPosition="5" pixmap="buttons/key_text.svg" transparent="1" alphatest="on"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -361,7 +361,8 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="CutListEditor" position="center,680" size="700,24" flags="wfNoBorder" backgroundColor="transparent">
+	<!--from Plugins.Extensions.CutListEditor.ui-->
+	<screen name="CutListEditor" position="center,680*f" size="700*f,24*f" flags="wfNoBorder" backgroundColor="transparent">
 		<!--eLabel position="center,center" size="1229,592" zPosition="-3" backgroundColor="back"/>
 		<eLabel position="80,125" size="310,420" zPosition="1" backgroundColor="grey"/>
 		<eLabel position="81,126" size="308,418" zPosition="2" backgroundColor="black"/>
@@ -382,43 +383,47 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget source="session.CurrentService" render="Label" position="450,550" size="790,25" zPosition="3" font="Regular;20" halign="center" valign="center" backgroundColor="back">
 			<convert type="ServicePosition">Position,Detailed</convert>
 		</widget-->
-		<widget name="Timeline" position="2,2" size="696,20" zPosition="3" pointer="skin_default/position_arrow.png:3,5" foregroundColor="black"/>
+		<widget name="Timeline" position="2*f,2*f" size="696*f,20*f" zPosition="3" pointer="skin_default/position_arrow.svg:3*f,5*f" foregroundColor="black"/>
 		<!--eLabel text="OK=Menu" position="1059,615" size="140,22" zPosition="1" font="Regular;20" backgroundColor="back" /-->
 	</screen>
 
-	<screen name="DVDPlayer" flags="wfNoBorder" position="0,610" size="1280,110">
+	<!--from Screens.DVD-->
+	<screen name="DVDPlayer" flags="wfNoBorder" position="0,610*f" size="1280*f,110*f">
 		<panel name="PlayerTemplate"/>
-		<eLabel text="Audio" position="0,e-75" size="85,25" font="Regular;20" halign="right" foregroundColor="grey"/>
-		<widget name="audioLabel" position="90,e-75" size="105,25" font="Regular;20" noWrap="1" foregroundColor="grey"/>
-		<eLabel text="Subtitles" position="0,e-50" size="85,25" font="Regular;20" halign="right" foregroundColor="grey"/>
-		<widget name="subtitleLabel" position="90,e-50" size="105,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="anglePix" position="59,e-22" size="26,16" pixmap="skin_default/icons/icon_view.png" alphatest="on"/>
-		<widget name="angleLabel" position="90,e-25" size="105,22" font="Regular;20" foregroundColor="grey"/>
-		<widget name="chapterLabel" position="300,e-60" size="330,25" font="Replacement;20" foregroundColor="grey" halign="right"/>
+		<eLabel text="Audio" position="0,e-75*f" size="85*f,25*f" font="Regular;20*f" halign="right" foregroundColor="grey"/>
+		<widget name="audioLabel" position="90*f,e-75*f" size="105*f,25*f" font="Regular;20*f" noWrap="1" foregroundColor="grey"/>
+		<eLabel text="Subtitles" position="0,e-50*f" size="85*f,25*f" font="Regular;20*f" halign="right" foregroundColor="grey"/>
+		<widget name="subtitleLabel" position="90*f,e-50*f" size="105*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="anglePix" position="59*f,e-22*f" size="26*f,16*f" pixmap="icons/icon_view.svg" alphatest="on"/>
+		<widget name="angleLabel" position="90*f,e-25*f" size="105*f,22*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="chapterLabel" position="300*f,e-60*f" size="330*f,25*f" font="Replacement;20*f" foregroundColor="grey" halign="right"/>
 	</screen>
 
-	<screen name="DVDToolbox" position="90,100" size="1100,560">
-		<widget source="info" render="Label" position="20,60" size="1060,100" font="Regular;22"/>
-		<widget name="details" position="20,200" size="1060,200" font="Regular;20"/>
-		<widget source="space_bar" render="Progress" position="10,480" size="1080,26" borderWidth="1" backgroundColor="grey"/>
-		<widget source="space_label" render="Label" position="20,484" size="1060,22" font="Regular;18" halign="center" foregroundColor="black"/>
+	<!--from Plugins.Extensions.DVDBurn.DVDToolbox-->
+	<screen name="DVDToolbox" position="90*f,100*f" size="1100*f,560*f">
+		<widget source="info" render="Label" position="20*f,60*f" size="1060*f,100*f" font="Regular;22*f"/>
+		<widget name="details" position="20*f,200*f" size="1060*f,200*f" font="Regular;20*f"/>
+		<widget source="space_bar" render="Progress" position="10*f,480*f" size="1080*f,26*f" borderWidth="1" backgroundColor="grey"/>
+		<widget source="space_label" render="Label" position="20*f,484*f" size="1060*f,22*f" font="Regular;18*f" halign="center" foregroundColor="black"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="Dish" flags="wfNoBorder" position="1100,100" size="65,80" zPosition="-1" backgroundColor="transparent">
-		<widget name="Dishpixmap" pixmap="SimpleGrayHD/skin_default/icons/dish.png" position="0,0" size="65,80" alphatest="off"/>
-		<widget name="turnTime" position="0,80" size="120,20" font="Regular;20" halign="right" shadowColor="black" shadowOffset="-2,-2"/>
-		<widget name="tunerName" position="0,100" size="120,20" font="Regular;20" halign="right" shadowColor="black" shadowOffset="-2,-2"/>
-		<widget name="turnSpeed" position="0,120" size="120,20" font="Regular;20" halign="right" shadowColor="black" shadowOffset="-2,-2"/>
-		<widget name="From" position="0,140" size="50,20" font="Regular;17" shadowColor="black" shadowOffset="-2,-1"/>
-		<widget name="posFrom" position="52,140" size="70,20" font="Regular;20" shadowColor="black" shadowOffset="-2,-2"/>
-		<widget name="Goto" position="0,160" size="50,20" font="Regular;17" shadowColor="black" shadowOffset="-2,-1"/>
-		<widget name="posGoto" position="52,160" size="70,20" font="Regular;20" shadowColor="black" shadowOffset="-2,-2"/>
+	<!--from Screens.Dish-->
+	<screen name="Dish" flags="wfNoBorder" position="1100*f,100*f" size="65*f,80*f" zPosition="-1" backgroundColor="transparent">
+		<widget name="Dishpixmap" pixmap="icons/dish.svg" position="0,0" size="65*f,80*f" alphatest="off"/>
+		<widget name="turnTime" position="0,80*f" size="120*f,20*f" font="Regular;20*f" halign="right" shadowColor="black" shadowOffset="-2,-2"/>
+		<widget name="tunerName" position="0,100*f" size="120*f,20*f" font="Regular;20*f" halign="right" shadowColor="black" shadowOffset="-2,-2"/>
+		<widget name="turnSpeed" position="0,120*f" size="120*f,20*f" font="Regular;20*f" halign="right" shadowColor="black" shadowOffset="-2,-2"/>
+		<widget name="From" position="0,140*f" size="50*f,20*f" font="Regular;17*f" shadowColor="black" shadowOffset="-2,-1"/>
+		<widget name="posFrom" position="52*f,140*f" size="70*f,20*f" font="Regular;20*f" shadowColor="black" shadowOffset="-2,-2"/>
+		<widget name="Goto" position="0,160*f" size="50*f,20*f" font="Regular;17*f" shadowColor="black" shadowOffset="-2,-1"/>
+		<widget name="posGoto" position="52*f,160*f" size="70*f,20*f" font="Regular;20*f" shadowColor="black" shadowOffset="-2,-2"/>
 	</screen>
 
-	<screen name="EPGSearchSetup" position="center,center" size="640,470">
-		<widget name="config" position="0,10" size="640,300" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget source="help" render="Label" position="15,330" size="610,50" font="Regular;20"/>
+	<!--from Plugins.Extensions.EPGSearchSetup-->
+	<screen name="EPGSearchSetup" position="center,center" size="640*f,470*f">
+		<widget name="config" position="0,10*f" size="640*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget source="help" render="Label" position="15*f,330*f" size="610*f,50*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -427,7 +432,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget source="Event" render="Label" position="15*f,10*f" size="740*f,30*f" font="Replacement;26*f">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget name="list" position="10*f,50*f" size="750*f,327*f" setColWidths="60*f,130*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f"/>
+		<widget name="list" position="10*f,50*f" size="750*f,325*f" setColWidths="60*f,130*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f"/>
 		<widget source="Event" render="Label" position="15*f,400*f" size="740*f,70*f" font="Regular;20*f">
 			<convert type="EventName">FullDescription</convert>
 		</widget>
@@ -456,37 +461,38 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="EPGSelectionMulti" position="center,100" size="1090,580">
-		<widget name="now_button" pixmap="SimpleGrayHD/skin_default/buttons/grey.png" position="15,10" size="140,40" alphatest="on"/>
-		<widget name="now_button_sel" pixmap="SimpleGrayHD/skin_default/buttons/white.png" position="15,10" size="140,40" alphatest="on"/>
-		<widget name="next_button" pixmap="SimpleGrayHD/skin_default/buttons/grey.png" position="159,10" size="140,40" alphatest="on"/>
-		<widget name="next_button_sel" pixmap="SimpleGrayHD/skin_default/buttons/white.png" position="159,10" size="140,40" alphatest="on"/>
-		<widget name="more_button" pixmap="SimpleGrayHD/skin_default/buttons/grey.png" position="303,10" size="140,40" alphatest="on"/>
-		<widget name="more_button_sel" pixmap="SimpleGrayHD/skin_default/buttons/white.png" position="303,10" size="140,40" alphatest="on"/>
-		<widget name="now_text" position="17,12" size="136,36" text="NOW" font="Regular;20" halign="center" valign="center"/>
-		<widget name="next_text" position="161,12" size="136,36" text="NEXT" font="Regular;20" halign="center" valign="center"/>
-		<widget name="more_text" position="305,12" size="136,36" text="MORE" font="Regular;20" halign="center" valign="center"/>
+	<!--from Screens.EPGSelection as EPGSelectionMulti-->
+	<screen name="EPGSelectionMulti" position="center,100*f" size="1090*f,580*f">
+		<widget name="now_button" pixmap="buttons/grey.svg" position="15*f,10*f" size="140*f,40*f" alphatest="on"/>
+		<widget name="now_button_sel" pixmap="buttons/white.svg" position="15*f,10*f" size="140*f,40*f" alphatest="on"/>
+		<widget name="next_button" pixmap="buttons/grey.svg" position="159*f,10*f" size="140*f,40*f" alphatest="on"/>
+		<widget name="next_button_sel" pixmap="buttons/white.svg" position="159*f,10*f" size="140*f,40*f" alphatest="on"/>
+		<widget name="more_button" pixmap="buttons/grey.svg" position="303*f,10*f" size="140*f,40*f" alphatest="on"/>
+		<widget name="more_button_sel" pixmap="buttons/white.svg" position="303*f,10*f" size="140*f,40*f" alphatest="on"/>
+		<widget name="now_text" position="17*f,12*f" size="136*f,36*f" text="NOW" font="Regular;20*f" halign="center" valign="center"/>
+		<widget name="next_text" position="161*f,12*f" size="136*f,36*f" text="NEXT" font="Regular;20*f" halign="center" valign="center"/>
+		<widget name="more_text" position="305*f,12*f" size="136*f,36*f" text="MORE" font="Regular;20*f" halign="center" valign="center"/>
 
-		<widget name="list" position="15,60" size="812,450" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget name="date" position="845,60" size="230,28" font="Regular;24"/>
-		<widget source="Event" render="Label" position="845,110" size="230,400" font="Regular;18">
+		<widget name="list" position="15*f,60*f" size="812*f,450*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="30*f"/>
+		<widget name="date" position="845*f,60*f" size="230*f,28*f" font="Regular;24*f"/>
+		<widget source="Event" render="Label" position="845*f,110*f" size="230*f,400*f" font="Regular;18*f">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="845,542" size="104,25" font="Regular;20" foregroundColor="grey">
+		<widget source="global.CurrentTime" render="Label" position="845*f,542*f" size="104*f,25*f" font="Regular;20*f" foregroundColor="grey">
 			<convert type="ClockToText">Format:%d.%m.%Y</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="955,530" size="140,40" font="Replacement;30">
+		<widget source="global.CurrentTime" render="Label" position="955*f,530*f" size="140*f,40*f" font="Replacement;30*f">
 			<convert type="ClockToText">Format:%H:%M:%S</convert>
 		</widget>
 
-		<eLabel position="15,530" size="200,40" zPosition="-5" backgroundColor="red"/>
-		<eLabel position="219,530" size="200,40" zPosition="-5" backgroundColor="green"/>
-		<eLabel position="423,530" size="200,40" zPosition="-5" backgroundColor="yellow"/>
-		<eLabel position="627,530" size="200,40" zPosition="-5" backgroundColor="blue"/>
-		<widget source="key_red" render="Label" position="17,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
-		<widget source="key_green" render="Label" position="221,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
-		<widget source="key_yellow" render="Label" position="425,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
-		<widget source="key_blue" render="Label" position="629,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
+		<eLabel position="15*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="red"/>
+		<eLabel position="219*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="green"/>
+		<eLabel position="423*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="yellow"/>
+		<eLabel position="627*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="blue"/>
+		<widget source="key_red" render="Label" position="17*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget source="key_green" render="Label" position="221*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget source="key_yellow" render="Label" position="425*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget source="key_blue" render="Label" position="629*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 	</screen>
 
 	<!--from Screens.EventView-->
@@ -519,75 +525,79 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="FileBrowser" position="center,center" size="640,400">
-		<widget name="filelist" position="5,10" size="620,300" scrollbarMode="showOnDemand"/>
+	<!--from Plugins.Extensions.DVDBurn.ProjectSettings-->
+	<screen name="FileBrowser" position="center,center" size="640*f,400*f">
+		<widget name="filelist" position="5*f,10*f" size="620*f,300*f" scrollbarMode="showOnDemand"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="GraphMultiEPG" position="center,100" size="1190,580">
-		<widget name="timeline_text" position="15,10" size="1160,26" foregroundColor="white"/>
-		<widget name="list" position="15,36" size="1160,300" scrollbarMode="showOnDemand" backgroundColor="black"/>
-		<widget name="timeline0" position="65,36" zPosition="1" size="1,300" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline1" position="65,36" zPosition="1" size="1,300" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline2" position="65,36" zPosition="1" size="1,300" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline3" position="65,36" zPosition="1" size="1,300" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline4" position="65,36" zPosition="1" size="1,300" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline5" position="65,36" zPosition="1" size="1,300" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline_now" position="65,36" zPosition="2" size="1,300" pixmap="SimpleGrayHD/window/timeline-now.png" alphatest="on"/>
-		<widget source="Event" render="Label" position="15,360" size="400,60" font="Regular;24">
+	<!--from Plugins.Extensions.GraphMultiEPG.GraphMultiEpg-->
+	<screen name="GraphMultiEPG" position="center,100*f" size="1190*f,580*f">
+		<widget name="timeline_text" position="15*f,10*f" size="1160*f,26*f" foregroundColor="white"/>
+		<widget name="list" position="15*f,36*f" size="1160*f,300*f" scrollbarMode="showOnDemand" backgroundColor="black"/>
+		<widget name="timeline0" position="65*f,36*f" zPosition="1" size="1,300*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline1" position="65*f,36*f" zPosition="1" size="1,300*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline2" position="65*f,36*f" zPosition="1" size="1,300*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline3" position="65*f,36*f" zPosition="1" size="1,300*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline4" position="65*f,36*f" zPosition="1" size="1,300*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline5" position="65*f,36*f" zPosition="1" size="1,300*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline_now" position="65*f,36*f" zPosition="2" size="1,300*f" pixmap="skin/timeline-now.svg" alphatest="on"/>
+		<widget source="Event" render="Label" position="15*f,360*f" size="400*f,60*f" font="Regular;24*f">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="Label" position="15,420" size="400,25" font="Regular;20">
+		<widget source="Event" render="Label" position="15*f,420*f" size="400*f,25*f" font="Regular;20*f">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText">Format:%A</convert>
 		</widget>
-		<widget source="Event" render="Label" position="15,450" size="60,22" font="Regular;20" halign="right">
+		<widget source="Event" render="Label" position="15*f,450*f" size="60*f,22*f" font="Regular;20*f" halign="right">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText"/>
 		</widget>
-		<widget source="Event" render="Progress" position="85,455" size="260,15" borderWidth="1" borderColor="grey">
+		<widget source="Event" render="Progress" position="85*f,455*f" size="260*f,15*f" borderWidth="1" borderColor="grey">
 			<convert type="EventTime">Progress</convert>
 		</widget>
-		<widget source="Event" render="Label" position="355,450" size="70,22" font="Regular;20">
+		<widget source="Event" render="Label" position="355*f,450*f" size="70*f,22*f" font="Regular;20*f">
 			<convert type="EventTime">EndTime</convert>
 			<convert type="ClockToText">Format:%H:%M</convert>
 		</widget>
-		<widget source="Event" render="Label" position="425,360" size="740,160" font="Regular;18">
+		<widget source="Event" render="Label" position="425*f,360*f" size="740*f,160*f" font="Regular;18*f">
 			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="915,542" size="104,25" font="Regular;20" foregroundColor="grey">
+		<widget source="global.CurrentTime" render="Label" position="915*f,542*f" size="104*f,25*f" font="Regular;20*f" foregroundColor="grey">
 			<convert type="ClockToText">Format:%d.%m.%Y</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="1025,530" size="140,40" font="Replacement;30">
+		<widget source="global.CurrentTime" render="Label" position="1025*f,530*f" size="140*f,40*f" font="Replacement;30*f">
 			<convert type="ClockToText">Format:%H:%M:%S</convert>
 		</widget>
 
-		<eLabel position="15,530" size="200,40" zPosition="-5" backgroundColor="red"/>
-		<eLabel position="219,530" size="200,40" zPosition="-5" backgroundColor="green"/>
-		<eLabel position="423,530" size="200,40" zPosition="-5" backgroundColor="yellow"/>
-		<eLabel position="627,530" size="200,40" zPosition="-5" backgroundColor="blue"/>
-		<widget name="key_red" render="Label" position="17,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
-		<widget name="key_green" render="Label" position="221,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
-		<widget name="key_yellow" render="Label" position="425,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
-		<widget name="key_blue" render="Label" position="629,532" size="196,36" font="Regular;22" halign="center" valign="center"/>
+		<eLabel position="15*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="red"/>
+		<eLabel position="219*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="green"/>
+		<eLabel position="423*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="yellow"/>
+		<eLabel position="627*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="blue"/>
+		<widget name="key_red" render="Label" position="17*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_green" render="Label" position="221*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_yellow" render="Label" position="425*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_blue" render="Label" position="629*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 	</screen>
 
-	<screen name="GraphMultiEPGList" position="center,center" size="770,526">
-		<widget name="timeline_text" position="15,10" size="740,26" foregroundColor="white"/>
-		<widget name="list" position="15,36" size="740,420" scrollbarMode="showOnDemand" backgroundColor="black"/>
-		<widget name="timeline0" position="0,36" zPosition="1" size="1,420" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline1" position="0,36" zPosition="1" size="1,420" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline2" position="0,36" zPosition="1" size="1,420" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline3" position="0,36" zPosition="1" size="1,420" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline4" position="0,36" zPosition="1" size="1,420" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline5" position="0,36" zPosition="1" size="1,420" pixmap="SimpleGrayHD/window/timeline.png"/>
-		<widget name="timeline_now" position="0,36" zPosition="2" size="1,420" pixmap="SimpleGrayHD/window/timeline-now.png" alphatest="on"/>
+	<!--from Plugins.Extensions.GraphMultiEPG.GraphMultiEpg as GraphMultiEPGList-->
+	<screen name="GraphMultiEPGList" position="center,center" size="370*f,526*f">
+		<widget name="timeline_text" position="15*f,10*f" size="740*f,26*f" foregroundColor="white"/>
+		<widget name="list" position="15*f,36*f" size="740*f,420*f" scrollbarMode="showOnDemand" backgroundColor="black"/>
+		<widget name="timeline0" position="0,36*f" zPosition="1" size="1,420*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline1" position="0,36*f" zPosition="1" size="1,420*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline2" position="0,36*f" zPosition="1" size="1,420*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline3" position="0,36*f" zPosition="1" size="1,420*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline4" position="0,36*f" zPosition="1" size="1,420*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline5" position="0,36*f" zPosition="1" size="1,420*f" pixmap="skin/timeline.svg"/>
+		<widget name="timeline_now" position="0,36*f" zPosition="2" size="1,420*f" pixmap="skin/timeline-now.svg" alphatest="on"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="GraphMultiEpgSetup" position="center,center" size="680,500">
+	<!--from Plugins.Extensions.GraphMultiEPG.GraphMultiEpgSetup-->
+	<screen name="GraphMultiEpgSetup" position="center,center" size="680*f,500*f">
 		<panel name="CancelOKTemplate"/>
-		<widget name="config" position="0,10" size="680,400" scrollbarMode="showOnDemand"/>
+		<widget name="config" position="0,10*f" size="680*f,400*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
 	<screen name="HarddiskSelection" position="center,center" size="600,250">
@@ -740,28 +750,29 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="MediaPlayer" position="center,100" size="1080,580">
-		<widget name="filelist" position="5,10" size="535,370" scrollbarMode="showOnDemand"/>
-		<widget name="playlist" position="540,10" size="530,370" selectionDisabled="1" scrollbarMode="showOnDemand"/>
-		<widget name="coverArt" pixmap="skin_default/no_coverArt.png" position="20,400" size="116,116" transparent="1" alphatest="on"/>
-		<widget name="title" position="160,390" size="680,35" font="Regular;22"/>
-		<widget name="titletext" position="160,430" size="100,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="currenttext" position="260,430" size="650,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="artisttext" position="160,460" size="100,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="artist" position="260,460" size="580,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="albumtext" position="160,490" size="100,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="album" position="260,490" size="580,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="yeartext" position="160,520" size="100,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="year" position="260,520" size="250,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="genretext" position="510,520" size="100,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="genre" position="610,520" size="300,25" font="Regular;20" foregroundColor="grey"/>
-		<widget name="repeat" position="20,545" size="50,30" pixmaps="SimpleGrayHD/skin_default/icons/repeat_off.png,SimpleGrayHD/skin_default/icons/repeat_on.png" transparent="1" alphatest="on"/>
-		<widget source="session.CurrentService" render="Label" position="95,550" size="100,25" font="Regular;20" halign="right">
+	<!--from Plugins.Extensions.MediaPlayer.plugin-->
+	<screen name="MediaPlayer" position="center,100*f" size="1080*f,580*f">
+		<widget name="filelist" position="5*f,10*f" size="535*f,370*f" scrollbarMode="showOnDemand"/>
+		<widget name="playlist" position="540*f,10*f" size="530*f,370*f" selectionDisabled="1" scrollbarMode="showOnDemand"/>
+		<widget name="coverArt" pixmap="skin_default/no_coverArt.svg" position="20*f,400*f" size="116*f,116*f" transparent="1" alphatest="on"/>
+		<widget name="title" position="160*f,390*f" size="680*f,35*f" font="Regular;22*f"/>
+		<widget name="titletext" position="160*f,430*f" size="100*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="currenttext" position="260*f,430*f" size="650*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="artisttext" position="160*f,460*f" size="100*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="artist" position="260*f,460*f" size="580*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="albumtext" position="160*f,490*f" size="100*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="album" position="260*f,490*f" size="580*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="yeartext" position="160*f,520*f" size="100*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="year" position="260*f,520*f" size="250*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="genretext" position="510*f,520*f" size="100*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="genre" position="610*f,520*f" size="300*f,25*f" font="Regular;20*f" foregroundColor="grey"/>
+		<widget name="repeat" position="20*f,545*f" size="50*f,30*f" pixmaps="icons/repeat_off.svg,icons/repeat_on.svg" transparent="1" alphatest="on"/>
+		<widget source="session.CurrentService" render="Label" position="95*f,550*f" size="100*f,25*f" font="Regular;20*f" halign="right">
 			<convert type="ServicePosition">Position</convert>
 		</widget>
-		<eLabel position="205,561" size="300,3" backgroundColor="grey"/>
-		<widget name="PositionGauge" position="205,555" size="300,16" zPosition="2" transparent="1" pointer="SimpleGrayHD/window/pointer.png:16,3"/>
-		<widget source="session.CurrentService" render="Label" position="515,550" size="100,25" font="Regular;20">
+		<eLabel position="205*f,561*f" size="300*f,3*f" backgroundColor="grey"/>
+		<widget name="PositionGauge" position="205*f,555*f" size="300*f,16*f" zPosition="2" transparent="1" pointer="skin/pointer.svg:16,3*f"/>
+		<widget source="session.CurrentService" render="Label" position="515*f,550*f" size="100*f,25*f" font="Regular;20*f">
 			<convert type="ServicePosition">Remaining</convert>
 		</widget>
 	</screen>
@@ -829,7 +840,8 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="menu" position="15,25" size="465,250" scrollbarMode="showOnDemand"/>
 	</screen>
 
-	<screen name="MoviePlayer" flags="wfNoBorder" position="0,610" size="1280,110">
+	<!--from Screens.InfoBar-->
+	<screen name="MoviePlayer" flags="wfNoBorder" position="0,610*f" size="1280*f,110*f">
 		<panel name="PlayerTemplate"/>
 	</screen>
 
@@ -840,8 +852,8 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="chosenletter" position="15*f,10*f" size="692*f,500*f" zPosition="4" font="Regular;24*f"/>
 		<widget name="list" position="15*f,10*f" size="692*f,447*f" scrollbarMode="showOnDemand" fontSizesOriginal="22*f,18*f,16*f" fontSizesCompact="20*f,14*f" fontSizesMinimal="20*f,16*f" itemHeights="75*f,37*f,26*f" pbarShift="5*f" pbarHeight="16*f" pbarLargeWidth="48*f"
 		partIconeShiftMinimal="5*f" partIconeShiftCompact="4*f" partIconeShiftOriginal="5*f" spaceRight="2*f" spaceIconeText="2*f" iconsWidth="22*f" trashShift="1" dirShift="1" columnsOriginal="180,200*f" columnsCompactDescription="120,140,154*f" compactColumn="200*f" treeDescription="165*f"/>
-		<widget name="movie_sort" position="15*f,476*f" size="35*f,20*f" pixmaps="SimpleGray-HD/skin_default/icons/az.svg,SimpleGray-HD/skin_default/icons/newtop.svg,SimpleGray-HD/skin_default/icons/shuffle.svg,SimpleGray-HD/skin_default/icons/za.svg,SimpleGray-HD/skin_default/icons/oldtop.svg,SimpleGray-HD/skin_default/icons/faz.svg,SimpleGray-HD/skin_default/icons/fza.svg,SimpleGray-HD/skin_default/icons/default.svg" transparent="1" alphatest="on" scale="on"/>
-		<widget name="movie_off" position="55*f,476*f" size="35*f,20*f" pixmaps="SimpleGray-HD/skin_default/icons/ask.svg,SimpleGray-HD/skin_default/icons/movielist.svg,SimpleGray-HD/skin_default/icons/quit.svg,SimpleGray-HD/skin_default/icons/pause.svg,SimpleGray-HD/skin_default/icons/playlist.svg,SimpleGray-HD/skin_default/icons/playlistquit.svg,SimpleGray-HD/skin_default/icons/loop.svg,SimpleGray-HD/skin_default/icons/rep.svg" transparent="1" alphatest="on" scale="on"/>
+		<widget name="movie_sort" position="15*f,476*f" size="35*f,20*f" pixmaps="icons/az.svg,icons/newtop.svg,icons/shuffle.svg,icons/za.svg,icons/oldtop.svg,icons/faz.svg,icons/fza.svg,icons/default.svg" transparent="1" alphatest="on" scale="on"/>
+		<widget name="movie_off" position="55*f,476*f" size="35*f,20*f" pixmaps="icons/ask.svg,icons/movielist.svg,icons/quit.svg,icons/pause.svg,icons/playlist.svg,icons/playlistquit.svg,icons/loop.svg,icons/rep.svg" transparent="1" alphatest="on" scale="on"/>
 		<widget name="freeDiskSpace" position="105*f,475*f" size="602*f,25*f" font="Regular;20*f"/>
 		<widget name="DescriptionBorder" position="0,0" size="0,0"/>
 
@@ -875,7 +887,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.Mute-->
 	<screen name="Mute" position="15*f,15*f" size="64*f,64*f" backgroundColor="transparent" zPosition="10" flags="wfNoBorder">
-		<ePixmap pixmap="SimpleGray-HD/window/mute.svg" position="0,0" size="64*f,64*f"/>
+		<ePixmap pixmap="skin_default/mute.svg" position="0,0" size="64*f,64*f"/>
 	</screen>
 
 	<!--from Screens.NetworkSetup-->
@@ -906,35 +918,35 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	<screen name="NetworkAdapterTest" position="center,center" size="740*f,380*f">
 		<widget name="Adaptertext" position="15*f,25*f" size="200*f,25*f" font="Regular;20*f"/>
 		<widget name="Adapter" position="200*f,25*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
-		<widget name="AdapterInfo_OK" position="530*f,22*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="AdapterInfo" position="580*f,17*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGrayHD/skin_default/buttons/white.svg"/>
+		<widget name="AdapterInfo_OK" position="530*f,22*f" size="38*f,31*f" pixmap="icons/lock_on.svg" alphatest="on"/>
+		<widget name="AdapterInfo" position="580*f,17*f" size="140*f,40*f" pixmaps="buttons/grey.svg,SimpleGrayHD/skin_default/buttons/white.svg"/>
 		<widget name="AdapterInfo_Text" position="582*f,19*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
 		<widget name="Networktext" position="15*f,75*f" size="200*f,25*f" font="Regular;20*f"/>
 		<widget name="Network" position="200*f,75*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
-		<widget name="NetworkInfo_Check" position="530*f,72*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="NetworkInfo" position="580*f,67*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="NetworkInfo_Check" position="530*f,72*f" size="38*f,31*f" pixmap="icons/lock_on.svg" alphatest="on"/>
+		<widget name="NetworkInfo" position="580*f,67*f" size="140*f,40*f" pixmaps="buttons/grey.svg,buttons/white.svg"/>
 		<widget name="NetworkInfo_Text" position="582*f,69*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
 		<widget name="Dhcptext" position="15*f,125*f" size="200*f,25*f" font="Regular;20*f"/>
 		<widget name="Dhcp" position="200*f,125*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
-		<widget name="DhcpInfo_Check" position="530*f,122*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="DhcpInfo" position="580*f,117*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="DhcpInfo_Check" position="530*f,122*f" size="38*f,31*f" pixmap="icons/lock_on.svg" alphatest="on"/>
+		<widget name="DhcpInfo" position="580*f,117*f" size="140*f,40*f" pixmaps="buttons/grey.svg,buttons/white.svg"/>
 		<widget name="DhcpInfo_Text" position="582*f,119*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
 		<widget name="IPtext" position="15*f,175*f" size="200*f,25*f" font="Regular;20*f"/>
 		<widget name="IP" position="200*f,175*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
-		<widget name="IPInfo_Check" position="530*f,172*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="IPInfo" position="580*f,167*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="IPInfo_Check" position="530*f,172*f" size="38*f,31*f" pixmap="icons/lock_on.svg" alphatest="on"/>
+		<widget name="IPInfo" position="580*f,167*f" size="140*f,40*f" pixmaps="buttons/grey.svg,buttons/white.svg"/>
 		<widget name="IPInfo_Text" position="582*f,169*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
 		<widget name="DNStext" position="15*f,225*f" size="200*f,25*f" font="Regular;20*f"/>
 		<widget name="DNS" position="200*f,225*f" size="315*f,25*f" font="Regular;20*f" foregroundColors="white,red,green" halign="right"/>
-		<widget name="DNSInfo_Check" position="530*f,222*f" size="38*f,31*f" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" alphatest="on"/>
-		<widget name="DNSInfo" position="580*f,217*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="DNSInfo_Check" position="530*f,222*f" size="38*f,31*f" pixmap="icons/lock_on.svg" alphatest="on"/>
+		<widget name="DNSInfo" position="580*f,217*f" size="140*f,40*f" pixmaps="buttons/grey.svg,buttons/white.svg"/>
 		<widget name="DNSInfo_Text" position="582*f,219*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
-		<widget name="EditSettingsButton" position="580*f,267*f" size="140*f,40*f" pixmaps="SimpleGray-HD/skin_default/buttons/grey.svg,SimpleGray-HD/skin_default/buttons/white.svg"/>
+		<widget name="EditSettingsButton" position="580*f,267*f" size="140*f,40*f" pixmaps="buttons/grey.svg,buttons/white.svg"/>
 		<widget name="EditSettings_Text" position="582*f,269*f" size="136*f,36*f" halign="center" valign="center" foregroundColors="back,grey,white" font="Regular;20*f" zPosition="1"/>
 
 		<widget name="InfoText" position="15*f,17*f" size="710*f,370*f" font="Regular;22*f" zPosition="3"/>
@@ -966,22 +978,24 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="HelpWindow" position="50,280" size="1,1"/>
 	</screen>
 
-	<screen name="NimSelection" position="center,center" size="500,350">
-		<widget source="nimlist" render="Listbox" position="10,15" size="480,320" scrollbarMode="showOnDemand">
+	<!--from Screens.Satconfig-->
+	<screen name="NimSelection" position="center,center" size="500*f,350*f">
+		<widget source="nimlist" render="Listbox" position="10*f,15*f" size="480*f,320*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryText(pos=(5, 5), size=(470, 30), flags=RT_HALIGN_LEFT, text=1), # index 1 is the nim name,
-					MultiContentEntryText(pos=(5, 30), size=(470, 50), font=1, flags=RT_HALIGN_LEFT, text=2), # index 2 is a description of the nim settings,
+					MultiContentEntryText(pos=(5*f, 5*f), size=(470*f, 30*f), flags=RT_HALIGN_LEFT, text=1), # index 1 is the nim name,
+					MultiContentEntryText(pos=(5*f, 30*f), size=(470*f, 50*f), font=1, flags=RT_HALIGN_LEFT, text=2), # index 2 is a description of the nim settings,
 					],
-				"fonts": [gFont("Regular", 20), gFont("Regular", 15)],
-				"itemHeight": 80}
+				"fonts": [gFont("Regular", 20*f), gFont("Regular", 15*f)],
+				"itemHeight": 80*f}
 			</convert>
 		</widget>
 	</screen>
 
-	<screen name="NimSetup" position="center,center" size="740,520">
-		<widget name="config" position="0,10" size="740,300" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget name="description" position="15,330" size="710,125" font="Regular;20"/>
+	<!--from Screens.Satconfig-->
+	<screen name="NimSetup" position="center,center" size="740*f,520*f">
+		<widget name="config" position="0,10*f" size="740*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget name="description" position="15*f,330*f" size="710*f,125*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -1211,32 +1225,32 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 			<convert type="FrontendInfo">SNRdB</convert>
 		</widget>
 		<eLabel text="SNR:" position="90*f,40*f" size="60*f,25*f" font="Regular;20*f" halign="right"/>
-		<widget source="Frontend" render="Progress" position="155*f,43*f" size="260*f,20*f" pixmap="SimpleGray-HD/window/bar_snr.svg" borderWidth="2" borderColor="grey">
+		<widget source="Frontend" render="Progress" position="155*f,43*f" size="260*f,20*f" pixmap="skin_default/bar_snr.svg" borderWidth="2" borderColor="grey">
 			<convert type="FrontendInfo">SNR</convert>
 		</widget>
 		<widget source="Frontend" render="Label" position="420*f,40*f" size="60*f,22*f" font="Regular;20*f">
 			<convert type="FrontendInfo">SNR</convert>
 		</widget>
 		<eLabel text="AGC:" position="90*f,70*f" size="60*f,25*f" font="Regular;20*f" halign="right"/>
-		<widget source="Frontend" render="Progress" position="155*f,73*f" size="260*f,20*f" pixmap="SimpleGray-HD/window/bar_snr.svg" borderWidth="2" borderColor="grey">
+		<widget source="Frontend" render="Progress" position="155*f,73*f" size="260*f,20*f" pixmap="skin_default/bar_snr.svg" borderWidth="2" borderColor="grey">
 			<convert type="FrontendInfo">AGC</convert>
 		</widget>
 		<widget source="Frontend" render="Label" position="420*f,70*f" size="60*f,22*f" font="Regular;20*f">
 			<convert type="FrontendInfo">AGC</convert>
 		</widget>
 		<eLabel text="BER:" position="90*f,100*f" size="60*f,25*f" font="Regular;20*f" halign="right"/>
-		<widget source="Frontend" render="Progress" position="155*f,103*f" size="260*f,20*f" pixmap="SimpleGray-HD/window/bar_ber.svg" borderWidth="2" borderColor="grey">
+		<widget source="Frontend" render="Progress" position="155*f,103*f" size="260*f,20*f" pixmap="skin_default/bar_ber.svg" borderWidth="2" borderColor="grey">
 			<convert type="FrontendInfo">BER</convert>
 		</widget>
 		<widget source="Frontend" render="Label" position="420*f,100*f" size="60*f,22*f" font="Regular;20*f">
 			<convert type="FrontendInfo">BER</convert>
 		</widget>
 		<eLabel text="Lock:" position="0,130*f" size="150*f,25*f" font="Regular;22*f" halign="right"/>
-		<widget source="Frontend" render="Pixmap" pixmap="SimpleGray-HD/skin_default/icons/lock_on.svg" position="155*f,130*f" size="25*f,24*f" alphatest="on">
+		<widget source="Frontend" render="Pixmap" pixmap="icons/lock_on.svg" position="155*f,130*f" size="25*f,24*f" alphatest="on">
 			<convert type="FrontendInfo">LOCK</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="Frontend" render="Pixmap" pixmap="SimpleGray-HD/skin_default/icons/lock_off.svg" position="155*f,130*f" size="25*f,24*f" alphatest="on">
+		<widget source="Frontend" render="Pixmap" pixmap="icons/lock_off.svg" position="155*f,130*f" size="25*f,24*f" alphatest="on">
 			<convert type="FrontendInfo">LOCK</convert>
 			<convert type="ConditionalShowHide">Invert</convert>
 		</widget>
@@ -1344,28 +1358,29 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="infolist" position="15,10" size="710,491" selectionDisabled="1" itemHeight="31"/>
 	</screen>
 
-	<screen name="ServiceScan" position="center,center" size="620,450">
-		<widget source="FrontendInfo" render="Pixmap" pixmap="skin_default/icons/scan-s.png" position="15,8" size="64,64" transparent="1" alphatest="on">
+	<!--from Screens.ServiceScan-->
+	<screen name="ServiceScan" position="center,center" size="620*f,450*f">
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.svg" position="15*f,8*f" size="64*f,64*f" transparent="1" alphatest="on">
 			<convert type="FrontendInfo">TYPE</convert>
 			<convert type="ValueRange">0,0</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="skin_default/icons/scan-c.png" position="15,8" size="64,64" transparent="1" alphatest="on">
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.svg" position="15*f,8*f" size="64*f,64*f" transparent="1" alphatest="on">
 			<convert type="FrontendInfo">TYPE</convert>
 			<convert type="ValueRange">1,1</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="skin_default/icons/scan-t.png" position="15,8" size="64,64" transparent="1" alphatest="on">
+		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.svg" position="15*f,8*f" size="64*f,64*f" transparent="1" alphatest="on">
 			<convert type="FrontendInfo">TYPE</convert>
 			<convert type="ValueRange">2,2</convert>
 			<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget name="network" position="95,10" size="510,25" font="Regular;20"/>
-		<widget name="transponder" position="95,40" size="510,25" font="Regular;20"/>
-		<widget name="scan_progress" position="15,80" size="590,20" foregroundColor="grey" borderWidth="1" borderColor="white"/>
-		<widget name="scan_state" position="15,110" size="590,25" zPosition="2" font="Regular;20"/>
-		<widget name="pass" position="15,140" size="590,25" font="Regular;20"/>
-		<widget name="servicelist" position="15,170" size="590,200" enableWrapAround="1" scrollbarMode="showOnDemand"/>
+		<widget name="network" position="95*f,10*f" size="510*f,25*f" font="Regular;20*f"/>
+		<widget name="transponder" position="95*f,40*f" size="510*f,25*f" font="Regular;20*f"/>
+		<widget name="scan_progress" position="15*f,80*f" size="590*f,20*f" foregroundColor="grey" borderWidth="1" borderColor="white"/>
+		<widget name="scan_state" position="15*f,110*f" size="590*f,25*f" zPosition="2" font="Regular;20*f"/>
+		<widget name="pass" position="15*f,140*f" size="590*f,25*f" font="Regular;20*f"/>
+		<widget name="servicelist" position="15*f,170*f" size="590*f,200*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -1538,7 +1553,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.UnhandledKey-->
 	<screen name="UnhandledKey" position="center,center" size="55*f,55*f" zPosition="100" flags="wfNoBorder">
-		<widget name="UnhandledKeyPixmap" pixmap="SimpleGray-HD/window/unhandled_key.svg" position="0,0" size="55*f,55*f"/>
+		<widget name="UnhandledKeyPixmap" pixmap="skin_default/unhandled_key.svg" position="0,0" size="55*f,55*f"/>
 	</screen>
 
 	<!--from Screens.SoftwareUpdate-->
@@ -1624,7 +1639,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.Volume-->
 	<screen name="Volume" position="center,15*f" size="305*f,34*f" zPosition="10" flags="wfNoBorder">
-		<ePixmap pixmap="SimpleGray-HD/window/volume.svg" position="5*f,5*f" size="35*f,24*f" alphatest="on"/>
+		<ePixmap pixmap="skin_default/volume.svg" position="5*f,5*f" size="35*f,24*f" alphatest="on"/>
 		<widget name="Volume" position="45*f,12*f" size="200*f,10*f" borderWidth="1" borderColor="grey"/>
 		<widget name="VolumeText" position="250*f,0" size="50*f,30*f" font="Replacement;26*f" halign="center"/>
 	</screen>
@@ -1676,8 +1691,8 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 			</convert>
 		</widget>
 		<panel name="DynamicButtonsTemplate"/>
-		<widget name="info" position="635*f,445*f" size="35*f,25*f" pixmap="SimpleGray-HD/skin_default/buttons/key_info.png" alphatest="on"/>
-		<widget name="menu" position="675*f,445*f" size="35*f,25*f" pixmap="SimpleGray-HD/skin_default/buttons/key_menu.png" alphatest="on"/>
+		<widget name="info" position="635*f,445*f" size="35*f,25*f" pixmap="buttons/key_info.png" alphatest="on"/>
+		<widget name="menu" position="675*f,445*f" size="35*f,25*f" pixmap="buttons/key_menu.png" alphatest="on"/>
 		<widget name="thumbnail" position="0,0" size="100*f,72*f"/>
 	</screen>
 
@@ -1694,7 +1709,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		</widget>
 		<widget name="HelpWindow" position="320*f,440*f" size="1,1"/>
 		<panel name="DynamicButtonsTemplate"/>
-		<ePixmap position="575*f,445*f" size="35*f,25*f" pixmap="SimpleGray-HD/skin_default/buttons/key_menu.png" alphatest="on"/>
+		<ePixmap position="575*f,445*f" size="35*f,25*f" pixmap="buttons/key_menu.png" alphatest="on"/>
 	</screen>
 
 	<!--from Plugins.Extensions.PicturePlayer.ui-->
@@ -1706,7 +1721,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.Standby-->
 	<screen name="QuitMainloopScreen" position="fill" flags="wfNoBorder">
-		<ePixmap pixmap="SimpleGray-HD/skin_default/icons/input_info.svg" position="c-27*f,c-60*f" size="53*f,53*f" alphatest="on"/>
+		<ePixmap pixmap="icons/input_info.svg" position="c-27*f,c-60*f" size="53*f,53*f" alphatest="on"/>
 		<widget name="text" position="center,c+5*f" size="720*f,100*f" font="Regular;22*f" halign="center"/>
 	</screen>
 </skin>

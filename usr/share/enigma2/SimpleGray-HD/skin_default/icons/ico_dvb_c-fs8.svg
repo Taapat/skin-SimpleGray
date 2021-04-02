@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="Layer_1" data-name="Layer 1" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>.cls-1{fill:#141f38;}</style>
+  </defs>
+  <title>antenna-tower-outline</title>
+  <polyline style="fill: rgba(255, 249, 249, 0); stroke: rgb(255, 255, 255);" points="2.517 17.523 12.516 17.524 12.517 7.524 2.558 7.476"/>
+  <rect x="12.517" y="9" width="6" height="7" style="fill: rgba(255, 255, 255, 0); stroke: rgb(255, 255, 255);"/>
+  <rect x="18.483" y="11.524" width="4" height="2" style="fill: rgb(255, 255, 255);"/>
+  <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="4.453 19.682"/>
+</svg>
