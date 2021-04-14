@@ -54,4 +54,3 @@ class SGProvider(Converter, object):
 	def changed(self, what):
 		if what[0] is not self.CHANGED_SPECIFIC:
 			Converter.changed(self, what)
-
