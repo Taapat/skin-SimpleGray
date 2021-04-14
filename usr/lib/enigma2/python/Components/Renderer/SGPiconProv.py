@@ -16,6 +16,7 @@ else:
 	piconInTmp = False
 	lastPiconPath = None
 
+
 def initPiconPaths():
 	global searchPaths
 	searchPaths = []
@@ -23,6 +24,7 @@ def initPiconPaths():
 		onMountpointAdded(mp)
 	for part in harddiskmanager.getMountedPartitions():
 		onMountpointAdded(part.mountpoint)
+
 
 def onMountpointAdded(mountpoint):
 	global searchPaths
@@ -37,6 +39,7 @@ def onMountpointAdded(mountpoint):
 	except Exception, ex:
 		print("[PiconProv] Failed to investigate %s:" % mountpoint, ex)
 
+
 def onMountpointRemoved(mountpoint):
 	global searchPaths
 	path = os.path.join(mountpoint, 'piconProv') + '/'
@@ -46,11 +49,13 @@ def onMountpointRemoved(mountpoint):
 	except:
 		pass
 
+
 def onPartitionChange(why, part):
 	if why is 'add':
 		onMountpointAdded(part.mountpoint)
 	elif why is 'remove':
 		onMountpointRemoved(part.mountpoint)
+
 
 def findPicon(serviceName):
 	global lastPiconPath
@@ -67,12 +72,14 @@ def findPicon(serviceName):
 					return pngname
 	return None
 
+
 def getPiconName(serviceName):
 	if not serviceName or serviceName is "Unknown":
 		return None
 	sname = serviceName.upper()
 	pngname = findPicon(sname)
 	return pngname
+
 
 class SGPiconProv(Renderer):
 	def __init__(self):
@@ -111,6 +118,7 @@ class SGPiconProv(Renderer):
 				else:
 					self.instance.hide()
 				self.pngname = pngname
+
 
 if not piconInTmp:
 	harddiskmanager.on_partition_list_change.append(onPartitionChange)
