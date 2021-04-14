@@ -33,13 +33,15 @@ class SGProvider(Converter, object):
 			if providerlist is not None:
 				while True:
 					provider = providerlist.getNext()
-					if not provider.valid(): break
+					if not provider.valid():
+						break
 					if provider.flags & eServiceReference.isDirectory:
 						servicelist = serviceHandler.list(provider)
 						if servicelist is not None:
 							while True:
 								service = servicelist.getNext()
-								if not service.valid(): break
+								if not service.valid():
+									break
 								if service == ref:
 									info = serviceHandler.info(provider)
 									if info:
