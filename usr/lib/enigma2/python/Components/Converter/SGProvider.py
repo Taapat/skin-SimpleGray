@@ -18,7 +18,7 @@ class SGProvider(Converter, object):
 	def getText(self):
 		ref = self.source.service
 		if isinstance(ref, eServiceReference):
-			if ref.getData(0) in (2,10):
+			if ref.getData(0) in (2, 10):
 				typestr = service_types_radio
 			else:
 				typestr = service_types_tv

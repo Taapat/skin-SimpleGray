@@ -92,7 +92,7 @@ class SGPiconProv(Renderer):
 		for (attrib, value) in self.skinAttributes:
 			if attrib is "path":
 				self.addPath(value)
-				attribs.remove((attrib,value))
+				attribs.remove((attrib, value))
 		self.skinAttributes = attribs
 		return Renderer.applySkin(self, desktop, parent)
 
