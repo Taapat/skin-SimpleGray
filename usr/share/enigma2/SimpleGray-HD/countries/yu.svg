@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg height="40pt" viewBox="0 0 60 40" width="60pt" version="1.1" id="svg1608" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
   <clipPath id="b">
     <path d="m0 167.75h756.13v168.34h-756.13z" id="path816"/>
   </clipPath>
   <clipPath id="c">
     <path d="m0 335.51h756.13v168.58h-756.13z" id="path819"/>
   </clipPath>
-  <g id="g6907" transform="matrix(0.079351, 0, 0, 0.079352, 0, 0)">
+  <g id="g6907" transform="matrix(0.079351, 0, 0, 0.079352, 0.000161, 0.00012)">
     <path d="M 0,0 H 756.13 V 504.08 H 0 Z" id="path822" style="fill:#c6363c;fill-opacity:1;fill-rule:evenodd;stroke-width:1.73203361"/>
     <g id="g828" transform="matrix(1 0 0 1.9975065 0 -167.20204)" clip-path="url(#b)">
       <path style="fill:#0c4076;fill-opacity:1" id="path826" fill-rule="evenodd" fill="#0d4077" d="m0 167.62h756.13v168.44h-756.13z"/>

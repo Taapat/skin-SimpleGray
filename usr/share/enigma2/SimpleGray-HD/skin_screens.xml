@@ -22,6 +22,7 @@
 
 	<parameters>
 		<parameter name="AboutHddSplit" value="1"/>
+		<parameter name="AutoscaleSVG" value="1"/>
 	</parameters>
 
 	<windowstyle type="skinned" id="0">
@@ -625,19 +626,21 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="list" position="170,15" size="550,495" scrollbarMode="showOnDemand"/>
 	</screen>
 
-	<screen name="HotkeySetup" position="center,center" size="740,565">
-		<widget name="list" position="5,10" size="335,484" scrollbarMode="showOnDemand" itemHeight="30"/>
-		<widget name="choosen" position="350,10" size="380,350" scrollbarMode="showOnDemand" itemHeight="30"/>
-		<widget name="description" position="350,410" size="360,100" font="Regular;20"/>
+	<!--from Screens.Hotkey-->
+	<screen name="HotkeySetup" position="center,center" size="740*f,565*f">
+		<widget name="list" position="5*f,10*f" size="335*f,484*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
+		<widget name="choosen" position="350*f,10*f" size="380*f,350*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
+		<widget name="description" position="350*f,410*f" size="360*f,100*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="HotkeySetupSelect" position="center,center" size="740,565">
-		<widget name="list" position="5,10" size="335,484" scrollbarMode="showOnDemand" itemHeight="30"/>
-		<widget name="choosen" position="350,10" size="390,350" scrollbarMode="showOnDemand" itemHeight="30"/>
-		<widget name="description" position="350,410" size="360,100" font="Regular;20"/>
-		<widget name="h_prev" pixmap="skin_default/buttons/key_prev.png" alphatest="on" position="646,470" size="35,25"/>
-		<widget name="h_next" pixmap="skin_default/buttons/key_next.png" alphatest="on" position="685,470" size="35,25"/>
+	<!--from Screens.Hotkey-->
+	<screen name="HotkeySetupSelect" position="center,center" size="740*f,565*f">
+		<widget name="list" position="5*f,10*f" size="335*f,484*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
+		<widget name="choosen" position="350*f,10*f" size="390*f,350*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
+		<widget name="description" position="350*f,410*f" size="360*f,100*f" font="Regular;20*f"/>
+		<widget name="h_prev" pixmap="buttons/key_prev.svg" alphatest="on" position="646*f,470*f" size="35*f,25*f"/>
+		<widget name="h_next" pixmap="buttons/key_next.svg" alphatest="on" position="685*f,470*f" size="35*f,25*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -1645,7 +1648,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	</screen>
 
 	<!--Plugins.Extensions.YouTube.YouTubeDownload-->
-	<screen name="YouTubeDownloadList" position="center,center" size="580*f,260*f">
+	<!--screen name="YouTubeDownloadList" position="center,center" size="580*f,260*f">
 		<widget source="list" render="Listbox" position="0,10*f" size="580*f,180*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -1659,10 +1662,10 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 			</convert>
 		</widget>
 		<panel name="DynamicButtonsTemplate"/>
-	</screen>
+	</screen-->
 
 	<!--Plugins.Extensions.YouTube.YouTubeUi-->
-	<screen name="YouTubeInfo" position="center,center" size="720*f,445*f">
+	<!--screen name="YouTubeInfo" position="center,center" size="720*f,445*f">
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="10*f,5*f" size="100*f,40*f" transparent="1" alphatest="on"/>
 		<widget name="title" position="125*f,10*f" size="590*f,60*f" font="Regular;24*f"/>
 		<widget name="pic" position="15*f,90*f" size="320*f,180*f" transparent="1" alphatest="on"/>
@@ -1673,10 +1676,10 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="dislikes" position="205*f,320*f" size="150*f,20*f" font="Regular;16*f"/>
 		<widget name="published" position="15*f,350*f" size="300*f,20*f" font="Regular;16*f"/>
 		<panel name="DynamicButtonsTemplate"/>
-	</screen>
+	</screen-->
 
 	<!--Plugins.Extensions.YouTube.YouTubeUi-->
-	<screen name="YouTubeMain" position="center,center" size="720*f,490*f">
+	<!--screen name="YouTubeMain" position="center,center" size="720*f,490*f">
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="15*f,0" size="100*f,40*f" alphatest="on"/>
 		<widget source="list" render="Listbox" position="15*f,50*f" size="690*f,360*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
@@ -1694,10 +1697,10 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="info" position="635*f,445*f" size="35*f,25*f" pixmap="buttons/key_info.png" alphatest="on"/>
 		<widget name="menu" position="675*f,445*f" size="35*f,25*f" pixmap="buttons/key_menu.png" alphatest="on"/>
 		<widget name="thumbnail" position="0,0" size="100*f,72*f"/>
-	</screen>
+	</screen-->
 
 	<!--Plugins.Extensions.YouTube.YouTubeUi-->
-	<screen name="YouTubeSearch" position="center,120*f" size="620*f,490*f">
+	<!--screen name="YouTubeSearch" position="center,120*f" size="620*f,490*f">
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="0,2*f" size="100*f,40*f" transparent="1" alphatest="on" />
 		<widget name="config" position="110*f,10*f" size="510*f,30*f" scrollbarMode="showNever"/>
 		<widget source="list" render="Listbox" position="0,43*f" size="620*f,273*f" scrollbarMode="showOnDemand">
@@ -1710,7 +1713,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="HelpWindow" position="320*f,440*f" size="1,1"/>
 		<panel name="DynamicButtonsTemplate"/>
 		<ePixmap position="575*f,445*f" size="35*f,25*f" pixmap="buttons/key_menu.png" alphatest="on"/>
-	</screen>
+	</screen-->
 
 	<!--from Plugins.Extensions.PicturePlayer.ui-->
 	<screen name="picshow" position="center,center" size="740*f,390*f">
