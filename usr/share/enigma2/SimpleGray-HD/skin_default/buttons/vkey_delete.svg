@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-  <rect y="28.004" width="18" height="1" style="fill: rgb(255, 255, 255);" x="11"/>
-  <rect x="11" y="15.997" width="18" height="1" style="fill: rgb(255, 255, 255);"/>
-  <path d="M 47.331 26.97 L 53.834 33.97 L 40.827 33.97 L 47.331 26.97 Z" style="fill: rgb(255, 255, 255);" transform="matrix(0, 1, -1, 0, 62.970001, -24.8305)" bx:shape="triangle 40.827 26.97 13.007 7 0.5 0 1@e124392e"/>
-  <rect x="11" y="15.997" width="2" height="13.007" style="fill: rgb(255, 255, 255);"/>
-  <rect x="27" y="16.8" width="2.5" height="11.4" style="stroke-width: 0px; fill: rgb(255, 255, 255);" bx:origin="0.5 0.500318"/>
-  <path d="M 43.666 25.043 L 49.666 31.543 L 37.666 31.543 L 43.666 25.043 Z" style="fill: rgb(255, 255, 255);" transform="matrix(0, 1, -1, 0, 44.042999, -21.166)" bx:shape="triangle 37.666 25.043 12 6.5 0.5 0 1@1695d31e"/>
-  <path d="M 43.666 23.117 L 49.666 29.117 L 37.666 29.117 L 43.666 23.117 Z" style="fill: rgb(255, 255, 255);" transform="matrix(0, -1, 1, 0, -1.617455, 66.166)" bx:shape="triangle 37.666 23.117 12 6 0.5 0 1@d2e98a77"/>
-  <path d="M 20 24.004 L 24.5 29.004 L 15.5 29.004 L 20 24.004 Z" style="fill: rgb(255, 255, 255);" bx:shape="triangle 15.5 24.004 9 5 0.5 0 1@8cae4712"/>
-  <path d="M -20 -20.996 L -15.5 -15.996 L -24.5 -15.996 L -20 -20.996 Z" style="fill: rgb(255, 255, 255);" transform="matrix(-1, 0, 0, -1, 0, 0)" bx:shape="triangle -24.5 -20.996 9 5 0.5 0 1@dbd2cedc"/>
+<svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 33.029 31.5 L 18.029 31.5 C 17.339 31.5 16.799 31.15 16.439 30.62 L 9.972 22.368 L 16.439 14.39 C 16.799 13.86 17.339 13.5 18.029 13.5 L 33.029 13.5 C 34.129 13.5 35.029 14.4 35.029 15.5 L 35.029 29.5 C 35.029 30.6 34.129 31.5 33.029 31.5 Z M 30.029 18.91 L 28.619 17.5 L 25.029 21.09 L 21.439 17.5 L 20.029 18.91 L 23.619 22.5 L 20.029 26.09 L 21.439 27.5 L 25.029 23.91 L 28.619 27.5 L 30.029 26.09 L 26.439 22.5 L 30.029 18.91 Z" style="fill: rgb(255, 255, 255);" transform="matrix(-1, 0, 0, -1, 45.000999, 45)"/>
 </svg>

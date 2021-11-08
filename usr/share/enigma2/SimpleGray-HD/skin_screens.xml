@@ -293,8 +293,8 @@
 		<widget name="description" position="15*f,0" size="0,0" font="Regular;20*f"/>
 		<applet type="onLayoutFinish">
 from enigma import eSize, ePoint
-from Tools.SkinFactor import SKIN_FACTOR
-f = SKIN_FACTOR
+from skin import getSkinFactor
+f = getSkinFactor()
 textsize = self["text"].getSize()
 textsize = (int(textsize[0] * 1.03), int(textsize[1] * 1.03))
 wsizex = textsize[0] + 30 * f
@@ -1666,7 +1666,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--Plugins.Extensions.YouTube.YouTubeUi-->
 	<screen name="YouTubeInfo" position="center,center" size="720*f,445*f">
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="10*f,5*f" size="100*f,40*f" transparent="1" alphatest="on"/>
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube.svg" position="10*f,5*f" size="100*f,40*f" transparent="1" alphatest="on"/>
 		<widget name="title" position="125*f,10*f" size="590*f,60*f" font="Regular;24*f"/>
 		<widget name="pic" position="15*f,90*f" size="320*f,180*f" transparent="1" alphatest="on"/>
 		<widget name="description" position="350*f,90*f" size="360*f,300*f" font="Regular;16*f"/>
@@ -1680,11 +1680,11 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--Plugins.Extensions.YouTube.YouTubeUi-->
 	<screen name="YouTubeMain" position="center,center" size="720*f,490*f">
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="15*f,0" size="100*f,40*f" alphatest="on"/>
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube.svg" position="15*f,0" size="100*f,40*f" alphatest="on"/>
 		<widget source="list" render="Listbox" position="15*f,50*f" size="690*f,360*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryPixmapAlphaTest(pos=(0, 0), size=(100*f, 72*f), png=2), # Thumbnail
+					MultiContentEntryPixmapAlphaTest(pos=(0, 0), size=(100*f, 72*f), png=2, flags=BT_SCALE), # Thumbnail
 					MultiContentEntryText(pos=(110*f, 1*f), size=(575*f, 52*f), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=3), # Title
 					MultiContentEntryText(pos=(120*f, 50*f), size=(200*f, 22*f), font=1, flags=RT_HALIGN_LEFT, text=4), # Views
 					MultiContentEntryText(pos=(360*f, 50*f), size=(200*f, 22*f), font=1, flags=RT_HALIGN_LEFT, text=5), # Duration
@@ -1694,14 +1694,14 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 			</convert>
 		</widget>
 		<panel name="DynamicButtonsTemplate"/>
-		<widget name="info" position="635*f,445*f" size="35*f,25*f" pixmap="buttons/key_info.png" alphatest="on"/>
-		<widget name="menu" position="675*f,445*f" size="35*f,25*f" pixmap="buttons/key_menu.png" alphatest="on"/>
+		<widget name="info" position="635*f,445*f" size="35*f,25*f" pixmap="buttons/key_info.svg" alphatest="on"/>
+		<widget name="menu" position="675*f,445*f" size="35*f,25*f" pixmap="buttons/key_menu.svg" alphatest="on"/>
 		<widget name="thumbnail" position="0,0" size="100*f,72*f"/>
 	</screen>
 
 	<!--Plugins.Extensions.YouTube.YouTubeUi-->
 	<screen name="YouTubeSearch" position="center,120*f" size="620*f,490*f">
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube_HD.png" position="0,2*f" size="100*f,40*f" transparent="1" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube.svg" position="0,2*f" size="100*f,40*f" transparent="1" alphatest="on" />
 		<widget name="config" position="110*f,10*f" size="510*f,30*f" scrollbarMode="showNever"/>
 		<widget source="list" render="Listbox" position="0,43*f" size="620*f,273*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
@@ -1712,7 +1712,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		</widget>
 		<widget name="HelpWindow" position="320*f,440*f" size="1,1"/>
 		<panel name="DynamicButtonsTemplate"/>
-		<ePixmap position="575*f,445*f" size="35*f,25*f" pixmap="buttons/key_menu.png" alphatest="on"/>
+		<ePixmap position="575*f,445*f" size="35*f,25*f" pixmap="buttons/key_menu.svg" alphatest="on"/>
 	</screen>
 
 	<!--from Plugins.Extensions.PicturePlayer.ui-->

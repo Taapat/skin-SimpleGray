@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-  <rect y="-16.996" width="18" height="1" style="fill: rgb(255, 255, 255);" x="-33.368" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
-  <rect x="-33.368" y="-29.003" width="18" height="1" style="fill: rgb(255, 255, 255);" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
-  <path d="M 47.331 26.97 L 53.834 33.97 L 40.827 33.97 L 47.331 26.97 Z" style="fill: rgb(255, 255, 255);" transform="matrix(0, -1, 1, 0, -18.601536, 69.830116)" bx:shape="triangle 40.827 26.97 13.007 7 0.5 0 1@e124392e"/>
-  <rect x="-33.368" y="-29.003" width="2" height="13.007" style="fill: rgb(255, 255, 255);" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
-  <rect x="-17.368" y="-28.2" width="2.5" height="11.4" style="stroke-width: 0px; fill: rgb(255, 255, 255);" transform="matrix(-1, 0, 0, -1, 0, 0)" bx:origin="0.5 0.500318"/>
-  <path d="M 43.666 25.043 L 49.666 31.543 L 37.666 31.543 L 43.666 25.043 Z" style="fill: rgb(255, 255, 255);" transform="matrix(0, -1, 1, 0, 0.325467, 66.165619)" bx:shape="triangle 37.666 25.043 12 6.5 0.5 0 1@1695d31e"/>
-  <path d="M 43.666 23.117 L 49.666 29.117 L 37.666 29.117 L 43.666 23.117 Z" style="fill: rgb(255, 255, 255);" transform="matrix(0, 1, -1, 0, 45.985924, -21.166386)" bx:shape="triangle 37.666 23.117 12 6 0.5 0 1@d2e98a77"/>
-  <path d="M -24.368 -20.996 L -19.868 -15.996 L -28.868 -15.996 L -24.368 -20.996 Z" style="fill: rgb(255, 255, 255);" transform="matrix(-1, 0, 0, -1, 0, 0)" bx:shape="triangle -28.868 -20.996 9 5 0.5 0 1@85a1e01d"/>
-  <path d="M 24.368 24.004 L 28.868 29.004 L 19.868 29.004 L 24.368 24.004 Z" style="fill: rgb(255, 255, 255);" bx:shape="triangle 19.868 24.004 9 5 0.5 0 1@4d6ca14d"/>
+<svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 33.029 13.5 L 18.029 13.5 C 17.339 13.5 16.799 13.85 16.439 14.38 L 9.972 22.632 L 16.439 30.61 C 16.799 31.14 17.339 31.5 18.029 31.5 L 33.029 31.5 C 34.129 31.5 35.029 30.6 35.029 29.5 L 35.029 15.5 C 35.029 14.4 34.129 13.5 33.029 13.5 Z M 30.029 26.09 L 28.619 27.5 L 25.029 23.91 L 21.439 27.5 L 20.029 26.09 L 23.619 22.5 L 20.029 18.91 L 21.439 17.5 L 25.029 21.09 L 28.619 17.5 L 30.029 18.91 L 26.439 22.5 L 30.029 26.09 Z" style="fill: rgb(255, 255, 255);"/>
 </svg>
