@@ -601,36 +601,32 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="config" position="0,10*f" size="680*f,400*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
-	<screen name="HarddiskSelection" position="center,center" size="600,250">
-		<widget name="hddlist" position="15,10" size="570,150" scrollbarMode="showOnDemand"/>
+	<!--from Screens.HarddiskSetup-->
+	<screen name="HarddiskSelection" position="center,center" size="600*f,250*f">
+		<widget name="hddlist" position="15*f,10*f" size="570*f,150*f" scrollbarMode="showOnDemand" itemHeight="30*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="HarddiskSetup" position="center,center" size="600,250">
-		<widget name="model" position="15,10" size="570,28" font="Regular;22"/>
-		<widget name="capacity" position="15,50" size="570,28" font="Regular;22"/>
-		<widget name="bus" position="15,90" size="570,28" font="Regular;22"/>
+	<!--from Screens.HarddiskSetup-->
+	<screen name="HarddiskSetup" position="center,center" size="600*f,250*f">
+		<widget name="model" position="15*f,10*f" size="570*f,28*f" font="Regular;22*f"/>
+		<widget name="capacity" position="15*f,50*f" size="570*f,28*f" font="Regular;22*f"/>
+		<widget name="bus" position="15*f,90*f" size="570*f,28*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="HdmiCECSetupScreen" position="center,center" size="640,465">
-		<widget name="config" position="10,10" size="620,300" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget source="current_address" render="Label" position="10,330" size="620,25" font="Regular;22"/>
-		<widget source="fixed_address" render="Label" position="10,360" size="620,25" font="Regular;20"/>
-		<panel name="DynamicButtonsTemplate"/>
-	</screen>
-
-	<screen name="HelpMenu" position="center,center" size="740,565">
+	<!--from Screens.HelpMenu-->
+	<screen name="HelpMenu" position="center,center" size="740*f,565*f">
 		<panel name="RCTemplate"/>
-		<widget name="long_key" position="0,510" size="300,30" font="Regular;24" halign="center" foregroundColor="yellow"/>
-		<widget name="list" position="170,15" size="550,495" scrollbarMode="showOnDemand"/>
+		<widget name="list" position="170*f,15*f" size="550*f,480*f" scrollbarMode="showOnDemand" itemHeight="30*f" font="Regular;20*f"/>
+		<widget name="long_key" position="170*f,510*f" size="550*f,30*f" font="Regular;24*f"/>
 	</screen>
 
 	<!--from Screens.Hotkey-->
 	<screen name="HotkeySetup" position="center,center" size="740*f,565*f">
 		<widget name="list" position="5*f,10*f" size="335*f,484*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
 		<widget name="choosen" position="350*f,10*f" size="380*f,350*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
-		<widget name="description" position="350*f,410*f" size="360*f,100*f" font="Regular;20*f"/>
+		<widget name="description" position="350*f,410*f" size="360*f,100*f" font="Regular;30*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -644,45 +640,32 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="IPKGMenu" position="center,center" size="570,330">
-		<widget name="filelist" position="15,15" size="540,220" scrollbarMode="showOnDemand"/>
-		<panel name="DynamicButtonsTemplate"/>
-	</screen>
-
-	<screen name="IPKGSource" position="center,center" size="780,170">
-		<widget name="text" position="15,20" size="750,25" font="Regular;22"/>
-		<panel name="DynamicButtonsTemplate"/>
-	</screen>
-
-	<screen name="ImageWizard" position="0,0" size="1280,720" flags="wfNoBorder">
-		<panel name="DefaultWizardTemplate"/>
-	</screen>
-
 	<!--from Screens.InfoBar-->
 	<screen name="InfoBar" flags="wfNoBorder" position="0,570*f" size="1280*f,150*f">
 		<panel name="InfoBarTemplate"/>
 		<panel name="InfoBarVideoInfoTemplate"/>
 	</screen>
 
-	<screen name="InputBox" position="center,center" size="550,90">
-		<widget name="text" position="10,20" size="550,25" font="Regular;23"/>
-		<widget name="input" position="10,55" size="550,25" font="Regular;20"/>
+	<!--from Screens.InputBox-->
+	<screen name="InputBox" position="center,center" size="550*f,90*f">
+		<widget name="text" position="10*f,20*f" size="550*f,25*f" font="Regular;23*f"/>
+		<widget name="input" position="10*f,55*f" size="550*f,25*f" font="Regular;20*f"/>
 	</screen>
 
-	<screen name="InputDeviceSelection" position="center,center" size="570,380">
-		<widget source="list" render="Listbox" position="15,10" size="540,240" scrollbarMode="showOnDemand">
+	<!--from Screens.InputDeviceSetup-->
+	<screen name="InputDeviceSelection" position="center,center" size="570*f,380*f">
+		<widget source="list" render="Listbox" position="15*f,10*f" size="540*f,240*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 			<!--  device, description, devicepng, divpng  -->
 				{"template": [
-					MultiContentEntryPixmapAlphaTest(pos=(0, 6), size=(54, 54), png=2), # index 3 is the interface pixmap
-					MultiContentEntryText(pos=(65, 6), size=(605, 54), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=1), # index 1 is the interfacename
+					MultiContentEntryPixmapAlphaTest(pos=(3*f, 3*f), size=(54*f, 54*f), png=2, flags=BT_SCALE),  # index 3 is the interface pixmap
+					MultiContentEntryText(pos=(65*f, 6*f), size=(605*f, 54*f), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text=1),  # index 1 is the interfacename
 					],
-				"fonts": [gFont("Regular", 25)],
-				"itemHeight": 60}
+				"fonts": [gFont("Regular", 25*f)],
+				"itemHeight": 60*f}
 			</convert>
 		</widget>
-		<widget source="introduction" render="Label" position="15,270" size="540,25" font="Regular;22"/>
-
+		<widget source="introduction" render="Label" position="15*f,270*f" size="540*f,30*f" font="Regular;25*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -697,21 +680,16 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="IpkDownloadTemplate"/>
 	</screen>
 
-	<screen name="IpkgInstaller" position="center,center" size="620,460">
-		<widget name="list" position="0,10" size="620,300" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget name="introduction" position="15,330" size="590,50" font="Regular;22"/>
-		<panel name="DynamicButtonsTemplate"/>
-	</screen>
-
-	<screen name="JobView" position="center,center" size="533,250">
-		<widget source="job_name" render="Label" position="15,15" size="503,30" font="Regular;22"/>
-		<widget source="job_task" render="Label" position="15,55" size="503,25" font="Regular;20"/>
-		<widget source="job_progress" render="Label" position="15,85" size="110,25" font="Regular;20">
+	<!--from Screens.TaskView-->
+	<screen name="JobView" position="center,center" size="533*f,250*f">
+		<widget source="job_name" render="Label" position="15*f,15*f" size="503*f,30*f" font="Regular;22*f"/>
+		<widget source="job_task" render="Label" position="15*f,55*f" size="503*f,25*f" font="Regular;20*f"/>
+		<widget source="job_progress" render="Label" position="15*f,85*f" size="110*f,25*f" font="Regular;20*f">
 			<convert type="ProgressToText"/>
 		</widget>
-		<widget source="job_progress" render="Progress" position="125,90" size="403,10" borderWidth="1" borderColor="grey"/>
-		<widget source="job_status" render="Label" position="15,115" size="503,25" font="Regular;20"/>
-		<widget name="config" position="0,145" size="533,25"/>
+		<widget source="job_progress" render="Progress" position="125*f,88*f" size="403*f,14*f" borderWidth="1" borderColor="grey"/>
+		<widget source="job_status" render="Label" position="15*f,115*f" size="503*f,25*f" font="Regular;20*f"/>
+		<widget name="config" position="0,145*f" size="533*f,25*f" itemHeight="25*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -744,12 +722,13 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="wizard" pixmap="SimpleGray-HD/picon_default.png" position="40*f,650*f" size="100,60" alphatest="on"/>
 	</screen>
 
-	<screen name="LocationBox" position="center,center" size="720,525">
-		<widget name="text" position="15,10" size="690,25" font="Regular;20"/>
-		<widget name="target" position="15,40" size="690,25" font="Regular;20"/>
-		<widget name="filelist" position="5,75" size="710,200" scrollbarMode="showOnDemand" itemHeight="25"/>
-		<widget name="textbook" position="15,290" size="690,25" font="Regular;20"/>
-		<widget name="booklist" position="15,320" size="690,125" scrollbarMode="showOnDemand"/>
+	<!--from Screens.LocationBox-->
+	<screen name="LocationBox" position="center,center" size="720*f,525*f">
+		<widget name="text" position="15*f,10*f" size="690*f,25*f" font="Regular;20*f"/>
+		<widget name="target" position="15*f,40*f" size="690*f,25*f" font="Regular;20*f"/>
+		<widget name="filelist" position="5*f,75*f" size="710*f,200*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget name="textbook" position="15*f,290*f" size="690*f,25*f" font="Regular;20*f"/>
+		<widget name="booklist" position="15*f,320*f" size="690*f,125*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -809,6 +788,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="Menu_Template"/>
 	</screen>
 
+	<!--from Screens.Menu-->
 	<screen name="MenuSort" position="10*f,60*f" size="550*f,650*f">
 		<widget source="menu" render="Listbox" position="0,30*f" size="616*f,550*f" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
@@ -829,18 +809,21 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="MessageBox_Template"/>
 	</screen>
 
-	<screen name="MinuteInput" position="center,center" size="220,45" title="Seek">
-		<widget name="minutes" position="10,10" size="200,25" halign="right" font="Regular;20"/>
+	<!--from Screens.MinuteInput-->
+	<screen name="MinuteInput" position="center,center" size="220*f,45*f" title="Seek">
+		<widget name="minutes" position="10*f,10*f" size="200*f,25*f" halign="right" font="Regular;20*f"/>
 	</screen>
 
-	<screen name="MovieBrowserConfiguration" position="center,center" size="640,460">
-		<widget name="config" position="0,10" size="640,300" enableWrapAround="1" scrollbarMode="showOnDemand"/>
-		<widget name="description" position="15,330" size="610,50" font="Regular;20"/>
+	<!--from Screens.MovieSelection-->
+	<screen name="MovieBrowserConfiguration" position="center,center" size="640*f,460*f">
+		<widget name="config" position="0,10*f" size="640*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget name="description" position="15*f,330*f" size="610*f,50*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="MovieContextMenu" position="center,center" size="500,300" flags="wfNoBorder">
-		<widget name="menu" position="15,25" size="465,250" scrollbarMode="showOnDemand"/>
+	<!--from Screens.MovieSelection-->
+	<screen name="MovieContextMenu" position="center,center" size="400*f,290*f" flags="wfNoBorder">
+		<widget name="menu" position="15*f,25*f" size="365*f,240*f" scrollbarMode="showOnDemand" font="Regular;25*f"/>
 	</screen>
 
 	<!--from Screens.InfoBar-->
@@ -1208,8 +1191,9 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="RemoteControlType" position="center,center" size="520,240">
-		<widget name="config" position="0,10" size="520,100" scrollbarMode="showOnDemand"/>
+	<!--from Screens.InputDeviceSetup-->
+	<screen name="RemoteControlType" position="center,center" size="520*f,240*f">
+		<widget name="config" position="0,10*f" size="520*f,100*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -1671,9 +1655,8 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="pic" position="15*f,90*f" size="320*f,180*f" transparent="1" alphatest="on"/>
 		<widget name="description" position="350*f,90*f" size="360*f,300*f" font="Regular;16*f"/>
 		<widget name="views" position="15*f,290*f" size="150*f,20*f" font="Regular;16*f"/>
-		<widget name="duration" position="205*f,290*f" size="150*f,20*f" font="Regular;16*f"/>
+		<widget name="duration" position="205*f,290*f" size="140*f,20*f" font="Regular;16*f"/>
 		<widget name="likes" position="15*f,320*f" size="150*f,20*f" font="Regular;16*f"/>
-		<widget name="dislikes" position="205*f,320*f" size="150*f,20*f" font="Regular;16*f"/>
 		<widget name="published" position="15*f,350*f" size="300*f,20*f" font="Regular;16*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
@@ -1702,7 +1685,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	<!--Plugins.Extensions.YouTube.YouTubeUi-->
 	<screen name="YouTubeSearch" position="center,120*f" size="620*f,490*f">
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/YouTube/YouTube.svg" position="0,2*f" size="100*f,40*f" transparent="1" alphatest="on" />
-		<widget name="config" position="110*f,10*f" size="510*f,30*f" scrollbarMode="showNever"/>
+		<widget name="config" position="110*f,10*f" size="510*f,30*f" scrollbarMode="showNever" itemHeight="30*f" font="Regular;20*f"/>
 		<widget source="list" render="Listbox" position="0,43*f" size="620*f,273*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [MultiContentEntryText(pos=(15*f, 1*f), size=(590*f, 30*f), font=0, flags=RT_HALIGN_LEFT, text=0)],

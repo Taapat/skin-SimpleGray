@@ -13,7 +13,7 @@
 
 	<screen name="ConfigIntroductionLabelTemplate">
 		<widget name="config" position="0,10*f" size="520*f,100*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
-		<widget source="introduction" render="Label" position="15*f,130*f" size="490*f,25*f" font="Regular;22"/>
+		<widget source="introduction" render="Label" position="15*f,130*f" size="490*f,30*f" font="Regular;22*f"/>
 	</screen>
 
 	<screen name="ConfigIntroductionTemplate">
@@ -332,10 +332,10 @@ self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
 
 	<screen name="RCTemplate">
 		<widget name="rc" position="15,15" size="154,500" pixmaps="skin_default/rc.png,skin_default/rcold.png" alphatest="on"/>
-		<widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
-		<widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
-		<widget name="arrowup" pixmap="skin_default/arrowup.png" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
-		<widget name="arrowup2" pixmap="skin_default/arrowup.png" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+		<widget name="arrowdown" pixmap="skin_default/arrowdown.svg" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+		<widget name="arrowdown2" pixmap="skin_default/arrowdown.svg" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+		<widget name="arrowup" pixmap="skin_default/arrowup.svg" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+		<widget name="arrowup2" pixmap="skin_default/arrowup.svg" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
 	</screen>
 
 	<screen name="VKeyIconTemplate">
