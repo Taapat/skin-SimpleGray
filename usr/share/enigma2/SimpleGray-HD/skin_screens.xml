@@ -1336,13 +1336,14 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="ServiceInfo" position="center,center" size="740,565">
-		<widget name="infolist" position="15,10" size="710,491" selectionDisabled="1" itemHeight="31"/>
+	<!--from Screens.ServiceInfo-->
+	<screen name="ServiceInfo" position="center,center" size="740*f,550*f">
+		<widget name="infolist" position="15*f,10*f" size="710*f,480*f" selectionDisabled="1" itemHeight="30*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<screen name="ServiceInfoSimple" position="center,center" size="740,511">
-		<widget name="infolist" position="15,10" size="710,491" selectionDisabled="1" itemHeight="31"/>
+	<screen name="ServiceInfoSimple" position="center,center" size="740*f,550*f">
+		<widget name="infolist" position="15*f,10*f" size="710*f,480*f" selectionDisabled="1" itemHeight="30*f"/>
 	</screen>
 
 	<!--from Screens.ServiceScan-->
@@ -1385,23 +1386,35 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="list" position="15,10" size="692,498" scrollbarMode="showOnDemand"/>
 	</screen>
 
-	<screen name="SkinSelector" position="center,center" size="610,375">
-		<widget name="SkinList" position="15,10" size="280,250" scrollbarMode="showOnDemand"/>
-		<widget name="Preview" position="315,10" size="280,210" alphatest="on"/>
-		<widget source="introduction" render="Label" position="15,270" size="580,25" font="Regular;22"/>
+	<!--from Screens.SkinSelector-->
+	<screen name="SkinSelector" position="center,center" size="660*f,375*f">
+		<widget source="skins" render="Listbox" position="10*f,15*f" size="335*f,250*f" enableWrapAround="1" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos=(5*f, 0), size=(180*f, 25*f), flags=RT_HALIGN_LEFT, text=1),
+					MultiContentEntryText(pos=(185*f, 0), size=(145*f, 25*f), font=0, flags=RT_HALIGN_RIGHT, text=2)],
+				"fonts": [gFont("Regular",20*f)],
+				"itemHeight": 25*f}
+			</convert>
+		</widget>
+		<widget name="preview" position="370*f,10*f" size="280*f,210*f" alphatest="blend"/>
+		<widget source="description" render="Label" position="15*f,270*f" size="630*f,25*f" font="Regular;22*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
+	<!--from Screens.Standby-->
 	<screen name="Standby" position="fill" flags="wfNoBorder"/>
 
+	<!--from Screens.Standby-->
 	<screen name="StandbySummary" position="0,0" size="132,64">
 		<widget source="global.CurrentTime" render="Label" position="0,0" size="132,64" font="Regular;30" halign="center" valign="center">
 			<convert type="ClockToText">Format:%H:%M-%h.%d</convert>
 		</widget>
 	</screen>
 
-	<screen name="StreamingClientsInfo" position="center,center" size="640,360">
-		<widget name="menu" position="15,10" size="610,290" font="Regular;20" scrollbarMode="showOnDemand" itemHeight="29"/>
+	<!--from Screens.StreamingClientsInfo-->
+	<screen name="StreamingClientsInfo" position="center,center" size="640*f,360*f">
+		<widget name="menu" position="15*f,10*f" size="610*f,240*f" font="Regular;20*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
@@ -1416,10 +1429,11 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		</widget>
 	</screen>
 
-	<screen name="SubtitleDisplay" position="0,0" size="1280,720" zPosition="-1" flags="wfNoBorder" backgroundColor="transparent"/>
+	<screen name="SubtitleDisplay" position="fill" zPosition="-1" flags="wfNoBorder" backgroundColor="transparent"/>
 
-	<screen name="TextBox" position="center,center" size="600,465">
-		<widget name="text" position="15,10" size="570,440" font="Regular;20"/>
+	<!--from Screens.TextBox-->
+	<screen name="TextBox" position="center,center" size="600*f,465*f">
+		<widget name="text" position="15*f,10*f" size="570*f,440*f" font="Regular;20*f"/>
 	</screen>
 
 	<screen name="TimeDateInput" position="center,center" size="324,190">
