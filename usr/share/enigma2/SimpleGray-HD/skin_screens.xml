@@ -330,6 +330,13 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="entries" position="center,95*f" size="631*f,300*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
+	<!--from Screens.ClockDisplay-->
+	<screen name="clockDisplay" position="300*f,100*f" size="300*f,300*f">
+		<widget name="okbutton" position="10*f,10*f" size="280*f,40*f"/>
+		<widget name="title" position="10*f,120*f" size="280*f,50*f"/>
+		<widget name="theClock" position="10*f,60*f" size="280*f,50*f"/>
+	</screen>
+
 	<!--from Screens.About-->
 	<screen name="CommitInfo" position="center,center" size="530*f,460*f">
 		<widget name="AboutScrollLabel" position="15*f,10*f" size="500*f,370*f" font="Regular;20*f" halign="left"/>
@@ -337,7 +344,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	</screen>
 
 	<screen name="Config" position="center,center" size="580*f,350*f">
-		<widget name="config" position="0,10*f" size="580*f,200*f" enableWrapAround="1" scrollbarMode="showOnDemand"/>
+		<widget name="config" position="0,10*f" size="580*f,200*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<widget name="statusbar" position="15*f,210*f" size="650*f,25*f" font="Regular;20*f"/>
 		<widget name="status" position="15*f,235*f" size="650*f,50*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
@@ -348,6 +355,11 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="config" position="0,10*f" size="640*f,150*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<widget name="HelpWindow" position="400*f,370*f" size="1,1" zPosition="5" pixmap="buttons/key_text.svg" transparent="1" alphatest="on"/>
 		<panel name="DynamicButtonsTemplate"/>
+	</screen>
+
+	<!--from Screens.ConfigMenu-->
+	<screen name="configTest" position="300*f,100*f" size="300*f,300*f">
+		<widget name="config" position="10*f,30*f" size="420*f,200*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
 	<!--from Screens.Console-->
@@ -809,6 +821,14 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="minutes" position="10*f,10*f" size="200*f,25*f" halign="right" font="Regular;20*f"/>
 	</screen>
 
+	<!--from Screens.Ci-->
+	<screen name="MMIDialog" position="center,center" size="450*f,270*f">
+		<widget name="title" position="10*f,10*f" size="430*f,25*f" font="Regular;20*f"/>
+		<widget name="subtitle" position="10*f,35*f" size="430*f,25*f" font="Regular;20*f"/>
+		<widget name="entries" position="10*f,70*f" size="430*f,150*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<widget name="bottom" position="10*f,230*f" size="430*f,25*f" font="Regular;20*f"/>
+	</screen>
+
 	<!--from Screens.MovieSelection-->
 	<screen name="MovieBrowserConfiguration" position="center,center" size="640*f,460*f">
 		<widget name="config" position="0,10*f" size="640*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
@@ -1039,6 +1059,11 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="text" position="0,0" size="800*f,200*f" font="Regular;22*f" backgroundColor="transparent" transparent="1" borderColor="black" borderWidth="3" valign="center" halign="center"/>
 	</screen>
 
+	<!--from Screens.PictureInPicture-->
+	<screen name="PictureInPicture" position="400*f,60*f" zPosition="-1" size="240*f,192*f" flags="wfNoBorder">
+		<widget name="video" position="0,0" size="240*f,192*f" backgroundColor="transparent"/>
+	</screen>
+
 	<!--from Plugins.Extensions.PicturePlayer.ui-->
 	<screen name="Pic_Exif" position="center,center" size="650*f,440*f">
 		<widget source="menu" render="Listbox" position="10*f,10*f" size="630*f,350*f" scrollbarMode="showOnDemand" selectionDisabled="1">
@@ -1172,6 +1197,32 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 				<convert type="RdsInfo">RasInteractiveAvailable</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
+	</screen>
+
+	<!--from Screens.RdsDisplay-->
+	<screen name="RassInteractive" position="50*f,180*f" size="100*f,275*f" backgroundColor="transparent" flags="wfNoBorder">
+		<ePixmap pixmap="icons/rass_logo.svg" position="25,0" size="50,21" transparent="1" alphatest="on"/>
+		<eLabel text="Index" position="36*f,25*f" size="60*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<eLabel text="0" position="5*f,25*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="Marker" position="21*f,25*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<eLabel text="1" position="5*f,50*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_1" position="35*f,50*f" size="36*f,20*f" alphatest="on"/>
+		<eLabel text="2" position="5*f,75*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_2" position="35*f,75*f" size="36*f,20*f" alphatest="on"/>
+		<eLabel text="3" position="5*f,100*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_3" position="35*f,100*f" size="36*f,20*f" alphatest="on"/>
+		<eLabel text="4" position="5*f,125*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_4" position="35*f,125*f" size="36*f,20*f" alphatest="on"/>
+		<eLabel text="5" position="5*f,150*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_5" position="35*f,150*f" size="36*f,20*f" alphatest="on"/>
+		<eLabel text="6" position="5*f,175*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_6" position="35*f,175*f" size="36*f,20*f" alphatest="on"/>
+		<eLabel text="7" position="5*f,200*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_7" position="35*f,200*f" size="36*f,20*f" alphatest="on"/>
+		<eLabel text="8" position="5*f,225*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_8" position="35*f,225*f" size="36*f,20*f" alphatest="on"/>
+		<eLabel text="9" position="5*f,250*f" size="16*f,25*f" font="Regular;21*f" backgroundColor="transparent"/>
+		<widget name="subpages_9" position="35*f,250*f" size="36*f,20*f" alphatest="on"/>
 	</screen>
 
 	<!--from Screens.RdsDisplay-->
