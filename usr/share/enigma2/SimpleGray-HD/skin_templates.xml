@@ -30,7 +30,7 @@
 		<widget source="list" render="Listbox" position="200*f,250*f" size="550*f,250*f" scrollbarMode="showOnDemand">
 			<convert type="StringList"/>
 		</widget>
-		<widget name="config" position="200*f,250*f" size="450*f,250*f" scrollbarMode="showOnDemand"/>
+		<widget name="config" position="200*f,250*f" size="450*f,250*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<widget name="wizard" pixmap="picon_default.png" position="40*f,650*f" size="100,60" alphatest="on"/>
 	</screen>
 

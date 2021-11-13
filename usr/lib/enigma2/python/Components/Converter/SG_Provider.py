@@ -10,7 +10,7 @@ from Components.Element import cached
 from Screens.ChannelSelection import service_types_radio, service_types_tv
 
 
-class SGProvider(Converter, object):
+class SG_Provider(Converter, object):
 	def __init__(self, type):
 		Converter.__init__(self, type)
 
@@ -46,8 +46,8 @@ class SGProvider(Converter, object):
 									info = serviceHandler.info(provider)
 									if info:
 										return info.getName(provider)
-									return ""
-		return ""
+									return ''
+		return ''
 
 	text = property(getText)
 

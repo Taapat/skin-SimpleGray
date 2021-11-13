@@ -239,8 +239,8 @@
 		<widget source="ServiceEvent" render="Picon" position="785*f,75*f" size="100*f,60*f" transparent="1" alphatest="blend">
 			<convert type="ServiceName">Reference</convert>
 		</widget>
-		<widget source="ServiceEvent" render="SGPiconProv" position="925*f,75*f" size="100*f,60*f" transparent="1" alphatest="blend">
-			<convert type="SGProvider"/>
+		<widget source="ServiceEvent" render="SG_PiconProv" position="925*f,75*f" size="100*f,60*f" transparent="1" alphatest="blend">
+			<convert type="SG_Provider"/>
 		</widget>
 		<widget source="ServiceEvent" render="Label" position="735*f,140*f" size="340*f,25*f" valign="center" font="Regular;20*f">
 			<convert type="EventName">Name</convert>

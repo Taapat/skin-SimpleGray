@@ -11,7 +11,7 @@ searchPaths = []
 if pathExists('/tmp/piconProv/'):
 	piconInTmp = True
 	lastPiconPath = '/tmp/piconProv/'
-	print("[PiconProv] use path:", lastPiconPath)
+	print('[PiconProv] use path:', lastPiconPath)
 else:
 	piconInTmp = False
 	lastPiconPath = None
@@ -37,7 +37,7 @@ def onMountpointAdded(mountpoint):
 					searchPaths.append(piconPath)
 					break
 	except Exception, ex:
-		print("[PiconProv] Failed to investigate %s:" % mountpoint, ex)
+		print('[PiconProv] Failed to investigate %s:' % mountpoint, ex)
 
 
 def onMountpointRemoved(mountpoint):
@@ -45,7 +45,7 @@ def onMountpointRemoved(mountpoint):
 	path = os.path.join(mountpoint, 'piconProv') + '/'
 	try:
 		searchPaths.remove(path)
-		print("[PiconProv] removed path:", path)
+		print('[PiconProv] removed path:', path)
 	except:
 		pass
 
@@ -60,12 +60,12 @@ def onPartitionChange(why, part):
 def findPicon(serviceName):
 	global lastPiconPath
 	if lastPiconPath:
-		pngname = lastPiconPath + serviceName + ".png"
+		pngname = lastPiconPath + serviceName + '.png'
 		if pathExists(pngname):
 			return pngname
 	if not piconInTmp:
 		for piconPath in searchPaths:
-			pngname = piconPath + serviceName + ".png"
+			pngname = piconPath + serviceName + '.png'
 			if pngname:
 				if pathExists(pngname):
 					lastPiconPath = piconPath
@@ -74,17 +74,17 @@ def findPicon(serviceName):
 
 
 def getPiconName(serviceName):
-	if not serviceName or serviceName is "Unknown":
+	if not serviceName or serviceName is 'Unknown':
 		return None
 	sname = serviceName.upper()
 	pngname = findPicon(sname)
 	return pngname
 
 
-class SGPiconProv(Renderer):
+class SG_PiconProv(Renderer):
 	def __init__(self):
 		Renderer.__init__(self)
-		self.pngname = ""
+		self.pngname = ''
 
 	def addPath(self, value):
 		if pathExists(value):
@@ -97,7 +97,7 @@ class SGPiconProv(Renderer):
 	def applySkin(self, desktop, parent):
 		attribs = self.skinAttributes[:]
 		for (attrib, value) in self.skinAttributes:
-			if attrib is "path":
+			if attrib is 'path':
 				self.addPath(value)
 				attribs.remove((attrib, value))
 		self.skinAttributes = attribs
@@ -112,7 +112,7 @@ class SGPiconProv(Renderer):
 				pngname = getPiconName(self.source.text)
 			if self.pngname is not pngname:
 				if pngname:
-					#self.instance.setScale(1)
+					self.instance.setScale(1)
 					self.instance.setPixmapFromFile(pngname)
 					self.instance.show()
 				else:
