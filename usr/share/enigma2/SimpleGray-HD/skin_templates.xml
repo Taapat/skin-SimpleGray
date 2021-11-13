@@ -4,11 +4,11 @@
 	<!-- Templates -->
 
 	<screen name="CancelOKTemplate">
-		<eLabel position="10,e-50" size="150,40" zPosition="-5" backgroundColor="red"/>
-		<eLabel position="164,e-50" size="150,40" zPosition="-5" backgroundColor="green"/>
+		<eLabel position="10*f,e-50*f" size="150*f,40*f" zPosition="-5" backgroundColor="red"/>
+		<eLabel position="164*f,e-50*f" size="150*f,40*f" zPosition="-5" backgroundColor="green"/>
 
-		<widget name="canceltext" position="12,e-48" size="146,36" font="Regular;22" halign="center" valign="center"/>
-		<widget name="oktext" position="166,e-48" size="146,36" font="Regular;22" halign="center" valign="center"/>
+		<widget name="canceltext" position="12*f,e-48*f" size="146*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="oktext" position="166*f,e-48*f" size="146*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 	</screen>
 
 	<screen name="ConfigIntroductionLabelTemplate">
@@ -23,15 +23,15 @@
 
 	<screen name="DefaultWizardTemplate">
 		<panel name="RCTemplate"/>
-		<eLabel position="30,535" size="15,15" backgroundColor="red"/>
-		<eLabel position="32,537" size="11,11"/>
-		<widget name="languagetext" position="55,530" size="200,25" font="Regular;20"/>
-		<widget name="text" position="200,50" size="940,200" font="Regular;23"/>
-		<widget source="list" render="Listbox" position="200,250" size="550,250" scrollbarMode="showOnDemand">
+		<eLabel position="30*f,535*f" size="15*f,15*f" backgroundColor="red"/>
+		<eLabel position="32*f,537*f" size="11*f,11*f"/>
+		<widget name="languagetext" position="55*f,530*f" size="200*f,25*f" font="Regular;20*f"/>
+		<widget name="text" position="200*f,50*f" size="940*f,200*f" font="Regular;23*f"/>
+		<widget source="list" render="Listbox" position="200*f,250*f" size="550*f,250*f" scrollbarMode="showOnDemand">
 			<convert type="StringList"/>
 		</widget>
-		<widget name="config" position="200,250" size="450,250" scrollbarMode="showOnDemand"/>
-		<widget name="wizard" pixmap="SimpleGray-HD/picon_default.png" position="40,650" size="100,60" alphatest="on"/>
+		<widget name="config" position="200*f,250*f" size="450*f,250*f" scrollbarMode="showOnDemand"/>
+		<widget name="wizard" pixmap="picon_default.png" position="40*f,650*f" size="100,60" alphatest="on"/>
 	</screen>
 
 	<screen name="DynamicButtonsTemplate">
@@ -229,10 +229,10 @@
 
 	<screen name="MessageBox_Template">
 		<widget name="text" position="71*f,0" size="514*f,50*f" font="Regular;22*f"/>
-		<widget name="ErrorPixmap" pixmap="SimpleGray-HD/skin_default/icons/input_error.svg" position="10*f,0" size="53*f,53*f" alphatest="on"/>
-		<widget name="QuestionPixmap" pixmap="SimpleGray-HD/skin_default/icons/input_question.svg" position="10*f,0" size="53*f,53*f" alphatest="on"/>
-		<widget name="InfoPixmap" pixmap="SimpleGray-HD/skin_default/icons/input_info.svg" position="10*f,0" size="53*f,53*f" alphatest="on"/>
-		<widget name="WarningPixmap" pixmap="SimpleGray-HD/skin_default/icons/input_warning.svg" position="10*f,0*f" size="53*f,53*f" alphatest="on"/>
+		<widget name="ErrorPixmap" pixmap="icons/input_error.svg" position="10*f,0" size="53*f,53*f" alphatest="on"/>
+		<widget name="QuestionPixmap" pixmap="icons/input_question.svg" position="10*f,0" size="53*f,53*f" alphatest="on"/>
+		<widget name="InfoPixmap" pixmap="icons/input_info.svg" position="10*f,0" size="53*f,53*f" alphatest="on"/>
+		<widget name="WarningPixmap" pixmap="icons/input_warning.svg" position="10*f,0*f" size="53*f,53*f" alphatest="on"/>
 		<widget name="list" position="15*f,60*f" size="0,0" font="Regular;22*f" itemHeight="30*f"/>
 		<applet type="onLayoutFinish">
 from enigma import eSize, ePoint
@@ -272,10 +272,10 @@ self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
 	</screen>
 
 	<screen name="PinInput_Template">
-		<widget name="service" position="15,10" size="470,25" font="Regular;20"/>
-		<widget name="text" position="15,40" size="470,25" font="Regular;20"/>
-		<widget name="tries" position="15,70" size="470,25" font="Regular;20"/>
-		<widget name="input" position="15,110" size="470,40" font="Regular;50"/>
+		<widget name="service" position="15*f,10*f" size="470*f,25*f" font="Regular;20*f"/>
+		<widget name="text" position="15*f,40*f" size="470*f,25*f" font="Regular;20*f"/>
+		<widget name="tries" position="15*f,70*f" size="470*f,25*f" font="Regular;20*f"/>
+		<widget name="input" position="15*f,110*f" size="470*f,30*f" font="Regular;25*f"/>
 	</screen>
 
 	<screen name="PlayerTemplate">
