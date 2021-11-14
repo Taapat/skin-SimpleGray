@@ -1565,7 +1565,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 			<convert type="ServicePosition">Position</convert>
 		</widget>
 		<eLabel position="205*f,471*f" size="300*f,3*f" backgroundColor="grey"/>
-		<widget name="Timeline" position="205*f,465*f" size="300*f,16*f" zPosition="2" transparent="1" pointer="window/pointer.svg:16,3"/>
+		<widget name="Timeline" position="205*f,465*f" size="300*f,16*f" zPosition="2" transparent="1" pointer="skin/pointer.svg:16,3"/>
 		<widget source="session.CurrentService" render="Label" position="515*f,460*f" size="100*f,25*f" font="Regular;20*f">
 			<convert type="ServicePosition">Remaining</convert>
 		</widget>

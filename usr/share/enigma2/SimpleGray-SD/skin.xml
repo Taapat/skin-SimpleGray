@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <skin>
 	<output id="0">
-		<resolution xres="1920" yres="1080" bpp="32"/>
+		<resolution xres="720" yres="576" bpp="32"/>
 	</output>
 
 	<include filename="/usr/share/enigma2/SimpleGray-HD/skin_screens.xml"/>
