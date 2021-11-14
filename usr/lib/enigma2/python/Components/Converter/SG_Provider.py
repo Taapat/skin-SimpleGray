@@ -26,9 +26,9 @@ class SG_Provider(Converter, object):
 			providerlist = serviceHandler.list(eServiceReference(
 				'%s (channelID == %08x%04x%04x) && %s FROM PROVIDERS ORDER BY name' %
 					(typestr[:20],
-					ref.getUnsignedData(4), # NAMESPACE
-					ref.getUnsignedData(2), # TSID
-					ref.getUnsignedData(3), # ONID
+					ref.getUnsignedData(4),  # NAMESPACE
+					ref.getUnsignedData(2),  # TSID
+					ref.getUnsignedData(3),  # ONID
 					typestr[20:])))
 			if providerlist is not None:
 				while True:

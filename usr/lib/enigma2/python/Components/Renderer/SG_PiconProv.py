@@ -36,7 +36,7 @@ def onMountpointAdded(mountpoint):
 					print("[PiconProv] adding path:", piconPath)
 					searchPaths.append(piconPath)
 					break
-	except Exception, ex:
+	except Exception as ex:
 		print('[PiconProv] Failed to investigate %s:' % mountpoint, ex)
 
 
@@ -46,14 +46,14 @@ def onMountpointRemoved(mountpoint):
 	try:
 		searchPaths.remove(path)
 		print('[PiconProv] removed path:', path)
-	except:
+	except ValueError:
 		pass
 
 
 def onPartitionChange(why, part):
-	if why is 'add':
+	if why == 'add':
 		onMountpointAdded(part.mountpoint)
-	elif why is 'remove':
+	elif why == 'remove':
 		onMountpointRemoved(part.mountpoint)
 
 
@@ -74,7 +74,7 @@ def findPicon(serviceName):
 
 
 def getPiconName(serviceName):
-	if not serviceName or serviceName is 'Unknown':
+	if not serviceName or serviceName == 'Unknown':
 		return None
 	sname = serviceName.upper()
 	pngname = findPicon(sname)
@@ -97,7 +97,7 @@ class SG_PiconProv(Renderer):
 	def applySkin(self, desktop, parent):
 		attribs = self.skinAttributes[:]
 		for (attrib, value) in self.skinAttributes:
-			if attrib is 'path':
+			if attrib == 'path':
 				self.addPath(value)
 				attribs.remove((attrib, value))
 		self.skinAttributes = attribs
