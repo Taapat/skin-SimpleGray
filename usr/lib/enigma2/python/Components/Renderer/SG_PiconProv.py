@@ -8,6 +8,7 @@ from Tools.Directories import pathExists
 
 
 searchPaths = []
+
 if pathExists('/tmp/piconProv/'):
 	piconInTmp = True
 	lastPiconPath = '/tmp/piconProv/'
@@ -28,26 +29,21 @@ def initPiconPaths():
 
 def onMountpointAdded(mountpoint):
 	global searchPaths
-	try:
-		piconPath = os.path.join(mountpoint, 'piconProv') + '/'
-		if os.path.isdir(piconPath) and piconPath not in searchPaths:
-			for fn in os.listdir(piconPath):
-				if fn[-4:] == '.png':
-					print("[PiconProv] adding path:", piconPath)
-					searchPaths.append(piconPath)
-					break
-	except Exception as ex:
-		print('[PiconProv] Failed to investigate %s:' % mountpoint, ex)
+	piconPath = os.path.join(mountpoint, 'piconProv') + '/'
+	if os.path.isdir(piconPath) and piconPath not in searchPaths:
+		for fn in os.listdir(piconPath):
+			if fn[-4:] == '.png' or fn[-4:] == '.svg':
+				print("[PiconProv] adding path:", piconPath)
+				searchPaths.append(piconPath)
+				break
 
 
 def onMountpointRemoved(mountpoint):
 	global searchPaths
 	path = os.path.join(mountpoint, 'piconProv') + '/'
-	try:
+	if path in searchPaths:
 		searchPaths.remove(path)
 		print('[PiconProv] removed path:', path)
-	except ValueError:
-		pass
 
 
 def onPartitionChange(why, part):
@@ -60,16 +56,18 @@ def onPartitionChange(why, part):
 def findPicon(serviceName):
 	global lastPiconPath
 	if lastPiconPath:
-		pngname = lastPiconPath + serviceName + '.png'
-		if pathExists(pngname):
-			return pngname
+		for ext in ('.png', '.svg'):
+			pngname = lastPiconPath + serviceName + ext
+			if pathExists(pngname):
+				return pngname
 	if not piconInTmp:
 		for piconPath in searchPaths:
-			pngname = piconPath + serviceName + '.png'
-			if pngname:
-				if pathExists(pngname):
-					lastPiconPath = piconPath
-					return pngname
+			for ext in ('.png', '.svg'):
+				pngname = piconPath + serviceName + ext
+				if pngname:
+					if pathExists(pngname):
+						lastPiconPath = piconPath
+						return pngname
 	return None
 
 
