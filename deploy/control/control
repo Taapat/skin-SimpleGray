@@ -1,0 +1,9 @@
+Package: enigma2-plugin-skins-simple-gray
+Version:
+Description: Simple and clean multi resolution skin SimpleGray by Taapat
+Section: base
+Priority: optional
+Maintainer: Taapat
+License: GPLv3
+Architecture: all
+OE: enigma2-plugin-skins-simple-gray
