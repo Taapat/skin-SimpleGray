@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 30 25" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-  <path d="M 48.549 32.589 H 52.049 V 38.339 H 58.299 V 41.839 H 52.049 V 47.589 H 48.549 V 41.839 H 42.299 V 38.339 H 48.549 Z" style="fill: rgb(255, 255, 255);" transform="matrix(1, 0.00003, -0.00003, 1, -35.297298, -27.59001)" bx:shape="cross 42.299 32.589 16 15 3.5 3.5 0.5 1@bb04eaa6"/>
-  <rect x="3.5" y="3" width="1" height="19" style="fill: rgb(255, 255, 255);"/>
-  <rect x="25.502" y="3" width="1" height="19" style="fill: rgb(255, 255, 255);"/>
-  <rect x="3.5" y="21" width="23" height="1" style="fill: rgb(255, 255, 255);"/>
-  <rect x="3.502" y="3" width="23" height="1" style="fill: rgb(255, 255, 255);"/>
+<svg viewBox="0 0 30 25" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 14 7.167 L 16 7.167 L 16 11.5 L 20.333 11.5 L 20.333 13.5 L 16 13.5 L 16 17.833 L 14 17.833 L 14 13.5 L 9.667 13.5 L 9.667 11.5 L 14 11.5 Z" style="fill: rgb(255, 255, 255);" transform="matrix(1, 0.00003, -0.00003, 1, 0.000375, -0.00045)"/>
+  <rect x="7" y="4.5" width="16" height="16" style="fill: none; stroke: rgb(255, 255, 255);"/>
 </svg>
