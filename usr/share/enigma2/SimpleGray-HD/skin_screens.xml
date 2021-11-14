@@ -646,16 +646,16 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.Hotkey-->
 	<screen name="HotkeySetup" position="center,center" size="740*f,565*f">
-		<widget name="list" position="5*f,10*f" size="335*f,484*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
-		<widget name="choosen" position="350*f,10*f" size="380*f,350*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
+		<widget name="list" position="5*f,10*f" size="335*f,484*f" scrollbarMode="showOnDemand" itemHeight="25*f"/>
+		<widget name="choosen" position="350*f,10*f" size="380*f,350*f" scrollbarMode="showOnDemand" itemHeight="25*f"/>
 		<widget name="description" position="350*f,410*f" size="360*f,100*f" font="Regular;30*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
 	<!--from Screens.Hotkey-->
 	<screen name="HotkeySetupSelect" position="center,center" size="740*f,565*f">
-		<widget name="list" position="5*f,10*f" size="335*f,484*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
-		<widget name="choosen" position="350*f,10*f" size="390*f,350*f" scrollbarMode="showOnDemand" itemHeight="30*f"/>
+		<widget name="list" position="5*f,10*f" size="335*f,484*f" scrollbarMode="showOnDemand" itemHeight="25*f"/>
+		<widget name="choosen" position="350*f,10*f" size="390*f,350*f" scrollbarMode="showOnDemand" itemHeight="25*f"/>
 		<widget name="description" position="350*f,410*f" size="360*f,100*f" font="Regular;20*f"/>
 		<widget name="h_prev" pixmap="buttons/key_prev.svg" alphatest="on" position="646*f,470*f" size="35*f,25*f"/>
 		<widget name="h_next" pixmap="buttons/key_next.svg" alphatest="on" position="685*f,470*f" size="35*f,25*f"/>
@@ -1454,13 +1454,6 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.Standby-->
 	<screen name="Standby" position="fill" flags="wfNoBorder"/>
-
-	<!--from Screens.Standby-->
-	<screen name="StandbySummary" position="0,0" size="132*f,64*f">
-		<widget source="global.CurrentTime" render="Label" position="0,0" size="132*f,64*f" font="Regular;30*f" halign="center" valign="center">
-			<convert type="ClockToText">Format:%H:%M-%h.%d</convert>
-		</widget>
-	</screen>
 
 	<!--from Screens.StreamingClientsInfo-->
 	<screen name="StreamingClientsInfo" position="center,center" size="640*f,360*f">
