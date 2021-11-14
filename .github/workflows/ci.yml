@@ -35,7 +35,7 @@ jobs:
           flake8 --ignore=W191,E128,E131,E117
   deploy:
     needs: test-python
-    if: always() && !contains(github.event.head_commit.message,'skip-release') && github.event_name == 'push' && (needs.test-python.result == 'success') && github.repository == 'Taapat/skin-SimpleGray' && github.ref == 'refs/heads/master'
+    if: always() && !contains(github.event.head_commit.message,'skip-release') && github.event_name == 'push' && needs.test-python.result == 'success' && github.repository == 'Taapat/skin-SimpleGray' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
