@@ -215,6 +215,11 @@
 		<widget name="status" position="0,0" size="200*f,34*f" backgroundColor="transparent" transparent="1" font="Replacement;26*f" borderColor="grey" borderWidth="2" valign="center" halign="center"/>
 	</screen>
 
+	<!--from Plugins.SystemPlugins.CableScan.plugin-->
+	<screen name="CableScanStatus" position="center,center" size="460*f,190*f">
+		<panel name="ScanStatusTemplate"/>
+	</screen>
+
 	<!--from Plugins.SystemPlugins.CommonInterfaceAssignment.plugin-->
 	<screen name="CIselectMainMenu" position="center,center" size="740*f,565*f">
 		<widget name="CiList" position="center,45*f" size="631*f,300*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
@@ -394,6 +399,12 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<!--eLabel text="OK=Menu" position="1059,615" size="140,22" zPosition="1" font="Regular;20" backgroundColor="back" /-->
 	</screen>
 
+	<!--from Plugins.SystemPlugins.DefaultServicesScanner.plugin-->
+	<screen name="DefaultServiceScan" position="center,center" size="620*f,450*f">
+		<panel name="ServiceScanTemplate"/>
+		<panel name="DynamicButtonsTemplate"/>
+	</screen>
+
 	<!--from Screens.DVD-->
 	<screen name="DVDPlayer" flags="wfNoBorder" position="0,610*f" size="1280*f,110*f">
 		<panel name="PlayerTemplate"/>
@@ -532,6 +543,11 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
+	<!--from Plugins.SystemPlugins.FastScan.plugin-->
+	<screen name="FastScanStatus" position="center,center" size="460*f,190*f">
+		<panel name="ScanStatusTemplate"/>
+	</screen>
+
 	<!--from Plugins.Extensions.DVDBurn.ProjectSettings-->
 	<screen name="FileBrowser" position="center,center" size="640*f,400*f">
 		<widget name="filelist" position="5*f,10*f" size="620*f,300*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
@@ -624,8 +640,8 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	<!--from Screens.HelpMenu-->
 	<screen name="HelpMenu" position="center,center" size="740*f,565*f">
 		<panel name="RCTemplate"/>
-		<widget name="list" position="170*f,15*f" size="550*f,480*f" scrollbarMode="showOnDemand" itemHeight="30*f" font="Regular;20*f"/>
-		<widget name="long_key" position="170*f,510*f" size="550*f,30*f" font="Regular;24*f"/>
+		<widget name="list" position="170,15*f" size="e-140-40*f,480*f" scrollbarMode="showOnDemand" itemHeight="30*f" font="Regular;20*f"/>
+		<widget name="long_key" position="170,510*f" size="e-140-40*f,30*f" font="Regular;24*f"/>
 	</screen>
 
 	<!--from Screens.Hotkey-->
@@ -1301,7 +1317,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<!--from Plugins.SystemPlugins.FastScan.plugin-->
+	<!--from Screens.ScanSetup-->
 	<screen name="ScanSetup" position="center,center" size="620*f,460*f">
 		<panel name="ConfigIntroductionTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
@@ -1401,27 +1417,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.ServiceScan-->
 	<screen name="ServiceScan" position="center,center" size="620*f,450*f">
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.svg" position="15*f,8*f" size="64*f,64*f" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">0,0</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-c.svg" position="15*f,8*f" size="64*f,64*f" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">1,1</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-t.svg" position="15*f,8*f" size="64*f,64*f" transparent="1" alphatest="on">
-			<convert type="FrontendInfo">TYPE</convert>
-			<convert type="ValueRange">2,2</convert>
-			<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget name="network" position="95*f,10*f" size="510*f,25*f" font="Regular;20*f"/>
-		<widget name="transponder" position="95*f,40*f" size="510*f,25*f" font="Regular;20*f"/>
-		<widget name="scan_progress" position="15*f,80*f" size="590*f,20*f" foregroundColor="grey" borderWidth="1" borderColor="white"/>
-		<widget name="scan_state" position="15*f,110*f" size="590*f,25*f" zPosition="2" font="Regular;20*f"/>
-		<widget name="pass" position="15*f,140*f" size="590*f,25*f" font="Regular;20*f"/>
-		<widget name="servicelist" position="15*f,170*f" size="590*f,200*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
+		<panel name="ServiceScanTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
