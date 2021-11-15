@@ -7,6 +7,8 @@ on:
   pull_request:
     paths-ignore:
       - 'README.md'
+  schedule:
+    - cron:  '0 6 * * *'
 
 jobs:
   test-python:
@@ -33,6 +35,36 @@ jobs:
       - name: Check code with flake8
         run: |
           flake8 --ignore=W191,E128,E131,E117
+  test-skin:
+    needs: test-python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set enigma2 repository
+        uses: actions/checkout@v2
+        with:
+          repository: 'OpenPLi/enigma2'
+          ref: 'develop'
+          path: './enigma2'
+      - name: Set up Python 2.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: '2.7'
+      - name: Install dependencies
+        run: |
+          pip install twisted pyopenssl service_identity
+      - name: Setup skin files for test
+        run: |
+          cp -R usr/lib/enigma2/* enigma2/lib
+          cp -R usr/share/enigma2/SimpleGray-HD enigma2/data
+          cp usr/share/fonts/* enigma2/data/fonts
+      - name: Patch enigma
+        run: |
+          sed -i 's/DEFAULT_SKIN = Sys/DEFAULT_SKIN = "SimpleGray-HD\/skin.xml"  # Sys/g' enigma2/lib/python/skin.py
+          sed -i 's/reloadWindowStyles()  #/# reloadWindowStyles()  #/g' enigma2/lib/python/skin.py
+      - name: ========== Test skin screens load ==========
+        run: |
+          PYTHONPATH=./test:./enigma2:./enigma2/lib/python python ./test/check_skin.py
   deploy:
     needs: test-python
     if: always() && !contains(github.event.head_commit.message,'skip-release') && github.event_name == 'push' && needs.test-python.result == 'success' && github.repository == 'Taapat/skin-SimpleGray' && github.ref == 'refs/heads/master'
