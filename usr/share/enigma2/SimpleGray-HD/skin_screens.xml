@@ -438,14 +438,14 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="posGoto" position="52*f,160*f" size="70*f,20*f" font="Regular;20*f" shadowColor="black" shadowOffset="-2,-2"/>
 	</screen>
 
-	<!--from Plugins.Extensions.EPGSearchSetup-->
+	<!--Plugins.Extensions.EPGSearchSetup-->
 	<screen name="EPGSearchSetup" position="center,center" size="640*f,470*f">
 		<widget name="config" position="0,10*f" size="640*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<widget source="help" render="Label" position="15*f,330*f" size="610*f,50*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<!--from Screens.EPGSelection-->
+	<!--from Screens.EpgSelection-->
 	<screen name="EPGSelection" position="center,100*f" size="770*f,580*f">
 		<widget source="Event" render="Label" position="15*f,10*f" size="740*f,30*f" font="Replacement;26*f">
 			<convert type="EventName">Name</convert>
@@ -479,7 +479,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<!--from Screens.EPGSelection as EPGSelectionMulti-->
+	<!--Screens.EPGSelection-->
 	<screen name="EPGSelectionMulti" position="center,100*f" size="1090*f,580*f">
 		<widget name="now_button" pixmap="buttons/grey.svg" position="15*f,10*f" size="140*f,40*f" alphatest="on"/>
 		<widget name="now_button_sel" pixmap="buttons/white.svg" position="15*f,10*f" size="140*f,40*f" alphatest="on"/>
@@ -513,7 +513,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget source="key_blue" render="Label" position="629*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 	</screen>
 
-	<!--from Screens.EventView-->
+	<!--Screens.EventView-->
 	<screen name="EventView" position="center,100*f" size="770*f,580*f">
 		<widget name="channel" position="15*f,10*f" size="740*f,30*f" font="Replacement;26*f"/>
 		<widget name="datetime" position="15*f,50*f" size="740*f,25*f" font="Regular;20*f"/>
@@ -603,7 +603,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="key_blue" render="Label" position="629*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 	</screen>
 
-	<!--from Plugins.Extensions.GraphMultiEPG.GraphMultiEpg as GraphMultiEPGList-->
+	<!--Plugins.Extensions.GraphMultiEPG.GraphMultiEpg-->
 	<screen name="GraphMultiEPGList" position="center,center" size="370*f,526*f">
 		<widget name="timeline_text" position="15*f,10*f" size="740*f,26*f" foregroundColor="white"/>
 		<widget name="list" position="15*f,36*f" size="740*f,420*f" scrollbarMode="showOnDemand" backgroundColor="black"/>
@@ -968,7 +968,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<!--from Plugins.SystemPlugins.NetworkBrowser.NetworkBrowser-->
+	<!--Plugins.SystemPlugins.NetworkBrowser.NetworkBrowser-->
 	<screen name="NetworkBrowser" position="center,center" size="600*f,450*f">
 		<widget source="list" render="Listbox" position="10*f,15*f" size="580*f,300*f" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
@@ -987,7 +987,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<!--from Plugins.SystemPlugins.NetworkWizard.NetworkWizard.-->
+	<!--from Plugins.SystemPlugins.NetworkWizard.NetworkWizard-->
 	<screen name="NetworkWizard" position="fill" flags="wfNoBorder">
 		<panel name="DefaultWizardTemplate"/>
 		<panel name="VKeyIconTemplate"/>
@@ -1311,7 +1311,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<!--from Plugins.SystemPlugins.NetworkBrowser.NetworkBrowser-->
+	<!--Plugins.SystemPlugins.NetworkBrowser.NetworkBrowser-->
 	<screen name="ScanIP" position="center,center" size="520*f,240*f">
 		<widget name="config" position="0,10*f" size="520*f,100*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<panel name="DynamicButtonsTemplate"/>
@@ -1367,7 +1367,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		</widget>
 	</screen>
 
-	<!--from Screens.InfoBarGenerics SecondInfoBar as SecondInfoBarSimple-->
+	<!--Screens.InfoBarGenerics SecondInfoBar-->
 	<screen name="SecondInfoBarSimple" position="0,0" size="1280*f,720*f" backgroundColor="transpBack" flags="wfNoBorder">
 		<panel name="InfoBarTemplate"/>
 		<panel name="InfoBarVideoInfoTemplate"/>
