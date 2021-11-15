@@ -52,7 +52,7 @@ jobs:
           python-version: '2.7'
       - name: Install dependencies
         run: |
-          pip install twisted pyopenssl service_identity
+          pip install twisted pyopenssl service_identity netifaces
       - name: Setup skin files for test
         run: |
           cp -R usr/lib/enigma2/* enigma2/lib
