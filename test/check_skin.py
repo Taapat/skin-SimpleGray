@@ -13,7 +13,7 @@ import enigma
 
 
 if sys.version_info[0] == 2:
-	reload(sys)
+	reload(sys)  # noqa: F821
 	sys.setdefaultencoding('utf-8')
 
 
