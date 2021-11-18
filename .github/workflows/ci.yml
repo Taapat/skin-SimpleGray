@@ -81,6 +81,7 @@ jobs:
           path: './tuxtxt'
       - name: Build enigma dependencies
         run: |
+          pushd .
           git clone --depth 1 git://git.opendreambox.org/git/obi/libdvbsi++.git
           cd ./libdvbsi++
           autoreconf -i
@@ -97,6 +98,7 @@ jobs:
           ./configure --with-boxtype=generic DVB_API_VERSION=5
           make
           sudo make install
+          popd
       - name: Build enigma
         run: |
           autoreconf -i
