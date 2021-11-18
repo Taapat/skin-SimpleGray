@@ -196,7 +196,7 @@
 
 	<!--from Plugins.SystemPlugins.SoftwareManager.BackupRestore-->
 	<screen name="BackupScreen" position="center,center" size="800*f,445*f">
-		<widget name="config" position="0,10*f" size="800*f,425*f" scrollbarMode="showOnDemand" temHeight="25*f" font="Regular;20*f"/>
+		<widget name="config" position="0,10*f" size="800*f,425*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
 	<!--from Plugins.SystemPlugins.SoftwareManager.BackupRestore-->
