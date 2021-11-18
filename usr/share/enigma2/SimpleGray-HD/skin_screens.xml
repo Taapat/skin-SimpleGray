@@ -56,7 +56,11 @@
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<!--from Screens.NetworkSetup-->
+	<!--before from Screens.NetworkSetup import NetworkAdapterSelection-->
+	<!--before scr = session.open(NetworkAdapterSelection)-->
+	<!--before scr.okbuttonClick()-->
+	<!--before session.current_dialog.ok()-->
+	<!--Screens.NetworkSetup-->
 	<screen name="AdapterSetup" position="center,center" size="600*f,520*f">
 		<widget source="Adaptertext" render="Label" position="15*f,15*f" size="100*f,25*f" font="Regular;22*f"/>
 		<widget source="Adapter" render="Label" position="115*f,15*f" size="470*f,25*f" font="Regular;22*f"/>
@@ -194,6 +198,7 @@
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
+	<!--before import Plugins.SystemPlugins.SoftwareManager.plugin-->
 	<!--from Plugins.SystemPlugins.SoftwareManager.BackupRestore-->
 	<screen name="BackupScreen" position="center,center" size="800*f,445*f">
 		<widget name="config" position="0,10*f" size="800*f,425*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
