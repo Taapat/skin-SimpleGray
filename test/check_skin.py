@@ -48,7 +48,11 @@ def try_screens_load():
 				print('Error in', screen_import, er)
 			else:
 				try:
-					args = inspect.getargspec(eval(screen_name).__init__)[0][2:]
+					arg_spec = inspect.getargspec(eval(screen_name).__init__)
+					if arg_spec[3] and len(arg_spec[3]) == len(arg_spec[0][2:]):
+						args = ()
+					else:
+						args = arg_spec[0][2:]
 					session.open(eval(screen_name), *args)
 				except Exception as er:
 					print('Error in', screen_name, er)

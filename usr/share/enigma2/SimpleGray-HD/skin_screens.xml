@@ -293,9 +293,7 @@
 		<widget name="number" position="145*f,15*f" size="80*f,25*f" halign="right" font="Regular;23*f"/>
 	</screen>
 
-	<!--before from Screens.ChoiceBox import ChoiceBox-->
-	<!--before session.open(ChoiceBox)-->
-	<!--Screens.ChoiceBox-->
+	<!--from Screens.ChoiceBox-->
 	<screen name="ChoiceBox" position="center,center" size="670*f,90*f">
 		<widget name="text" position="15*f,10*f" size="640*f,40*f" font="Regular;20*f"/>
 		<widget name="list" position="0,50*f" size="670*f,25*f" font="Regular;20*f" scrollbarMode="showOnDemand"/>
@@ -752,9 +750,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="wizard" pixmap="picon_default.png" position="40*f,650*f" size="100,60" alphatest="on"/>
 	</screen>
 
-	<!--before from Screens.LocationBox import LocationBox-->
-	<!--before session.open(LocationBox)-->
-	<!--Screens.LocationBox-->
+	<!--from Screens.LocationBox-->
 	<screen name="LocationBox" position="center,center" size="720*f,525*f">
 		<widget name="text" position="15*f,10*f" size="690*f,25*f" font="Regular;20*f"/>
 		<widget name="target" position="15*f,40*f" size="690*f,25*f" font="Regular;20*f"/>
@@ -1696,9 +1692,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="videomode" position="0,0" size="400*f,50*f" backgroundColor="transparent" transparent="1" font="Regular;22*f" borderColor="black" borderWidth="2" valign="center"/>
 	</screen>
 
-	<!--before from Screens.VirtualKeyBoard import VirtualKeyBoard-->
-	<!--before session.open(VirtualKeyBoard)-->
-	<!--Screens.VirtualKeyBoard-->
+	<!--from Screens.VirtualKeyBoard-->
 	<screen name="VirtualKeyBoard" position="center,center" size="660*f,415*f">
 		<widget name="prompt" position="15*f,10*f" size="630*f,25*f" font="Regular;20*f" noWrap="1"/>
 		<widget name="text" position="15*f,55*f" size="630*f,35*f" font="Regular;30*f" noWrap="1"/>
