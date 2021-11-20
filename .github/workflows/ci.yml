@@ -62,6 +62,8 @@ jobs:
         run: |
           sed -i 's/DEFAULT_SKIN = Sys/DEFAULT_SKIN = "SimpleGray-HD\/skin.xml"  # Sys/g' enigma2/lib/python/skin.py
           sed -i 's/reloadWindowStyles()  #/# reloadWindowStyles()  #/g' enigma2/lib/python/skin.py
+          cd ./enigma2/data
+          python convert-iso-639-3.py
       - name: ========== Test skin screens load ==========
         run: |
           PYTHONPATH=./test:./enigma2:./enigma2/lib/python python ./test/check_skin.py
