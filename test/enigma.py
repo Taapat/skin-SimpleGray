@@ -30,6 +30,10 @@ class _eInstances:
 		self.selected = self
 		self.ciStateChanged = self
 		self.CiSelection = self
+		self.scanCompleted = self
+		self.scanProgress = self
+		self.protectContextMenu = self
+		self.list = []
 
 	def __setattr__(self, name, value, *args):
 		self.__dict__[name] = value
@@ -41,8 +45,11 @@ class _eInstances:
 			return 0
 		return default
 
+	def __call__(self, *args):
+		return self
+
 	def get(self, *args):
-		return []
+		return self.list
 
 
 eAVSwitch = _eInstances()
@@ -133,15 +140,6 @@ class eTimer:
 		self.callback_thread = None
 
 
-class _eDVBResourceManager(_eInstances):
-	def __init__(self, *args):
-		self.frontendUseMaskChanged = _eInstances()
-
-
-eDVBResourceManager = _eInstances()
-eDVBResourceManager.getInstance = _eDVBResourceManager
-
-
 class pNavigation(_eInstances):
 	isRealRecording = 1
 	isStreaming = 2
@@ -197,7 +195,7 @@ class eServiceReferenceDVB:
 	user195 = 0xC
 
 
-class eServiceReference:
+class eServiceReference(_eInstances):
 	idInvalid = -1
 	isDirectory = 1
 	mustDescent = 2
@@ -210,21 +208,10 @@ class eServiceReference:
 	isGroup = 128
 	idDVB = None
 
-	@classmethod
-	def getInstance(self):
-		return self.instance
-
-	instance = None
-
 	def __init__(self, ref_type=0, flags=0, data='', *args):
 		eServiceReference.instance = self
 		self._data = data
 		self._name = ''
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
 
 	def setName(self, name):
 		self._name = name
@@ -236,22 +223,11 @@ class eServiceReference:
 		return self._data
 
 
-class ePicLoad:
-	@classmethod
-	def getInstance(self):
-		return self.instance
-
-	instance = None
-
+class ePicLoad(_eInstances):
 	def __init__(self):
 		ePicLoad.PictureData = self
 		self._functions = []
 		self._image = None
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
 
 	def get(self):
 		return self._functions
@@ -270,16 +246,19 @@ class ePicLoad:
 sel_index = 0
 
 
-class eListboxPythonConfigContent:
+class eListboxPythonConfigContent(_eInstances):
+	TYPE_TEXT = None
+	TYPE_PROGRESS = None
+	TYPE_PIXMAP = None
+	TYPE_PIXMAP_ALPHATEST = None
+	TYPE_PIXMAP_ALPHABLEND = None
+	TYPE_PROGRESS_PIXMAP = None
+
 	def __init__(self):
 		self.__list = []
+		self.getItemSize = _getDesktop
 		global sel_index
 		sel_index = 0
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
 
 	def getCurrentSelection(self):
 		if self.__list:
@@ -293,45 +272,21 @@ class eListboxPythonConfigContent:
 			self.__list = _list
 			try:
 				_list[0][1].onSelect(_session)
-			except AttributeError:
+			except (AttributeError, IndexError, TypeError):
 				pass
+
+	def getCurrentSelectionIndex(self):
+		return sel_index
 
 
 eListboxPythonStringContent = eListboxPythonConfigContent
+eListboxPythonMultiContent = eListboxPythonConfigContent
 
 
-class eListboxPythonMultiContent:
-	TYPE_TEXT = None
-	TYPE_PROGRESS = None
-	TYPE_PIXMAP = None
-	TYPE_PIXMAP_ALPHATEST = None
-	TYPE_PIXMAP_ALPHABLEND = None
-	TYPE_PROGRESS_PIXMAP = None
-
-	def __init__(self):
-		self.getItemSize = _getDesktop
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
-
-	def getCurrentSelectionIndex(self):
-		return 0
-
-	def getCurrentSelection(self):
-		return ''
-
-
-class eConsoleAppContainer:
+class eConsoleAppContainer(_eInstances):
 	def __init__(self):
 		self.dataAvail = []
 		self.appClosed = []
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
 
 
 class _eEnv:
@@ -350,17 +305,12 @@ class _eEnv:
 eEnv = _eEnv()
 
 
-class _getPicture:
+class _getPicture(_eInstances):
 	def height(self):
 		return 60
 
 	def width(self):
 		return 100
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
 
 
 class loadPNG:
@@ -376,7 +326,7 @@ loadJPG = loadPNG
 loadSVG = loadPNG
 
 
-class _getDesktop:
+class _getDesktop(_eInstances):
 	def __init__(self, *args):
 		pass
 
@@ -386,23 +336,13 @@ class _getDesktop:
 	def width(self):
 		return 1280
 
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
-
 
 eSize = _getDesktop
 
 
-class getDesktop:
+class getDesktop(_eInstances):
 	def __init__(self, *args):
 		self.size = _getDesktop
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
 
 	def bounds(self):
 		return _getDesktop()
@@ -419,18 +359,13 @@ class ePixmapPosition:
 		return 0
 
 
-class eWidget:
+class eWidget(_eInstances):
 	wfNoBorder = None
 
 	def __init__(self, *args):
 		self.selectionChanged = _eInstances()
 		self.getInstance = _eInstances
 		self._index = 0
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
 
 	def get(self):
 		return []
@@ -506,7 +441,7 @@ class ePixmap(eWidget):
 		return _getPicture()
 
 
-class _eEPGCache:
+class _eEPGCache(_eInstances):
 	MHW = 8
 	VIRGIN_NOWNEXT = 2048
 	VIRGIN_SCHEDULE = 4096
@@ -514,11 +449,6 @@ class _eEPGCache:
 
 	def __init__(self):
 		self.getInstance = _eInstances
-
-	def __getattr__(self, attr):
-		def default(*args):
-			return 0
-		return default
 
 
 eEPGCache = _eEPGCache()
