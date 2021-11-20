@@ -296,7 +296,7 @@ class _eEnv:
 		path = path.replace('${datadir}/', './enigma2/data/')
 		path = path.replace('${sysconfdir}/enigma2/', '/tmp/')
 		path = path.replace('${sysconfdir}/', '/tmp/')
-		path = path.replace('${libdir}/enigma2/', './enigma2/lib/')
+		path = path.replace('${libdir}/enigma2/', '../../enigma2/lib/')
 		path = path.replace('${libdir}/', './enigma2/')
 		path = path.replace('/media/', '/tmp/media/')
 		return path
