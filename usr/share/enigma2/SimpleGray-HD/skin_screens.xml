@@ -622,12 +622,6 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
-	<!--from Plugins.Extensions.GraphMultiEPG.GraphMultiEpgSetup-->
-	<screen name="GraphMultiEpgSetup" position="center,center" size="680*f,500*f">
-		<panel name="CancelOKTemplate"/>
-		<widget name="config" position="0,10*f" size="680*f,400*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
-	</screen>
-
 	<!--from Screens.HarddiskSetup-->
 	<screen name="HarddiskSelection" position="center,center" size="600*f,250*f">
 		<widget name="hddlist" position="15*f,10*f" size="570*f,150*f" scrollbarMode="showOnDemand" itemHeight="30*f" font="Regular;20*f"/>
