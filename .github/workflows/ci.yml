@@ -131,7 +131,7 @@ jobs:
       - name: ========== Test skin screens load ==========
         working-directory: './enigma2'
         run: |
-          PYTHONPATH=../test:./lib/python main/enigma2
+          LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib PYTHONPATH=../test:./lib/python main/enigma2
   deploy:
     needs: test-python
     if: always() && !contains(github.event.head_commit.message,'skip-release') && github.event_name == 'push' && needs.test-python.result == 'success' && github.repository == 'Taapat/skin-SimpleGray' && github.ref == 'refs/heads/master'
