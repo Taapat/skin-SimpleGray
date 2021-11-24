@@ -53,20 +53,85 @@ jobs:
       - name: Install dependencies
         run: |
           pip install twisted pyopenssl service_identity netifaces
+      - name: Install dev packages
+        run: |
+          sudo apt-get -q update
+          sudo apt-get install linux-libc-dev
+          sudo apt-get install git
+          sudo apt-get install build-essential
+          sudo apt-get install automake
+          sudo apt-get install libtool
+          sudo apt-get install python-dev
+          sudo apt-get install zlib1g-dev
+          sudo apt-get install gettext
+          sudo apt-get install swig
+          sudo apt-get install libgstreamer1.0-dev
+          sudo apt-get install libgstreamer-plugins-base1.0-dev
+          sudo apt-get install libfreetype6-dev
+          sudo apt-get install libsigc++-2.0-dev
+          sudo apt-get install libfribidi-dev
+          sudo apt-get install libssl-dev
+          sudo apt-get install libavahi-client-dev
+          sudo apt-get install libjpeg-turbo8-dev
+          sudo apt-get install libgif-dev
+      - name: Set tuxtxt repository
+        uses: actions/checkout@v2
+        with:
+          repository: 'OpenPLi/tuxtxt'
+          path: './tuxtxt'
+      - name: Build enigma dependencies
+        run: |
+          git clone --depth 1 git://git.opendreambox.org/git/obi/libdvbsi++.git
+          cd ./libdvbsi++
+          autoreconf -i
+          ./configure
+          make
+          sudo make install
+          cd ../tuxtxt/libtuxtxt
+          autoreconf -i
+          ./configure --with-boxtype=generic DVB_API_VERSION=5
+          make
+          sudo make install
+          cd ../tuxtxt
+          autoreconf -i
+          ./configure --with-boxtype=generic DVB_API_VERSION=5
+          make
+          sudo make install
+      - name: Patch enigma cpp files
+        run: |
+          sed -i 's/eFatal/eDebug/g' enigma2/lib/gdi/gfbdc.cpp
+          sed -i 's/bsodCatchSignals/\/\/bsodCatchSignals/g' enigma2/main/enigma.cpp
+          sed -i 's/${libdir}\/enigma2\/python\/StartEnigma.py/..\/test\/check_skin.py/g' enigma2/main/enigma.cpp
+      - name: Build enigma
+        run: |
+          cd ./enigma2
+          autoreconf -i
+          ./configure --with-libsdl=no --with-boxtype=nobox --enable-dependency-tracking ac_cv_prog_c_openmp=-fopenmp --with-textlcd
+          make
       - name: Setup skin files for test
         run: |
           cp -R usr/lib/enigma2/* enigma2/lib
           cp -R usr/share/enigma2/SimpleGray-HD enigma2/data
           cp usr/share/fonts/* enigma2/data/fonts
-      - name: Patch enigma
+      - name: Patch enigma py files
         run: |
           sed -i 's/DEFAULT_SKIN = Sys/DEFAULT_SKIN = "SimpleGray-HD\/skin.xml"  # Sys/g' enigma2/lib/python/skin.py
           sed -i 's/reloadWindowStyles()  #/# reloadWindowStyles()  #/g' enigma2/lib/python/skin.py
-          cd ./enigma2/data
-          python convert-iso-639-3.py
+          sed -i 's/${datadir}\/enigma2\/po\//.\/po\//g' enigma2/lib/python/Tools/Directories.py
+          sed -i 's/${datadir}\/enigma2\//.\/data\//g' enigma2/lib/python/Tools/Directories.py
+          sed -i 's/${datadir}\//.\/data\//g' enigma2/lib/python/Tools/Directories.py
+          sed -i 's/${sysconfdir}\/enigma2\//\/tmp\//g' enigma2/lib/python/Tools/Directories.py
+          sed -i 's/${sysconfdir}\//\/tmp\//g' enigma2/lib/python/Tools/Directories.py
+          sed -i 's/${libdir}\/enigma2\//.\/lib\//g' enigma2/lib/python/Tools/Directories.py
+          sed -i 's/${libdir}\//.\//g' enigma2/lib/python/Tools/Directories.py
+          sed -i 's/\/media\//\/tmp\/media\//g' enigma2/lib/python/Tools/Directories.py
+          echo 'from enigmaHelp import _eConsoleAppContainer, _eTimer' >> enigma2/lib/python/enigma.py
+          echo 'eConsoleAppContainer = _eConsoleAppContainer' >> enigma2/lib/python/enigma.py
+          echo 'eTimer = _eTimer' >> enigma2/lib/python/enigma.py
       - name: ========== Test skin screens load ==========
+        working-directory: './enigma2'
         run: |
-          PYTHONPATH=./test:./enigma2:./enigma2/lib/python python ./test/check_skin.py
+          PYTHONPATH=../test:./lib/python main/enigma2
   deploy:
     needs: test-python
     if: always() && !contains(github.event.head_commit.message,'skip-release') && github.event_name == 'push' && needs.test-python.result == 'success' && github.repository == 'Taapat/skin-SimpleGray' && github.ref == 'refs/heads/master'
