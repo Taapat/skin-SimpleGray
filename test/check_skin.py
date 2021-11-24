@@ -1,6 +1,5 @@
 """
 Minimal skin screens testing on enigma2 image.
-PYTHONPATH=./test:./enigma2:./enigma2/lib/python python ./test/check_skin.py
 """
 
 from __future__ import print_function
@@ -163,7 +162,10 @@ def try_screens_load():
 			continue
 		elif before:
 			for action in before:
-				exec(action)
+				try:
+					exec(action)
+				except Exception as er:
+					print('Error in', action, er)
 			before = []
 			print('=' * 60)
 		if '<!--from ' in line:
