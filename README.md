@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/License-GPLv3-green.svg)](https://github.com/Taapat/skin-SimpleGray/blob/master/LICENSE)   [![](https://github.com/Taapat/skin-SimpleGray/workflows/build/badge.svg)](https://github.com/Taapat/skin-SimpleGray/actions?query=workflow%3Abuild)  [![](https://img.shields.io/github/v/release/Taapat/skin-SimpleGray)](https://github.com/Taapat/skin-SimpleGray/releases)  [![](https://img.shields.io/github/downloads/Taapat/skin-SimpleGray/total?color=blue)](https://github.com/Taapat/skin-SimpleGray/releases)
+[![](https://github.com/Taapat/skin-SimpleGray/workflows/build/badge.svg)](https://github.com/Taapat/skin-SimpleGray/actions?query=workflow%3Abuild)  [![](https://img.shields.io/badge/License-GPLv3-green.svg)](https://github.com/Taapat/skin-SimpleGray/blob/master/LICENSE)  [![](https://img.shields.io/github/downloads/Taapat/skin-SimpleGray/total)](https://github.com/Taapat/skin-SimpleGray/releases)  [![](https://img.shields.io/github/v/release/Taapat/skin-SimpleGray)](https://github.com/Taapat/skin-SimpleGray/releases)
 -------
 Skin SimpleGray
 =========
