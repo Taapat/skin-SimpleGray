@@ -100,6 +100,7 @@ jobs:
       - name: Patch enigma cpp files
         run: |
           sed -i 's/eFatal/eDebug/g' enigma2/lib/gdi/gfbdc.cpp
+          sed -i 's/${sysconfdir}\/enigma2/.\/data/g' enigma2/lib/dvb/db.cpp
           sed -i 's/bsodCatchSignals/\/\/bsodCatchSignals/g' enigma2/main/enigma.cpp
           sed -i 's/${libdir}\/enigma2\/python\/StartEnigma.py/..\/test\/check_skin.py/g' enigma2/main/enigma.cpp
       - name: Build enigma
@@ -114,6 +115,7 @@ jobs:
         run: |
           sed -i 's/DEFAULT_SKIN = Sys/DEFAULT_SKIN = "SimpleGray-HD\/skin.xml"  # Sys/g' enigma2/lib/python/skin.py
           sed -i 's/reloadWindowStyles()  #/# reloadWindowStyles()  #/g' enigma2/lib/python/skin.py
+          sed -i 's/setResolution(xres, yres/setResolution(xres, yres, 8/g' enigma2/lib/python/skin.py
           sed -i 's/${datadir}\/enigma2\/po\//.\/po\//g' enigma2/lib/python/Tools/Directories.py
           sed -i 's/${datadir}\/enigma2\//.\/data\//g' enigma2/lib/python/Tools/Directories.py
           sed -i 's/${datadir}\//.\/data\//g' enigma2/lib/python/Tools/Directories.py

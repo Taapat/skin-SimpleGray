@@ -7,8 +7,21 @@ from __future__ import print_function
 import inspect
 import sys
 
+from Tools.Profile import profile, profile_final
 
-from enigma import getDesktop
+import Tools.RedirectOutput
+import enigma
+import eConsoleImpl
+import eBaseImpl
+
+import enigmaHelp
+
+
+enigma.eTimer = eBaseImpl.eTimer
+enigma.eSocketNotifier = eBaseImpl.eSocketNotifier
+enigma.eConsoleAppContainer = eConsoleImpl.eConsoleAppContainer
+
+
 
 
 class Session:
@@ -22,7 +35,6 @@ class Session:
 		self.screen = SessionGlobals(self)
 
 	def execBegin(self, first=True, do_show=True):
-		print('Exec begin')
 		c = self.current_dialog
 		c.execBegin()
 
@@ -123,7 +135,7 @@ def start_session():
 
 	print('init skin')
 	import skin
-	skin.loadSkinData(getDesktop(0))
+	skin.loadSkinData(enigma.getDesktop(0))
 
 	print('init av')
 	import Components.AVSwitch
@@ -140,7 +152,7 @@ def start_session():
 	import keymapparser
 	keymapparser.readKeymap(config.usage.keymap.value)
 
-	_session = Session(getDesktop(1), Navigation())
+	_session = Session(enigma.getDesktop(1), Navigation())
 
 	return _session
 
@@ -162,10 +174,7 @@ def try_screens_load():
 			continue
 		elif before:
 			for action in before:
-				try:
-					exec(action)
-				except Exception as er:
-					print('Error in', action, er)
+				exec(action)
 			before = []
 			print('=' * 60)
 		if '<!--from ' in line:
@@ -179,13 +188,15 @@ def try_screens_load():
 			except Exception as er:
 				print('Error in', screen_import, er)
 			else:
+				arg_spec = inspect.getargspec(eval(screen_name).__init__)
+				if arg_spec[3] and len(arg_spec[3]) == len(arg_spec[0][2:]):
+					args = ()
+				else:
+					args = arg_spec[0][2:]
 				try:
-					arg_spec = inspect.getargspec(eval(screen_name).__init__)
-					if arg_spec[3] and len(arg_spec[3]) == len(arg_spec[0][2:]):
-						args = ()
-					else:
-						args = arg_spec[0][2:]
-					session.open(eval(screen_name), *args)
+					src_screen = eval(screen_name)
+					src = session.open(src_screen, *args)
+					src.close(src_screen)
 				except Exception as er:
 					print('Error in', screen_name, er)
 			screen_import = None
