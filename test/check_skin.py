@@ -162,6 +162,7 @@ def try_screens_load():
 
 	screen_import = None
 	before = []
+	errors = 0
 
 	for line in open('./data/SimpleGray-HD/skin_screens.xml', 'r').readlines():  # noqa: E501
 		if '<!--before ' in line:
@@ -169,7 +170,11 @@ def try_screens_load():
 			continue
 		elif before:
 			for action in before:
-				exec(action)
+				try:
+					exec(action)
+				except Exception as er:
+					print('Error in', action)
+					errors += 1
 			before = []
 			print('=' * 60)
 		if '<!--from ' in line:
@@ -182,6 +187,7 @@ def try_screens_load():
 				exec(screen_import)
 			except Exception as er:
 				print('Error in', screen_import, er)
+				errors += 1
 			else:
 				arg_spec = inspect.getargspec(eval(screen_name).__init__)
 				if arg_spec[3] and len(arg_spec[3]) == len(arg_spec[0][2:]):
@@ -194,8 +200,10 @@ def try_screens_load():
 					src.close(src_screen)
 				except Exception as er:
 					print('Error in', screen_name, er)
+					errors += 1
 			screen_import = None
 			print('=' * 60)
+	print(errors, 'errors in screens test')
 
 
 try_screens_load()
