@@ -7,21 +7,16 @@ from __future__ import print_function
 import inspect
 import sys
 
-from Tools.Profile import profile, profile_final
-
-import Tools.RedirectOutput
 import enigma
 import eConsoleImpl
 import eBaseImpl
 
-import enigmaHelp
+import enigmaHelp  # noqa: F401
 
 
 enigma.eTimer = eBaseImpl.eTimer
 enigma.eSocketNotifier = eBaseImpl.eSocketNotifier
 enigma.eConsoleAppContainer = eConsoleImpl.eConsoleAppContainer
-
-
 
 
 class Session:
@@ -74,7 +69,7 @@ class Session:
 		return dlg
 
 	def close(self, screen, *retval):
-		print('Session close', screen.__class__.__name__)
+		print('Session close <%s>' % screen.__class__.__name__)
 		assert screen == self.current_dialog
 		self.current_dialog.execEnd()
 		callback = self.current_dialog.callback
