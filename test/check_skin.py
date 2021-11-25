@@ -69,7 +69,7 @@ class Session:
 		return dlg
 
 	def close(self, screen, *retval):
-		print('Session close <%s>' % screen.__class__.__name__)
+		print('Session close', screen)
 		assert screen == self.current_dialog
 		self.current_dialog.execEnd()
 		callback = self.current_dialog.callback
@@ -197,10 +197,11 @@ def try_screens_load():
 				try:
 					src_screen = eval(screen_name)
 					src = session.open(src_screen, *args)
-					src.close(src_screen)
 				except Exception as er:
 					print('Error in', screen_name, er)
 					errors += 1
+				else:
+					src.close(src_screen)
 			screen_import = None
 			print('=' * 60)
 	print(errors, 'errors in screens test')
