@@ -223,7 +223,7 @@
 		<widget name="status" position="0,0" size="200*f,34*f" backgroundColor="transparent" transparent="1" font="Replacement;26*f" borderColor="grey" borderWidth="2" valign="center" halign="center"/>
 	</screen>
 
-	<!--from Plugins.SystemPlugins.CableScan.plugin-->
+	<!--Plugins.SystemPlugins.CableScan.plugin-->
 	<screen name="CableScanStatus" position="center,center" size="460*f,190*f">
 		<panel name="ScanStatusTemplate"/>
 	</screen>
