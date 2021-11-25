@@ -173,7 +173,7 @@ def try_screens_load():
 				try:
 					exec(action)
 				except Exception as er:
-					print('Error in', action)
+					print('Error in', action, er)
 					errors += 1
 			before = []
 			print('=' * 60)
