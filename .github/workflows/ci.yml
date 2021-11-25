@@ -125,9 +125,6 @@ jobs:
           sed -i 's/${libdir}\//.\//g' enigma2/lib/python/Tools/Directories.py
           sed -i 's/\/media\//\/tmp\/media\//g' enigma2/lib/python/Tools/Directories.py
           sed -i 's/${datadir}\/enigma2/.\/data/g' enigma2/lib/python/Tools/ISO639.py
-          echo 'from enigmaHelp import _eConsoleAppContainer, _eTimer' >> enigma2/lib/python/enigma.py
-          echo 'eConsoleAppContainer = _eConsoleAppContainer' >> enigma2/lib/python/enigma.py
-          echo 'eTimer = _eTimer' >> enigma2/lib/python/enigma.py
       - name: Setup skin files for test
         run: |
           cp -R usr/lib/enigma2/* enigma2/lib
