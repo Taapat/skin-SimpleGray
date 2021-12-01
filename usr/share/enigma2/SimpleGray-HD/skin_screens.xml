@@ -612,7 +612,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	</screen>
 
 	<!--Plugins.Extensions.GraphMultiEPG.GraphMultiEpg-->
-	<screen name="GraphMultiEPGList" position="center,center" size="370*f,526*f">
+	<screen name="GraphMultiEPGList" position="center,center" size="770*f,526*f">
 		<widget name="timeline_text" position="15*f,10*f" size="740*f,26*f" foregroundColor="white"/>
 		<widget name="list" position="15*f,36*f" size="740*f,420*f" scrollbarMode="showOnDemand" backgroundColor="black"/>
 		<widget name="timeline0" position="0,36*f" zPosition="1" size="1,420*f" pixmap="skin/timeline.svg"/>
