@@ -3,7 +3,7 @@ import os
 from enigma import ePixmap
 
 from Components.Harddisk import harddiskmanager
-from Renderer import Renderer
+from Components.Renderer.Renderer import Renderer
 from Tools.Directories import pathExists
 
 
