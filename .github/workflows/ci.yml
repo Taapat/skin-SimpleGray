@@ -98,6 +98,13 @@ jobs:
           ./configure --with-boxtype=generic DVB_API_VERSION=5
           make
           sudo make install
+          cd ../..
+          git clone --depth 1 https://github.com/dbus-cxx/libsigc--3.0.git
+          cd libsigc--3.0
+          autoreconf -i
+          ./configure
+          make
+          sudo make install
       - name: Patch enigma cpp files
         run: |
           sed -i 's/eFatal/eDebug/g' enigma2/lib/gdi/gfbdc.cpp
