@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [2.7, 3.8]
+        python-version: ['2.7', '3.11']
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       - name: Upgrade pip
@@ -37,19 +37,24 @@ jobs:
           flake8 --ignore=W191,E128,E131,E117
   test-skin:
     needs: test-python
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set enigma2 repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: 'OpenPLi/enigma2'
           ref: 'develop'
           path: './enigma2'
-      - name: Set up Python 2.7
-        uses: actions/setup-python@v2
+      - name: install gcc ${{ matrix.gcc }}
+        run: |
+          sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+          sudo apt-get -q update
+          sudo apt install g++-10
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
         with:
-          python-version: '2.7'
+          python-version: '3.10'
       - name: Install dependencies
         run: |
           pip install twisted pyopenssl service_identity netifaces
@@ -61,25 +66,29 @@ jobs:
           sudo apt-get install build-essential
           sudo apt-get install automake
           sudo apt-get install libtool
-          sudo apt-get install python-dev
+          sudo apt-get install python3-dev
           sudo apt-get install zlib1g-dev
           sudo apt-get install gettext
           sudo apt-get install swig
+          sudo apt-get install libunwind-dev
           sudo apt-get install libgstreamer1.0-dev
           sudo apt-get install libgstreamer-plugins-base1.0-dev
           sudo apt-get install libfreetype6-dev
-          sudo apt-get install libsigc++-2.0-dev
           sudo apt-get install libfribidi-dev
           sudo apt-get install libssl-dev
           sudo apt-get install libavahi-client-dev
           sudo apt-get install libjpeg-turbo8-dev
           sudo apt-get install libgif-dev
+          sudo apt-get install mm-common
       - name: Set tuxtxt repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: 'OpenPLi/tuxtxt'
           path: './tuxtxt'
       - name: Build enigma dependencies
+        env: 
+          CC: "gcc-10"
+          CXX: "g++-10"
         run: |
           git clone --depth 1 git://git.opendreambox.org/git/obi/libdvbsi++.git
           cd ./libdvbsi++
@@ -97,6 +106,13 @@ jobs:
           ./configure --with-boxtype=generic DVB_API_VERSION=5
           make
           sudo make install
+          cd ../..
+          git clone --depth 1 https://github.com/dbus-cxx/libsigc--3.0.git
+          cd libsigc--3.0
+          autoreconf -i
+          ./configure
+          make
+          sudo make install
       - name: Patch enigma cpp files
         run: |
           sed -i 's/eFatal/eDebug/g' enigma2/lib/gdi/gfbdc.cpp
@@ -104,6 +120,9 @@ jobs:
           sed -i 's/bsodCatchSignals/\/\/bsodCatchSignals/g' enigma2/main/enigma.cpp
           sed -i 's/${libdir}\/enigma2\/python\/StartEnigma.py/..\/test\/check_skin.py/g' enigma2/main/enigma.cpp
       - name: Build enigma
+        env: 
+          CC: "gcc-10"
+          CXX: "g++-10"
         run: |
           cd ./enigma2
           autoreconf -i
@@ -139,11 +158,11 @@ jobs:
     if: always() && !contains(github.event.head_commit.message,'skip-release') && github.event_name == 'push' && needs.test-python.result == 'success' && github.repository == 'Taapat/skin-SimpleGray' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Set up Python 2.7
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '2.7'
       - name: Compile sources
