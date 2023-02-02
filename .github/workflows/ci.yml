@@ -36,8 +36,8 @@ jobs:
         run: |
           flake8 --ignore=W191,E128,E131,E117
   test-skin:
-    needs: ubuntu-20.04
-    runs-on: ubuntu-latest
+    needs: test-python
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - name: Set enigma2 repository
