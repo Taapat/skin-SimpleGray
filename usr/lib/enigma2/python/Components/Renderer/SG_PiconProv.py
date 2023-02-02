@@ -1,5 +1,7 @@
 from __future__ import print_function
+
 import os
+
 from enigma import ePixmap
 
 from Components.Harddisk import harddiskmanager
@@ -8,6 +10,7 @@ from Tools.Directories import pathExists
 
 
 searchPaths = []
+
 
 if pathExists('/tmp/piconProv/'):
 	piconInTmp = True
