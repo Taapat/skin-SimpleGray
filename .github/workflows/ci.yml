@@ -12,7 +12,7 @@ on:
 
 jobs:
   test-python:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ['2.7', '3.11']
@@ -36,7 +36,7 @@ jobs:
         run: |
           flake8 --ignore=W191,E128,E131,E117
   test-skin:
-    needs: test-python
+    needs: ubuntu-20.04
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
