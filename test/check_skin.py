@@ -50,7 +50,7 @@ class Session:
 			self.current_dialog.execEnd()
 
 	def openWithCallback(self, callback, screen, *arguments, **kwargs):
-		print('OpenWithCallback ', end='')
+		print('OpenWithCallback ')
 		dlg = self.open(screen, *arguments, **kwargs)
 		dlg.callback = callback
 		return dlg
