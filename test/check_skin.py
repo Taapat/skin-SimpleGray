@@ -1,9 +1,6 @@
 """
 Minimal skin screens testing on enigma2 image.
 """
-
-from __future__ import print_function
-
 import inspect
 import sys
 
@@ -189,11 +186,11 @@ def try_screens_load():
 				print('Error in', screen_import, er)
 				errors += 1
 			else:
-				arg_spec = inspect.getargspec(eval(screen_name).__init__)
-				if arg_spec[3] and len(arg_spec[3]) == len(arg_spec[0][2:]):
+				arg_spec = len(inspect.signature(eval(screen_name).__init__).parameters) - 2
+				if arg_spec <= 0:
 					args = ()
 				else:
-					args = arg_spec[0][2:]
+					args = ('' for _ in range(0, arg_spec))
 				try:
 					src_screen = eval(screen_name)
 					src = session.open(src_screen, *args)
