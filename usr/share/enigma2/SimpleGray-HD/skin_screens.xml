@@ -343,13 +343,6 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="entries" position="center,95*f" size="631*f,300*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
-	<!--from Screens.ClockDisplay-->
-	<screen name="ClockDisplay" position="300*f,100*f" size="300*f,300*f">
-		<widget name="okbutton" position="10*f,10*f" size="280*f,40*f"/>
-		<widget name="title" position="10*f,120*f" size="280*f,50*f"/>
-		<widget name="theClock" position="10*f,60*f" size="280*f,50*f"/>
-	</screen>
-
 	<!--from Screens.About-->
 	<screen name="CommitInfo" position="center,center" size="530*f,460*f">
 		<widget name="AboutScrollLabel" position="15*f,10*f" size="500*f,370*f" font="Regular;20*f" halign="left"/>
@@ -368,11 +361,6 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="config" position="0,10*f" size="640*f,150*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<widget name="HelpWindow" position="400*f,370*f" size="1,1" zPosition="5" pixmap="buttons/key_text.svg" transparent="1" alphatest="on"/>
 		<panel name="DynamicButtonsTemplate"/>
-	</screen>
-
-	<!--from Screens.ConfigMenu-->
-	<screen name="configTest" position="300*f,100*f" size="300*f,300*f">
-		<widget name="config" position="10*f,30*f" size="420*f,200*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 	</screen>
 
 	<!--from Screens.Console-->
