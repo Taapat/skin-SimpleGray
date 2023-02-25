@@ -1403,13 +1403,12 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.ServiceInfo-->
 	<screen name="ServiceInfo" position="center,center" size="740*f,550*f">
-		<widget name="infolist" position="15*f,10*f" size="710*f,480*f" selectionDisabled="1" itemHeight="30*f"/>
-		<panel name="DynamicButtonsTemplate"/>
+		<panel name="ServiceInfoTemplate"/>
 	</screen>
 
 	<!--Screens.ServiceInfo-->
 	<screen name="ServiceInfoSimple" position="center,center" size="740*f,550*f">
-		<widget name="infolist" position="15*f,10*f" size="710*f,480*f" selectionDisabled="1" itemHeight="30*f"/>
+		<panel name="ServiceInfoTemplate"/>
 	</screen>
 
 	<!--from Screens.ServiceScan-->

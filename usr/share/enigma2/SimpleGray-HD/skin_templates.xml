@@ -344,6 +344,11 @@ self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
 		<widget name="scan_progress" position="15*f,140*f" size="420*f,20*f" foregroundColor="grey" borderWidth="1" borderColor="white"/>
 	</screen>
 
+	<screen name="ServiceInfoTemplate">
+		<widget name="infolist" position="15*f,10*f" size="710*f,480*f" selectionDisabled="1" itemHeight="30*f"/>
+		<panel name="DynamicButtonsTemplate"/>
+	</screen>
+
 	<screen name="ServiceScanTemplate">
 		<widget source="FrontendInfo" render="Pixmap" pixmap="icons/scan-s.svg" position="15*f,8*f" size="64*f,64*f" transparent="1" alphatest="on">
 			<convert type="FrontendInfo">TYPE</convert>
