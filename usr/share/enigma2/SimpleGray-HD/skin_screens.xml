@@ -349,6 +349,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
+	<!--Plugins.Extensions.AutoBackup.ui-->
 	<screen name="Config" position="center,center" size="580*f,350*f">
 		<widget name="config" position="0,10*f" size="580*f,200*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
 		<widget name="statusbar" position="15*f,210*f" size="650*f,25*f" font="Regular;20*f"/>
