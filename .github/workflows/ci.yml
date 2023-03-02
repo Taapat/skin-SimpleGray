@@ -34,6 +34,9 @@ jobs:
   test-skin:
     needs: test-python
     runs-on: ubuntu-20.04
+    env:
+      CC: "gcc-10"
+      CXX: "g++-10"
     steps:
       - uses: actions/checkout@v3
       - name: Set enigma2 repository
@@ -58,9 +61,6 @@ jobs:
           repository: 'OpenPLi/tuxtxt'
           path: './tuxtxt'
       - name: Build enigma dependencies
-        env: 
-          CC: "gcc-10"
-          CXX: "g++-10"
         run: |
           git clone --depth 1 git://git.opendreambox.org/git/obi/libdvbsi++.git
           cd ./libdvbsi++
@@ -92,9 +92,6 @@ jobs:
           sed -i 's/bsodCatchSignals/\/\/bsodCatchSignals/g' enigma2/main/enigma.cpp
           sed -i 's/${libdir}\/enigma2\/python\/StartEnigma.py/..\/test\/check_skin.py/g' enigma2/main/enigma.cpp
       - name: Build enigma
-        env: 
-          CC: "gcc-10"
-          CXX: "g++-10"
         run: |
           cd ./enigma2
           autoreconf -i
