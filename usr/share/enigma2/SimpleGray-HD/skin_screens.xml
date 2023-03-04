@@ -435,6 +435,15 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="posGoto" position="52*f,160*f" size="70*f,20*f" font="Regular;20*f" shadowColor="black" shadowOffset="-2,-2"/>
 	</screen>
 
+	<!--Plugins.Extensions.EPGSearch-->
+	<screen name="EPGSearchHistory" position="center,center" size="640*f,445*f">
+		<widget source="history" render="Listbox" position="15,10*f" size="610*f,300*f" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f">
+			<convert type="StringList"/>
+		</widget>
+		<widget name="help" position="15*f,320*f" size="610*f,50*f" font="Regular;20*f"/>
+		<panel name="DynamicButtonsTemplate"/>
+	</screen>
+
 	<!--Plugins.Extensions.EPGSearchSetup-->
 	<screen name="EPGSearchSetup" position="center,center" size="640*f,470*f">
 		<widget name="config" position="0,10*f" size="640*f,300*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f" font="Regular;20*f"/>
