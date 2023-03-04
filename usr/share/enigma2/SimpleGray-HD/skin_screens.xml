@@ -1429,8 +1429,8 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.ChannelSelection-->
 	<screen name="SimpleChannelSelection" position="center,100*f" size="722*f,550*f">
+		<widget name="list" position="15*f,10*f" size="692*f,465*f" scrollbarMode="showOnDemand" serviceItemHeight="31*f" serviceNumberFont="Regular;20*f" serviceNameFont="Regular;20*f" serviceInfoFont="Regular;18*f" foregroundColorServiceNotAvail="grey" colorEventProgressbar="grey" colorServiceDescription="grey" colorEventProgressbarBorder="grey" colorServiceDescriptionSelected="white" colorEventProgressbarSelected="white" progressBarWidth="40*f" progressbarHeight="6*f"/>
 		<panel name="LeftButtonsTemplate"/>
-		<widget name="list" position="15*f,10*f" size="692*f,465*f" serviceItemHeight="31*f" scrollbarMode="showOnDemand" serviceNameFont="Regular;20*f" serviceInfoFont="Regular;18*f" ServiceNumberFont="Regular;20*f" progressBarWidth="40*f" fieldMargins="20*f"/>
 	</screen>
 
 	<!--from Screens.SkinSelector-->
