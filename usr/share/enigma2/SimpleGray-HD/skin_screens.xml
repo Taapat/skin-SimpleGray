@@ -372,28 +372,28 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Plugins.Extensions.CutListEditor.ui-->
 	<screen name="CutListEditor" position="center,680*f" size="700*f,24*f" flags="wfNoBorder" backgroundColor="transparent">
-		<!--eLabel position="center,center" size="1229,592" zPosition="-3" backgroundColor="back"/>
-		<eLabel position="80,125" size="310,420" zPosition="1" backgroundColor="grey"/>
-		<eLabel position="81,126" size="308,418" zPosition="2" backgroundColor="black"/>
-		<widget source="cutlist" render="Listbox" position="90,135" size="290,400" zPosition="3" scrollbarMode="showOnDemand" enableWrapAround="1">
+		<!--eLabel position="center,center" size="1229*f,592*f" zPosition="-3" backgroundColor="back"/>
+		<eLabel position="80*f,125*f" size="310*f,420*f" zPosition="1" backgroundColor="grey"/>
+		<eLabel position="81*f,126*f" size="308*f,418*f" zPosition="2" backgroundColor="black"/>
+		<widget source="cutlist" render="Listbox" position="90*f,135*f" size="290*f,400*f" zPosition="3" scrollbarMode="showOnDemand" enableWrapAround="1">
 			<convert type="TemplatedMultiContent">
 				{"template": [
-					MultiContentEntryText(size=(145,20), text=1, backcolor=MultiContentTemplateColor(3)),
-					MultiContentEntryText(pos=(145,0), size=(145,20), text=2, flags=RT_HALIGN_RIGHT, backcolor=MultiContentTemplateColor(3)),],
-				"fonts": [gFont("Regular",18)],
-				"itemHeight": 20}
+					MultiContentEntryText(size=(145*f,20*f), text=1, backcolor=MultiContentTemplateColor(3)),
+					MultiContentEntryText(pos=(145*f,0*f), size=(145*f,20*f), text=2, flags=RT_HALIGN_RIGHT, backcolor=MultiContentTemplateColor(3)),],
+				"fonts": [gFont("Regular",18*f)],
+				"itemHeight": 20*f}
 			</convert>
 		</widget>
-		<eLabel position="479,124" zPosition="3" size="696,367" backgroundColor="transparent"/>
-		<widget name="Video" position="479,124" zPosition="-10" size="696,367"/>
-		<widget source="session.CurrentService" render="Label" position="450,510" size="790,30" zPosition="3" font="Regular;24" halign="center" valign="center" backgroundColor="back">
+		<eLabel position="479*f,124*f" zPosition="3" size="696*f,367*f" backgroundColor="transparent"/>
+		<widget name="Video" position="479*f,124*f" zPosition="-10" size="696*f,367*f"/>
+		<widget source="session.CurrentService" render="Label" position="450*f,510*f" size="790*f,30*f" zPosition="3" font="Regular;24*f" halign="center" valign="center" backgroundColor="back">
 			<convert type="ServiceName">Name</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Label" position="450,550" size="790,25" zPosition="3" font="Regular;20" halign="center" valign="center" backgroundColor="back">
+		<widget source="session.CurrentService" render="Label" position="450*f,550*f" size="790*f,25*f" zPosition="3" font="Regular;20*f" halign="center" valign="center" backgroundColor="back">
 			<convert type="ServicePosition">Position,Detailed</convert>
 		</widget-->
 		<widget name="Timeline" position="2*f,2*f" size="696*f,20*f" zPosition="3" pointer="skin_default/position_arrow.svg:3*f,5*f" foregroundColor="black"/>
-		<!--eLabel text="OK=Menu" position="1059,615" size="140,22" zPosition="1" font="Regular;20" backgroundColor="back" /-->
+		<!--eLabel text="OK=Menu" position="1059*f,615*f" size="140*f,22*f" zPosition="1" font="Regular;20*f" backgroundColor="back"/-->
 	</screen>
 
 	<!--from Plugins.SystemPlugins.DefaultServicesScanner.plugin-->
