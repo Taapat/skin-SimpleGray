@@ -61,24 +61,24 @@
 	<!--before scr.okbuttonClick()-->
 	<!--before session.current_dialog.ok()-->
 	<!--Screens.NetworkSetup-->
-	<screen name="AdapterSetup" position="center,center" size="600*f,520*f">
+	<screen name="AdapterSetup" position="center,center" size="600*f,570*f">
 		<widget source="Adaptertext" render="Label" position="15*f,15*f" size="100*f,25*f" font="Regular;22*f"/>
 		<widget source="Adapter" render="Label" position="115*f,15*f" size="470*f,25*f" font="Regular;22*f"/>
-		<widget name="config" position="0,45*f" size="600*f,150*f" itemHeight="25*f" font="Regular;18*f"/>
-		<widget source="introduction" render="Label" position="15*f,215*f" size="560*f,25*f" font="Regular;20*f"/>
-		<widget source="IPtext" render="Label" position="15*f,245*f" size="270*f,22*f" font="Regular;20*f"/>
-		<widget source="IP" render="Label" position="305*f,245*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
-		<widget source="Netmasktext" render="Label" position="15*f,270*f" size="270*f,22*f" font="Regular;20*f"/>
-		<widget source="Mask" render="Label" position="305*f,270*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
-		<widget source="Gatewaytext" render="Label" position="15*f,295*f" size="285*f,22*f" font="Regular;20*f"/>
-		<widget source="Gateway" render="Label" position="305*f,295*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
-		<widget source="DNS1text" render="Label" position="15*f,320*f" size="285*f,22*f" font="Regular;20*f"/>
-		<widget source="DNS1" render="Label" position="305*f,320*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
-		<widget source="DNS2text" render="Label" position="15*f,345*f" size="285*f,22*f" font="Regular;20*f"/>
-		<widget source="DNS2" render="Label" position="305*f,345*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
-		<widget source="introduction2" render="Label" position="15*f,400*f" size="570*f,25*f" font="Regular;22*f"/>
+		<widget name="config" position="0,45*f" size="600*f,200*f" itemHeight="25*f" font="Regular;18*f"/>
+		<widget source="introduction" render="Label" position="15*f,265*f" size="560*f,25*f" font="Regular;20*f"/>
+		<widget source="IPtext" render="Label" position="15*f,295*f" size="270*f,22*f" font="Regular;20*f"/>
+		<widget source="IP" render="Label" position="305*f,295*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="Netmasktext" render="Label" position="15*f,320*f" size="270*f,22*f" font="Regular;20*f"/>
+		<widget source="Mask" render="Label" position="305*f,320*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="Gatewaytext" render="Label" position="15*f,345*f" size="285*f,22*f" font="Regular;20*f"/>
+		<widget source="Gateway" render="Label" position="305*f,345*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="DNS1text" render="Label" position="15*f,370*f" size="285*f,22*f" font="Regular;20*f"/>
+		<widget source="DNS1" render="Label" position="305*f,370*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="DNS2text" render="Label" position="15*f,395*f" size="285*f,22*f" font="Regular;20*f"/>
+		<widget source="DNS2" render="Label" position="305*f,395*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
+		<widget source="introduction2" render="Label" position="15*f,450*f" size="570*f,25*f" font="Regular;22*f"/>
 
-		<widget name="HelpWindow" position="center,425*f" size="1,1"/>
+		<widget name="HelpWindow" position="center,475*f" size="1,1"/>
 		<panel name="DynamicButtonsTemplate"/>
 		<panel name="VKeyIconTemplate"/>
 	</screen>
