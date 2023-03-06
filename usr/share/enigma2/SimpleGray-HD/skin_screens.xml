@@ -1704,6 +1704,46 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="VolumeText" position="250*f,0" size="50*f,30*f" font="Replacement;26*f" halign="center"/>
 	</screen>
 
+	<!--Plugins.SystemPlugins.WirelessLan.plugin-->
+	<screen name="WlanScan" position="center,center" size="560*f,400*f">
+		<widget source="list" render="Listbox" position="15*f,10*f" size="530*f,270*f" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos=(0, 0), size=(310*f, 30*f), font=0, flags=RT_HALIGN_LEFT, text=0),  # index 0 is the essid
+					MultiContentEntryText(pos=(0, 30*f), size=(175*f, 20*f), font=1, flags=RT_HALIGN_LEFT, text=5),  # index 5 is the interface
+					MultiContentEntryText(pos=(175*f, 30*f), size=(135*f, 20*f), font=1, flags=RT_HALIGN_LEFT, text=4),  # index 0 is the encryption
+					MultiContentEntryText(pos=(310*f, 0), size=(220*f, 20*f), font=1, flags=RT_HALIGN_LEFT, text=2),  # index 0 is the signal
+					MultiContentEntryText(pos=(310*f, 30*f), size=(220*f, 20*f), font=1, flags=RT_HALIGN_LEFT, text=3),  # index 0 is the maxrate
+					MultiContentEntryPixmapAlphaBlend(pos=(0, 52*f), size=(550*f, 2*f), png=6)],  # index 6 is the div pixmap
+				"fonts": [gFont("Regular", 25*f),gFont("Regular", 18*f)],
+				"itemHeight": 54*f}
+			</convert>
+		</widget>
+		<widget source="info" render="Label" position="15*f,290*f" size="530*f,30*f" font="Regular;25*f"/>
+		<panel name="DynamicButtonsTemplate"/>
+	</screen>
+
+	<!--Plugins.SystemPlugins.WirelessLan.plugin-->
+	<screen name="WlanStatus" position="center,center" size="560*f,420*f">
+		<widget source="LabelBSSID" render="Label" position="15*f,10*f" size="230*f,25*f" font="Regular;20*f"/>
+		<widget source="LabelESSID" render="Label" position="15*f,50*f" size="230*f,25*f" font="Regular;20*f"/>
+		<widget source="LabelQuality" render="Label" position="15*f,90*f" size="230*f,25*f" font="Regular;20*f"/>
+		<widget source="LabelSignal" render="Label" position="15*f,130*f" size="230*f,25*f" font="Regular;20*f"/>
+		<widget source="LabelBitrate" render="Label" position="15*f,170*f" size="230*f,25*f" font="Regular;20*f"/>
+		<widget source="LabelEnc" render="Label" position="15*f,210*f" size="230*f,25*f" font="Regular;20*f"/>
+		<widget source="IFtext" render="Label" position="15*f,250*f" size="230*f,25*f" font="Regular;20*f"/>
+		<widget source="Statustext" render="Label" position="15*f,290*f" size="230*f,25*f" font="Regular;20*f"/>
+		<widget source="BSSID" render="Label" position="250*f,10*f" size="270*f,25*f" font="Regular;20*f"/>
+		<widget source="ESSID" render="Label" position="250*f,50*f" size="270*f,25*f" font="Regular;20*f"/>
+		<widget source="quality" render="Label" position="250*f,90*f" size="270*f,25*f" font="Regular;20*f"/>
+		<widget source="signal" render="Label" position="250*f,130*f" size="270*f,25*f" font="Regular;20*f"/>
+		<widget source="bitrate" render="Label" position="250*f,170*f" size="270*f,25*f" font="Regular;20*f"/>
+		<widget source="enc" render="Label" position="250*f,210*f" size="270*f,25*f" font="Regular;20*f"/>
+		<widget source="IF" render="Label" position="250*f,250*f" size="270*f,25*f" font="Regular;20*f"/>
+		<widget name="statuspic" position="250*f,295*f" size="15*f,16*f" pixmaps="buttons/button_green.svg,buttons/button_green_off.svg" alphatest="on"/>
+		<panel name="DynamicButtonsTemplate"/>
+	</screen>
+
 	<!--Plugins.Extensions.YouTube.YouTubeDownload-->
 	<screen name="YouTubeDownloadList" position="center,center" size="580*f,260*f">
 		<widget source="list" render="Listbox" position="0,10*f" size="580*f,180*f" scrollbarMode="showOnDemand">
