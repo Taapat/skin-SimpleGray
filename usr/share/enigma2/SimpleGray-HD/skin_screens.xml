@@ -913,7 +913,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<ePixmap pixmap="skin_default/mute.svg" position="0,0" size="64*f,64*f"/>
 	</screen>
 
-	<!--from Screens.NetworkSetup-->
+	<!--Removed in OpenPLi develop Screens.NetworkSetup-->
 	<screen name="NameserverSetup" position="center,center" size="520*f,240*f">
 		<panel name="ConfigIntroductionLabelTemplate"/>
 		<panel name="DynamicButtonsTemplate"/>
