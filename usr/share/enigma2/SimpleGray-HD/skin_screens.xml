@@ -78,7 +78,7 @@
 		<widget source="DNS2" render="Label" position="305*f,395*f" size="280*f,22*f" font="Regular;15*f" halign="right"/>
 		<widget source="introduction2" render="Label" position="15*f,450*f" size="570*f,25*f" font="Regular;22*f"/>
 
-		<widget name="HelpWindow" position="center,475*f" size="1,1"/>
+		<widget name="HelpWindow" position="347*f,335*f" size="1,1"/>
 		<panel name="DynamicButtonsTemplate"/>
 		<panel name="VKeyIconTemplate"/>
 	</screen>
