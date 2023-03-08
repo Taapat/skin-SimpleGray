@@ -54,7 +54,7 @@ jobs:
           pip install twisted pyopenssl service_identity netifaces
       - name: Install dev packages
         run: |
-          sudo apt install docbook-xsl gettext libunwind-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libfribidi-dev libavahi-client-dev libgif-dev mm-common
+          sudo apt install docbook-xsl install g++11 gettext libunwind-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libfribidi-dev libavahi-client-dev libgif-dev mm-common
       - name: Set tuxtxt repository
         uses: actions/checkout@v3
         with:
