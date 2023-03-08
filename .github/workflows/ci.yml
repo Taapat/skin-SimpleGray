@@ -49,12 +49,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - name: Install dependencies
-        run: |
-          pip install twisted pyopenssl service_identity netifaces
       - name: Install dev packages
         run: |
-          sudo apt install docbook-xsl install g++11 gettext libunwind-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libfribidi-dev libavahi-client-dev libgif-dev mm-common
+          sudo apt install docbook-xsl g++11 gettext libunwind-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libfribidi-dev libavahi-client-dev libgif-dev mm-common
+      - name: Install python packages
+        run: |
+          pip install twisted pyopenssl service_identity netifaces
       - name: Set tuxtxt repository
         uses: actions/checkout@v3
         with:
