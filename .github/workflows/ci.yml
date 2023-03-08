@@ -12,7 +12,7 @@ on:
 
 jobs:
   test-python:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         python-version: ['2.7', '3.11']
@@ -35,8 +35,8 @@ jobs:
     needs: test-python
     runs-on: ubuntu-20.04
     env:
-      CC: "gcc-10"
-      CXX: "g++-10"
+      CC: "gcc-11"
+      CXX: "g++-11"
     steps:
       - uses: actions/checkout@v3
       - name: Set enigma2 repository
@@ -45,16 +45,18 @@ jobs:
           repository: 'OpenPLi/enigma2'
           ref: 'develop'
           path: './enigma2'
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
-      - name: Install dependencies
-        run: |
-          pip install twisted pyopenssl service_identity netifaces
+          python-version: '3.11'
       - name: Install dev packages
         run: |
-          sudo apt install docbook-xsl gettext libunwind-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libfribidi-dev libavahi-client-dev libgif-dev mm-common
+          sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+          sudo apt-get -q update
+          sudo apt install docbook-xsl g++-11 gettext libunwind-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libfribidi-dev libavahi-client-dev libgif-dev mm-common
+      - name: Install python packages
+        run: |
+          pip install twisted pyopenssl service_identity netifaces
       - name: Set tuxtxt repository
         uses: actions/checkout@v3
         with:
@@ -95,7 +97,7 @@ jobs:
         run: |
           cd ./enigma2
           autoreconf -i
-          ./configure --with-libsdl=no --with-boxtype=nobox --enable-dependency-tracking ac_cv_prog_c_openmp=-fopenmp --with-textlcd
+          ./configure CXXFLAGS=-Wno-error=range-loop-construct --with-libsdl=no --with-boxtype=nobox --enable-dependency-tracking ac_cv_prog_c_openmp=-fopenmp --with-textlcd
           make
           cd ./data
           python convert-iso-639-3.py
