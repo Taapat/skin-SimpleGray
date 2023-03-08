@@ -97,7 +97,7 @@ jobs:
         run: |
           cd ./enigma2
           autoreconf -i
-          ./configure --with-libsdl=no --with-boxtype=nobox --enable-dependency-tracking ac_cv_prog_c_openmp=-fopenmp --with-textlcd
+          ./configure CXXFLAGS=-Wno-error=range-loop-construct --with-libsdl=no --with-boxtype=nobox --enable-dependency-tracking ac_cv_prog_c_openmp=-fopenmp --with-textlcd
           make
           cd ./data
           python convert-iso-639-3.py
