@@ -35,8 +35,8 @@ jobs:
     needs: test-python
     runs-on: ubuntu-20.04
     env:
-      CC: "gcc-10"
-      CXX: "g++-10"
+      CC: "gcc-11"
+      CXX: "g++-11"
     steps:
       - uses: actions/checkout@v3
       - name: Set enigma2 repository
@@ -45,10 +45,10 @@ jobs:
           repository: 'OpenPLi/enigma2'
           ref: 'develop'
           path: './enigma2'
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: '3.11'
       - name: Install dependencies
         run: |
           pip install twisted pyopenssl service_identity netifaces
