@@ -50,7 +50,7 @@ class Session:
 			self.current_dialog.execEnd()
 
 	def openWithCallback(self, callback, screen, *arguments, **kwargs):
-		print('OpenWithCallback ')
+		print('OpenWithCallback')
 		dlg = self.open(screen, *arguments, **kwargs)
 		dlg.callback = callback
 		return dlg
@@ -58,8 +58,7 @@ class Session:
 	def open(self, screen, *arguments, **kwargs):
 		print('Session open ', screen, arguments)
 		self.pushCurrent()
-		dlg = self.current_dialog = self.instantiateDialog(screen,
-						*arguments, **kwargs)
+		dlg = self.current_dialog = self.instantiateDialog(screen, *arguments, **kwargs)
 
 		dlg.callback = None
 		self.execBegin()
@@ -96,14 +95,8 @@ def new_activateLanguage(self, index):
 	print('Activating language de_DE')
 
 
-_session = None
-
-
 def start_session():
 	print('init session')
-	global _session
-	if _session is not None:
-		return _session
 
 	print('init language')
 	from Components.Language import Language, language
@@ -144,9 +137,7 @@ def start_session():
 	import keymapparser
 	keymapparser.readKeymap(config.usage.keymap.value)
 
-	_session = Session(enigma.getDesktop(1), Navigation())
-
-	return _session
+	return Session(enigma.getDesktop(1), Navigation())
 
 
 def try_screens_load():
