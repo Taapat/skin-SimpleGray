@@ -345,7 +345,7 @@ self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
 	</screen>
 
 	<screen name="ServiceInfoTemplate">
-		<widget name="infolist" position="15*f,10*f" size="710*f,480*f" selectionDisabled="1" itemHeight="30*f"/>
+		<widget name="infolist" position="15*f,10*f" size="710*f,480*f" itemHeight="30*f" selectionDisabled="1"  scrollbarMode="showOnDemand"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
