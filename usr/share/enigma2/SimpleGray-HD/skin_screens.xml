@@ -456,7 +456,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget source="Event" render="Label" position="15*f,10*f" size="740*f,30*f" font="Replacement;26*f">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget name="list" position="10*f,50*f" size="750*f,325*f" setColWidths="60*f,130*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f"/>
+		<widget name="list" position="10*f,50*f" size="750*f,325*f" setColWidths="40*f,130*f" enableWrapAround="1" scrollbarMode="showOnDemand" itemHeight="25*f"/>
 		<widget source="Event" render="Label" position="15*f,400*f" size="740*f,70*f" font="Regular;20*f">
 			<convert type="EventName">FullDescription</convert>
 		</widget>
