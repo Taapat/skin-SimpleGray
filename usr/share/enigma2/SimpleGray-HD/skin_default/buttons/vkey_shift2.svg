@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-  <path d="M 16.992 17.171 H 20.731 L 20.731 10.671 L 32.731 21.671 L 20.731 32.671 L 20.731 26.171 H 16.992 V 17.171 Z" style="fill: rgb(0, 255, 238);" transform="matrix(0.000017, -1, 1, 0.000017, 0.828577, 47.36113)" bx:shape="arrow 16.992 10.671 15.739 22 9 12 0 1@5efabb5a"/>
+<svg viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
+  <path d="M 16.992 17.171 H 20.731 L 20.731 10.671 L 32.731 21.671 L 20.731 32.671 L 20.731 26.171 H 16.992 V 17.171 Z" style="fill: rgb(0, 255, 238);" transform="matrix(0.000017, -1, 1, 0.000017, 0.828577, 47.36113)" shape="arrow 16.992 10.671 15.739 22 9 12 0 1@5efabb5a"/>
 </svg>

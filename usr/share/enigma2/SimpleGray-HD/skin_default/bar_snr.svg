@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 260 20" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg viewBox="0 0 260 20" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="color-0" bx:pinned="true">
+    <linearGradient id="color-0" pinned="true">
       <stop style="stop-color: rgb(255, 0, 0);"/>
     </linearGradient>
-    <linearGradient id="color-1" bx:pinned="true">
+    <linearGradient id="color-1" pinned="true">
       <stop style="stop-color: rgb(255, 255, 0);"/>
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="130" y1="0" x2="130" y2="20" id="gradient-0" gradientTransform="matrix(0.076923, 0, 0, 13, 0, 0)" spreadMethod="pad">

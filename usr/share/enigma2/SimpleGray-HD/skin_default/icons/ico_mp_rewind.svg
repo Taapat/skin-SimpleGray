@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg id="Layer_1" data-name="Layer 1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg id="Layer_1" data-name="Layer 1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>.cls-1{fill:#141f38;}</style>
   </defs>
   <polyline style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" points="4.453 19.682"/>
-  <path d="M 3.795 -7.458 L 9.795 -1.458 L -2.205 -1.458 L 3.795 -7.458 Z" style="fill: rgb(255, 0, 0);" transform="matrix(0, 1, 1, 0, 14.958, 4.205)" bx:shape="triangle -2.205 -7.458 12 6 0.5 0 1@88428e0f"/>
-  <path d="M 3.795 -7.458 L 9.795 -1.458 L -2.205 -1.458 L 3.795 -7.458 Z" style="fill: rgb(255, 0, 0);" transform="matrix(0, 1, 1, 0, 8.958, 4.205)" bx:shape="triangle -2.205 -7.458 12 6 0.5 0 1@88428e0f"/>
+  <path d="M 3.795 -7.458 L 9.795 -1.458 L -2.205 -1.458 L 3.795 -7.458 Z" style="fill: rgb(255, 0, 0);" transform="matrix(0, 1, 1, 0, 14.958, 4.205)" shape="triangle -2.205 -7.458 12 6 0.5 0 1@88428e0f"/>
+  <path d="M 3.795 -7.458 L 9.795 -1.458 L -2.205 -1.458 L 3.795 -7.458 Z" style="fill: rgb(255, 0, 0);" transform="matrix(0, 1, 1, 0, 8.958, 4.205)" shape="triangle -2.205 -7.458 12 6 0.5 0 1@88428e0f"/>
 </svg>

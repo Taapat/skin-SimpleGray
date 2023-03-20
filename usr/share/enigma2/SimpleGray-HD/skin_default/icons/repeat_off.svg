@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg viewBox="0 0 50 30" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <bx:grid x="-0.2" y="-0.2" width="100" height="100"/>
+    <grid x="-0.2" y="-0.2" width="100" height="100"/>
   </defs>
-  <path d="M 14.274 15.991 H 31.644 L 31.644 10.991 L 40.644 18.491 L 31.644 25.991 L 31.644 20.991 H 14.274 V 15.991 Z" style="fill: rgb(255, 255, 255);" transform="matrix(0.99998, 0.006269, -0.006269, 0.99998, -8.495331, -3.66277)" bx:shape="arrow 14.274 10.991 26.37 15 5 9 0 1@1256099f"/>
+  <path d="M 14.274 15.991 H 31.644 L 31.644 10.991 L 40.644 18.491 L 31.644 25.991 L 31.644 20.991 H 14.274 V 15.991 Z" style="fill: rgb(255, 255, 255);" transform="matrix(0.99998, 0.006269, -0.006269, 0.99998, -8.495331, -3.66277)" shape="arrow 14.274 10.991 26.37 15 5 9 0 1@1256099f"/>
   <circle style="fill: rgb(255, 255, 255);" cx="39.885" cy="15" r="4.5"/>
 </svg>

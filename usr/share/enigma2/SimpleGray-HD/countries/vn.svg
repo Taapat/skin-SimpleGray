@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg width="60px" height="40px" viewBox="0 0 60 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg width="60px" height="40px" viewBox="0 0 60 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <desc>Created with Sketch.</desc>
   <rect width="60" height="40" style="fill: rgb(237, 85, 101);"/>
-  <path d="M 327 485.722 L 329.78 493.35 L 338.246 493.515 L 331.498 498.394 L 333.951 506.124 L 327 501.511 L 320.049 506.124 L 322.502 498.394 L 315.754 493.515 L 324.22 493.35 Z" style="fill: rgb(246, 214, 96);" transform="matrix(1, 0.000055, -0.000055, 1, -296.972717, -475.940978)" bx:shape="star 327 497 11.825 11.278 0.4 5 1@f1fd14e9"/>
+  <path d="M 327 485.722 L 329.78 493.35 L 338.246 493.515 L 331.498 498.394 L 333.951 506.124 L 327 501.511 L 320.049 506.124 L 322.502 498.394 L 315.754 493.515 L 324.22 493.35 Z" style="fill: rgb(246, 214, 96);" transform="matrix(1, 0.000055, -0.000055, 1, -296.972717, -475.940978)" shape="star 327 497 11.825 11.278 0.4 5 1@f1fd14e9"/>
 </svg>

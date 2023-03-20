@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <bx:grid x="0.026" y="0" width="100" height="100"/>
+    <grid x="0.026" y="0" width="100" height="100"/>
   </defs>
   <rect width="35" height="20" style="fill: rgb(143, 143, 143);"/>
   <line style="stroke-width: 2px; stroke-linecap: round; stroke: rgb(253, 253, 253);" x1="13.738" y1="5.507" x2="13.738" y2="14.493"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+<svg viewBox="0 0 35 20" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <bx:grid x="0.026" y="0" width="100" height="100"/>
+    <grid x="0.026" y="0" width="100" height="100"/>
   </defs>
   <rect width="35" height="20" style="fill: rgb(143, 143, 143);"/>
   <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke-width: 2px; stroke: rgb(248, 248, 248);" x1="13.355" y1="15.045" x2="15.842" y2="5.465"/>
   <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke-width: 2px; stroke: rgb(248, 248, 248);" x1="15.842" y1="5.465" x2="19.873" y2="5.465"/>
   <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke-width: 2px; stroke: rgb(248, 248, 248);" x1="14.644" y1="10.439" x2="19.066" y2="10.439"/>
   <line style="stroke-linecap: round; fill: rgb(255, 255, 255); stroke-width: 2px; stroke: rgb(248, 248, 248);" x1="19.065" y1="10.439" x2="20.622" y2="15.044"/>
-  <path style="fill: rgb(255, 255, 255);" transform="matrix(-0.048906, 0, 0, 0.050018, 36.024029, -5.250114)" d="M 356.177599046 331.610280201 A 70.88 70.88 0 0 1 324.598879736 194.82781937 L 338.275634163 230.456982767 A 32.716 32.716 0 0 0 352.85138728 293.591505743 Z" bx:shape="pie 350 261 32.716 70.88 175 339 1@21cb9ca2"/>
+  <path style="fill: rgb(255, 255, 255);" transform="matrix(-0.048906, 0, 0, 0.050018, 36.024029, -5.250114)" d="M 356.177599046 331.610280201 A 70.88 70.88 0 0 1 324.598879736 194.82781937 L 338.275634163 230.456982767 A 32.716 32.716 0 0 0 352.85138728 293.591505743 Z" shape="pie 350 261 32.716 70.88 175 339 1@21cb9ca2"/>
 </svg>
