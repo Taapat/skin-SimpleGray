@@ -74,15 +74,15 @@
 		<widget source="session.CurrentService" render="Label" position="340*f,e-147*f" size="390*f,45*f" font="Replacement;30*f" foregroundColor="grey" noWrap="1">
 			<convert type="ServiceName">Name</convert>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="DOLBY" position="730*f,e-126*f" size="52*f,18*f" font="Regular;15*f">
+		<widget source="session.CurrentService" render="FixedLabel" text="DOLBY" position="720*f,e-126*f" size="52*f,18*f" font="Regular;15*f">
 				<convert type="ServiceInfo">IsMultichannel</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="TEXT" position="783*f,e-126*f" size="39*f,18*f" font="Regular;15*f">
+		<widget source="session.CurrentService" render="FixedLabel" text="TEXT" position="773*f,e-126*f" size="39*f,18*f" font="Regular;15*f">
 				<convert type="ServiceInfo">HasTelext</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
-		<widget source="session.RecordState" render="FixedLabel" text="REC" position="823*f,e-130*f" size="35*f,25*f" font="Regular;20*f" foregroundColor="red">
+		<widget source="session.RecordState" render="FixedLabel" text="REC" position="813*f,e-130*f" size="35*f,25*f" font="Regular;20*f" foregroundColor="red">
 				<convert type="ConditionalShowHide"/>
 		</widget>
 
