@@ -64,6 +64,22 @@
 			<widget objectTypes="key_yellow,Label,Button" name="key_yellow" position="c+3*f,2*f" size="(e-36*f)/4-4*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 			<widget objectTypes="key_blue,Label,Button" name="key_blue" position="(e-36*f)*0.75+23*f,2*f" size="(e-36*f)/4-4*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 		</panel>
+		<applet type="onLayoutFinish">
+def calculate_text_size(self):
+	b_height = 0
+	for x in ("key_red", "key_green", "key_yellow", "key_blue"):
+		if x in self:
+			button = self[x]
+			if hasattr(button, "downstream_elements"):
+				button = button.downstream_elements[1]
+			if not b_height:
+				b_height = button.instance.size().height()
+			if button.instance.calculateSize().height() > b_height:
+				from skin import parseFont
+				button.instance.setFont(parseFont("Regular;16*f"))
+from Tools.BoundFunction import boundFunction
+self.onShown.append(boundFunction(calculate_text_size, self))
+		</applet>
 	</screen>
 
 	<screen name="InfoBarTemplate">
@@ -186,6 +202,17 @@
 			<widget name="key_yellow" position="365*f,2*f" size="166*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 			<widget name="key_blue" position="539*f,2*f" size="166*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 		</panel>
+		<applet type="onLayoutFinish">
+b_height = 0
+for x in ("key_red", "key_green", "key_yellow", "key_blue"):
+	if x in self:
+		button = self[x]
+		if not b_height:
+			b_height = button.instance.size().height()
+		if button.instance.calculateSize().height() > b_height:
+			from skin import parseFont
+			button.instance.setFont(parseFont("Regular;16*f"))
+		</applet>
 	</screen>
 
 	<screen name="LeftTextButtonsTemplate">
@@ -208,6 +235,17 @@
 			<widget objectTypes="key_yellow,StaticText" source="key_yellow" render="Label" position="365*f,2*f" size="166*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 			<widget objectTypes="key_blue,StaticText" source="key_blue" render="Label" position="539*f,2*f" size="166*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 		</panel>
+		<applet type="onLayoutFinish">
+b_height = 0
+for x in ("key_red", "key_green", "key_yellow", "key_blue"):
+	if x in self:
+		button = self[x].downstream_elements[1]
+		if not b_height:
+			b_height = button.instance.size().height()
+		if button.instance.calculateSize().height() > b_height:
+			from skin import parseFont
+			button.instance.setFont(parseFont("Regular;16*f"))
+		</applet>
 	</screen>
 
 	<screen name="IpkDownloadTemplate">
@@ -260,7 +298,7 @@ self["text"].instance.resize(eSize(*textsize))
 if self.type == self.TYPE_YESNO:
 	self["list"].instance.move(ePoint(int(15 * f), int(wsizey - listlen - 10 * f)))
 	self["list"].instance.resize(eSize(*(int(wsizex - 30 * f), int(listlen))))
-self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((690  * f - wsizey) / 2)))
+self.instance.move(ePoint(int((1280 * f - wsizex) // 2), int((690  * f - wsizey) // 2)))
 self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
 		</applet>
 	</screen>
