@@ -65,20 +65,20 @@
 			<widget objectTypes="key_blue,Label,Button" name="key_blue" position="(e-36*f)*0.75+23*f,2*f" size="(e-36*f)/4-4*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 		</panel>
 		<applet type="onLayoutFinish">
-def calculate_text_size(self):
+def resize_button_text(self):
 	b_height = 0
 	for x in ("key_red", "key_green", "key_yellow", "key_blue"):
 		if x in self:
 			button = self[x]
 			if hasattr(button, "downstream_elements"):
-				button = button.downstream_elements[1]
+				button = button.downstream_elements[-1]
 			if not b_height:
 				b_height = button.instance.size().height()
 			if button.instance.calculateSize().height() > b_height:
 				from skin import parseFont
 				button.instance.setFont(parseFont("Regular;16*f"))
 from Tools.BoundFunction import boundFunction
-self.onShown.append(boundFunction(calculate_text_size, self))
+self.onShown.append(boundFunction(resize_button_text, self))
 		</applet>
 	</screen>
 
@@ -202,17 +202,7 @@ self.onShown.append(boundFunction(calculate_text_size, self))
 			<widget name="key_yellow" position="365*f,2*f" size="166*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 			<widget name="key_blue" position="539*f,2*f" size="166*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 		</panel>
-		<applet type="onLayoutFinish">
-b_height = 0
-for x in ("key_red", "key_green", "key_yellow", "key_blue"):
-	if x in self:
-		button = self[x]
-		if not b_height:
-			b_height = button.instance.size().height()
-		if button.instance.calculateSize().height() > b_height:
-			from skin import parseFont
-			button.instance.setFont(parseFont("Regular;16*f"))
-		</applet>
+		<panel name="ResizeButtonTextTemplate"/>
 	</screen>
 
 	<screen name="LeftTextButtonsTemplate">
@@ -235,17 +225,7 @@ for x in ("key_red", "key_green", "key_yellow", "key_blue"):
 			<widget objectTypes="key_yellow,StaticText" source="key_yellow" render="Label" position="365*f,2*f" size="166*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 			<widget objectTypes="key_blue,StaticText" source="key_blue" render="Label" position="539*f,2*f" size="166*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 		</panel>
-		<applet type="onLayoutFinish">
-b_height = 0
-for x in ("key_red", "key_green", "key_yellow", "key_blue"):
-	if x in self:
-		button = self[x].downstream_elements[1]
-		if not b_height:
-			b_height = button.instance.size().height()
-		if button.instance.calculateSize().height() > b_height:
-			from skin import parseFont
-			button.instance.setFont(parseFont("Regular;16*f"))
-		</applet>
+		<panel name="ResizeButtonStaticTextTemplate"/>
 	</screen>
 
 	<screen name="IpkDownloadTemplate">
@@ -374,6 +354,34 @@ self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
 		<widget name="arrowdown2" pixmap="skin_default/arrowdown.svg" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
 		<widget name="arrowup" pixmap="skin_default/arrowup.svg" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
 		<widget name="arrowup2" pixmap="skin_default/arrowup.svg" position="0,0" zPosition="1" size="37,70" transparent="1" alphatest="on"/>
+	</screen>
+
+	<screen name="ResizeButtonStaticTextTemplate">
+		<applet type="onLayoutFinish">
+b_height = 0
+for x in ("key_red", "key_green", "key_yellow", "key_blue"):
+	if x in self:
+		button = self[x].downstream_elements[-1].instance
+		if not b_height:
+			b_height = button.size().height()
+		if button.calculateSize().height() > b_height:
+			from skin import parseFont
+			button.setFont(parseFont("Regular;16*f"))
+		</applet>
+	</screen>
+
+	<screen name="ResizeButtonTextTemplate">
+		<applet type="onLayoutFinish">
+b_height = 0
+for x in ("key_red", "key_green", "key_yellow", "key_blue"):
+	if x in self:
+		button = self[x].instance
+		if not b_height:
+			b_height = button.size().height()
+		if button.calculateSize().height() > b_height:
+			from skin import parseFont
+			button.setFont(parseFont("Regular;16*f"))
+		</applet>
 	</screen>
 
 	<screen name="ScanStatusTemplate">

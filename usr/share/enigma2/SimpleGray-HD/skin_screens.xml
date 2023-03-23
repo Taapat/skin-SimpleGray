@@ -517,6 +517,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget source="key_green" render="Label" position="221*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 		<widget source="key_yellow" render="Label" position="425*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
 		<widget source="key_blue" render="Label" position="629*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<panel name="ResizeButtonStaticTextTemplate"/>
 	</screen>
 
 	<!--Screens.EventView-->
@@ -603,10 +604,11 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<eLabel position="219*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="green"/>
 		<eLabel position="423*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="yellow"/>
 		<eLabel position="627*f,530*f" size="200*f,40*f" zPosition="-5" backgroundColor="blue"/>
-		<widget name="key_red" render="Label" position="17*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
-		<widget name="key_green" render="Label" position="221*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
-		<widget name="key_yellow" render="Label" position="425*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
-		<widget name="key_blue" render="Label" position="629*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_red" position="17*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_green" position="221*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_yellow" position="425*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_blue" position="629*f,532*f" size="196*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<panel name="ResizeButtonTextTemplate"/>
 	</screen>
 
 	<!--Plugins.Extensions.GraphMultiEPG.GraphMultiEpg-->
@@ -1116,8 +1118,9 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget name="list" position="5*f,10*f" size="625*f,453*f" scrollbarMode="showOnDemand" itemHeight="50*f"/>
 		<eLabel position="15*f,500*f" size="247*f,40*f" zPosition="-5" backgroundColor="red"/>
 		<eLabel position="266*f,500*f" size="247*f,40*f" zPosition="-5" backgroundColor="green"/>
-		<widget name="key_red" render="Label" position="17*f,502*f" size="243*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
-		<widget name="key_green" render="Label" position="268*f,502*f" size="243*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_red" position="17*f,502*f" size="243*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<widget name="key_green" position="268*f,502*f" size="243*f,36*f" font="Regular;22*f" halign="center" valign="center"/>
+		<panel name="ResizeButtonTextTemplate"/>
 	</screen>
 
 	<!--from Screens.PluginBrowser-->
