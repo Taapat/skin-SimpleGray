@@ -1,8 +1,9 @@
 """
 Minimal skin screens testing on enigma2 image.
 """
-import inspect
 import sys
+from inspect import signature
+from traceback import print_exc
 
 import enigma
 import eConsoleImpl
@@ -23,12 +24,16 @@ class Session:
 		self.nav = navigation
 		self.current_dialog = None
 		self.dialog_stack = []
+		self.summary = None
 		from Screens.SessionGlobals import SessionGlobals
 		self.screen = SessionGlobals(self)
 
 	def execBegin(self, first=True, do_show=True):
 		c = self.current_dialog
-		c.execBegin()
+		try:
+			c.execBegin()
+		except IndexError:
+			pass
 
 	def instantiateDialog(self, screen, *arguments, **kwargs):
 		return self.doInstantiateDialog(screen, arguments, kwargs, self.desktop)
@@ -179,18 +184,19 @@ def try_screens_load():
 				print(error)
 				errors.append(error)
 			else:
-				arg_spec = len(inspect.signature(eval(screen_name).__init__).parameters) - 2
-				if arg_spec <= 0:
+				arg_spec = signature(eval(screen_name).__init__).parameters.values()
+				if len(arg_spec) < 3:
 					args = ()
 				else:
-					args = ('' for _ in range(0, arg_spec))
+					args = ('' for i, x in enumerate(arg_spec) if x.default == x.empty and i > 1)
 				try:
 					src_screen = eval(screen_name)
 					src = session.open(src_screen, *args)
 				except Exception as er:
-					error = 'Error in %s: %s\n%s' % (screen_name, er, inspect.signature(eval(screen_name).__init__))
+					error = 'Error in %s: %s\n%s' % (screen_name, er, signature(eval(screen_name).__init__))
 					print(error)
 					errors.append(error)
+					print_exc()
 				else:
 					src.close(src_screen)
 			screen_import = None
