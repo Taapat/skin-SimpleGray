@@ -1,7 +1,6 @@
 """
 Minimal skin screens testing on enigma2 image.
 """
-import sys
 from inspect import signature
 from traceback import print_exc
 
@@ -84,11 +83,6 @@ class Session:
 
 		if callback is not None:
 			callback(*retval)
-
-
-if sys.version_info[0] == 2:
-	reload(sys)  # noqa: F821
-	sys.setdefaultencoding('utf-8')
 
 
 def new_activateLanguage(self, index):
