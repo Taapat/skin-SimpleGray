@@ -231,8 +231,8 @@ self.onShown.append(boundFunction(resize_button_text, self))
 	<screen name="IpkDownloadTemplate">
 		<widget name="activityslider" position="15*f,20*f" size="590*f,10*f" foregroundColor="grey" borderWidth="1"/>
 		<widget source="package" render="Label" position="15*f,50*f" size="590*f,40*f" font="Regular;20*f"/>
-		<widget source="status" render="Label" position="15*f,100*f" size="590*f,40*f" font="Regular;20*f"/>
-		<widget name="slider" position="15*f,160*f" size="590*f,30*f" foregroundColor="grey" borderWidth="1"/>
+		<widget source="status" render="Label" position="15*f,100*f" size="590*f,80*f" font="Regular;20*f"/>
+		<widget name="slider" position="15*f,200*f" size="590*f,30*f" foregroundColor="grey" borderWidth="1"/>
 	</screen>
 
 	<screen name="Menu_Template">

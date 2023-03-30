@@ -704,7 +704,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	</screen>
 
 	<!--from Screens.Opkg-->
-	<screen name="Opkg" position="center,center" size="620*f,200*f">
+	<screen name="Opkg" position="center,center" size="620*f,240*f">
 		<panel name="IpkDownloadTemplate"/>
 	</screen>
 
@@ -1623,7 +1623,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	</screen>
 
 	<!--from Screens.SoftwareUpdate-->
-	<screen name="UpdatePlugin" position="center,center" size="620*f,200*f">
+	<screen name="UpdatePlugin" position="center,center" size="620*f,240*f">
 		<panel name="IpkDownloadTemplate"/>
 	</screen>
 
