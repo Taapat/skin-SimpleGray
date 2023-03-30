@@ -140,11 +140,11 @@ jobs:
       - name: Set git variables
         run: |
           echo "SRCPV=git$(git rev-list --count HEAD)" >> $GITHUB_ENV
-          echo "SHA7=${GITHUB_SHA::7}" >> $GITHUB_ENV
+          echo "PKGV=${{ env.SRCPV }}-1-${GITHUB_SHA::7}-r0.0" >> $GITHUB_ENV
           echo "COMMIT_SUBJECT=$(git log -1 --pretty=format:%s)" >> $GITHUB_ENV
       - name: Create plugin package files
         run: |
-          sed -i 's/Version:/Version: 1.0+${{ env.SRCPV }}+${{ env.SHA7 }}-r0.0/' deploy/control/control
+          sed -i 's/Version:/Version: ${{ env.PKGV }}/' deploy/control/control
           mkdir ipk
       - name: Build data package
         run: |
@@ -157,7 +157,8 @@ jobs:
         working-directory: './deploy'
         run: |
           echo 2.0 > debian-binary
-          ar rv ../ipk/enigma2-plugin-skins-simple-gray_1.0+${{ env.SRCPV }}+${{ env.SHA7 }}-r0.0_all.ipk debian-binary data.tar.gz control.tar.gz
+          ar rv ../ipk/enigma2-plugin-skins-simple-gray_${{ env.PKGV }}_all.ipk debian-binary data.tar.gz control.tar.gz
+          ar rv ../ipk/enigma2-plugin-skins-simple-gray_${{ env.PKGV }}_all.ipk debian-binary data.tar.gz control.tar.gz
       - name: Create release
         uses: meeDamian/github-release@2.0
         with:
@@ -165,4 +166,4 @@ jobs:
           tag: ${{ env.SRCPV }}
           name: ${{ env.COMMIT_SUBJECT }}
           gzip: false
-          files: ipk/enigma2-plugin-skins-simple-gray_1.0+${{ env.SRCPV }}+${{ env.SHA7 }}-r0.0_all.ipk
+          files: ipk/enigma2-plugin-skins-simple-gray_${{ env.PKGV }}_all.ipk
