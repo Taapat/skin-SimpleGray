@@ -238,7 +238,7 @@ self.onShown.append(boundFunction(resize_button_text, self))
 	<screen name="Menu_Template">
 		<widget source="menu" render="Listbox" position="0,30*f" size="400*f,605*f" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
-				{"template": [MultiContentEntryText(pos=(15*f, 13*f), size=(400*f, 32*f), flags=RT_HALIGN_LEFT, text=0)],
+				{"template": [MultiContentEntryText(pos=(int(15*f), int(13*f)), size=(int(400*f), int(32*f)), flags=RT_HALIGN_LEFT, text=0)],
 				"fonts": [gFont("Replacement", 24*f)],
 				"itemHeight": 55*f}
 			</convert>
