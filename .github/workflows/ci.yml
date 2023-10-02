@@ -75,8 +75,8 @@ jobs:
           path: './tuxtxt'
       - name: Build enigma dependencies
         run: |
-          git clone --depth 1 git://git.opendreambox.org/git/obi/libdvbsi++.git
-          cd ./libdvbsi++
+          git clone --depth 1 https://github.com/jack2015/libdvbsi.git
+          cd libdvbsi
           autoreconf -i
           ./configure
           make
@@ -173,7 +173,7 @@ jobs:
           ar rv ../ipk/enigma2-plugin-skins-simple-gray_${{ env.PKGV }}_all.ipk debian-binary data.tar.gz control.tar.gz
           ar rv ../ipk/enigma2-plugin-skins-simple-gray_${{ env.PKGV }}_all.ipk debian-binary data.tar.gz control.tar.gz
       - name: Create release
-        uses: meeDamian/github-release@2.0
+        uses: Taapat/github-release@v2.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ env.SRCPV }}
