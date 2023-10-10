@@ -75,8 +75,9 @@ def resize_button_text(self):
 			if not b_height:
 				b_height = button.instance.size().height()
 			if button.instance.calculateSize().height() > b_height:
-				from skin import parseFont
-				button.instance.setFont(parseFont("Regular;16*f"))
+				from enigma import gFont
+				from skin import getSkinFactor
+				button.instance.setFont(gFont("Regular", int(16 * getSkinFactor())))
 from Tools.BoundFunction import boundFunction
 self.onShown.append(boundFunction(resize_button_text, self))
 		</applet>
@@ -365,8 +366,9 @@ for x in ("key_red", "key_green", "key_yellow", "key_blue"):
 		if not b_height:
 			b_height = button.size().height()
 		if button.calculateSize().height() > b_height:
-			from skin import parseFont
-			button.setFont(parseFont("Regular;16*f"))
+			from enigma import gFont
+			from skin import getSkinFactor
+			button.setFont(gFont("Regular", int(16 * getSkinFactor())))
 		</applet>
 	</screen>
 
@@ -379,8 +381,9 @@ for x in ("key_red", "key_green", "key_yellow", "key_blue"):
 		if not b_height:
 			b_height = button.size().height()
 		if button.calculateSize().height() > b_height:
-			from skin import parseFont
-			button.setFont(parseFont("Regular;16*f"))
+			from enigma import gFont
+			from skin import getSkinFactor
+			button.setFont(gFont("Regular", int(16 * getSkinFactor())))
 		</applet>
 	</screen>
 
