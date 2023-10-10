@@ -237,13 +237,31 @@ self.onShown.append(boundFunction(resize_button_text, self))
 	</screen>
 
 	<screen name="Menu_Template">
-		<widget source="menu" render="Listbox" position="0,30*f" size="400*f,605*f" scrollbarMode="showNever">
+		<widget source="menu" render="Listbox" position="0,30*f" size="630*f,605*f" scrollbarMode="showNever">
 			<convert type="TemplatedMultiContent">
-				{"template": [MultiContentEntryText(pos=(15*f, 13*f), size=(400*f, 32*f), flags=RT_HALIGN_LEFT, text=0)],
+				{"template": [MultiContentEntryText(pos=(15*f, 13*f), size=(630*f, 32*f), flags=RT_HALIGN_LEFT, text=0)],
 				"fonts": [gFont("Replacement", 24*f)],
 				"itemHeight": 55*f}
 			</convert>
 		</widget>
+		<applet type="onLayoutFinish">
+from enigma import eLabel, eSize, gFont
+from skin import getSkinFactor
+f = getSkinFactor()
+text = self["title"].text
+font = 26
+for entry in self.list:
+	if len(entry[0]) > len(text):
+		text = entry[0]
+		font = 24
+width = eLabel.calculateTextSize(gFont("Replacement", int(font * f)), text, eSize(*(int(550 * f), int(40 * f)))).width()
+minwith = 520 * f if self.skinName == "MenuSort" else 150 * f
+if minwith > width:
+	width = minwith
+elif width > 600 * f:
+	width = 600 * f
+self.instance.resize(eSize(*(int(width + 30 * f), int(650 * f))))
+		</applet>
 	</screen>
 
 	<screen name="MessageBox_Template">

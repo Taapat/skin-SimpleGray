@@ -824,13 +824,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 
 	<!--from Screens.Menu-->
 	<screen name="MenuSort" position="10*f,60*f" size="550*f,650*f">
-		<widget source="menu" render="Listbox" position="0,30*f" size="616*f,550*f" scrollbarMode="showNever">
-			<convert type="TemplatedMultiContent">
-				{"template": [MultiContentEntryText(pos=(15*f, 13*f), size=(400*f, 32*f), flags=RT_HALIGN_LEFT, text=0)],
-				"fonts": [gFont("Replacement", 24*f)],
-				"itemHeight": 55*f}
-			</convert>
-		</widget>
+		<panel name="Menu_Template"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
