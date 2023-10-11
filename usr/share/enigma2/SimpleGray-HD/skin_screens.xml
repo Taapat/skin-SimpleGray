@@ -656,7 +656,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	<screen name="HotkeySetup" position="center,center" size="740*f,565*f">
 		<widget name="list" position="5*f,10*f" size="335*f,484*f" scrollbarMode="showOnDemand" itemHeight="25*f"/>
 		<widget name="choosen" position="350*f,10*f" size="380*f,350*f" scrollbarMode="showOnDemand" itemHeight="25*f"/>
-		<widget name="description" position="350*f,410*f" size="360*f,100*f" font="Regular;30*f"/>
+		<widget name="description" position="350*f,394*f" size="360*f,100*f" font="Regular;20*f" valign="bottom"/>
 		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
