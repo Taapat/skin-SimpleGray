@@ -295,30 +295,28 @@
 
 	<!--from Screens.ChoiceBox-->
 	<screen name="ChoiceBox" position="center,center" size="670*f,90*f">
-		<widget name="autoresize" position="0,0" size="0,0" font="Regular;20*f" noWrap="1"/>
 		<widget name="text" position="15*f,10*f" size="640*f,40*f" font="Regular;20*f"/>
 		<widget name="list" position="0,50*f" size="670*f,25*f" font="Regular;20*f" scrollbarMode="showOnDemand"/>
 		<widget name="description" position="15*f,0" size="0,0" font="Regular;20*f"/>
 		<applet type="onLayoutFinish">
-from enigma import eSize, ePoint
+from enigma import eLabel, eSize, ePoint, gFont
 from skin import getSkinFactor
 f = getSkinFactor()
 textsize = self["text"].getSize()
 textsize = (int(textsize[0] * 1.03), int(textsize[1] * 1.03))
 wsizex = textsize[0] + 30 * f
 wsizey = textsize[1] + 25 * f
-if 400 * f > wsizex:
-	wsizex = 400 * f
+if 350 * f > wsizex:
+	wsizex = 350 * f
 listlen = len(self.list)
-listwith = ""
+listtext = ""
 descr = ""
 for x in range(listlen):
-	if len(self.list[x][0][0]) > len(listwith):
-		listwith = self.list[x][0][0]
+	if len(self.list[x][0][0]) > len(listtext):
+		listtext = self.list[x][0][0]
 	if len(self.list[x][0]) > 2 and isinstance(self.list[x][0][2], str) and len(self.list[x][0][2]) > len(descr):
 		descr = self.list[x][0][2]
-self["autoresize"].text = listwith
-listwith = self["autoresize"].instance.calculateSize().width() + 60 * f
+listwith = eLabel.calculateTextSize(gFont("Regular", int(20 * f)), listtext, eSize(int(640 * f), int(25 * f))).width() + 60 * f
 if listwith > wsizex:
 	wsizex = listwith
 listlen = listlen * 30 * f
@@ -335,7 +333,7 @@ if descr:
 	self["description"].resize(int(wsizex - 30 * f), textsize)
 	self["description"].move(int(15 * f), int(wsizey + 5 * f))
 	wsizey += textsize + 10 * f
-self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
+self.instance.resize(eSize(int(wsizex), int(wsizey)))
 self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) / 2)))
 		</applet>
 	</screen>
