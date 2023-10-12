@@ -254,13 +254,13 @@ for entry in self.list:
 	if len(entry[0]) > len(text):
 		text = entry[0]
 		font = 24
-width = eLabel.calculateTextSize(gFont("Replacement", int(font * f)), text, eSize(*(int(550 * f), int(40 * f)))).width()
+width = eLabel.calculateTextSize(gFont("Replacement", int(font * f)), text, eSize(int(550 * f), int(40 * f))).width()
 minwith = 520 * f if self.skinName == "MenuSort" else 150 * f
 if minwith > width:
 	width = minwith
 elif width > 600 * f:
 	width = 600 * f
-self.instance.resize(eSize(*(int(width + 30 * f), int(650 * f))))
+self.instance.resize(eSize(int(width + 30 * f), int(650 * f)))
 		</applet>
 	</screen>
 
@@ -296,9 +296,9 @@ elif 50 * f > textsize[1]:
 self["text"].instance.resize(eSize(*textsize))
 if self.type == self.TYPE_YESNO:
 	self["list"].instance.move(ePoint(int(15 * f), int(wsizey - listlen - 10 * f)))
-	self["list"].instance.resize(eSize(*(int(wsizex - 30 * f), int(listlen))))
+	self["list"].instance.resize(eSize(int(wsizex - 30 * f), int(listlen)))
 self.instance.move(ePoint(int((1280 * f - wsizex) // 2), int((690  * f - wsizey) // 2)))
-self.instance.resize(eSize(*(int(wsizex), int(wsizey))))
+self.instance.resize(eSize(int(wsizex), int(wsizey)))
 		</applet>
 	</screen>
 
