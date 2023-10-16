@@ -272,7 +272,7 @@ self.instance.resize(eSize(int(width + 30 * f), int(650 * f)))
 		<widget name="WarningPixmap" pixmap="icons/input_warning.svg" position="10*f,0*f" size="53*f,53*f" alphatest="on"/>
 		<widget name="list" position="15*f,60*f" size="0,0" font="Regular;22*f" itemHeight="30*f" scrollbarMode="showOnDemand"/>
 		<applet type="onLayoutFinish">
-from enigma import eLabel, eSize, ePoint, gFont
+from enigma import eSize, ePoint
 from skin import getSkinFactor
 f = getSkinFactor()
 textsize = self["text"].getSize()
@@ -290,6 +290,7 @@ if self.type == self.TYPE_YESNO:
 		if len(x[0]) > 5 > len(listtext):
 			listtext = x[0]
 	if listtext:
+		from enigma import eLabel, gFont
 		listwith = eLabel.calculateTextSize(gFont("Regular", int(22 * f)), listtext, eSize(int(600 * f), int(30 * f))).width() + 60 * f
 		if listwith > wsizex:
 			wsizex = listwith
