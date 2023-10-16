@@ -270,13 +270,12 @@ self.instance.resize(eSize(int(width + 30 * f), int(650 * f)))
 		<widget name="QuestionPixmap" pixmap="icons/input_question.svg" position="10*f,0" size="53*f,53*f" alphatest="on"/>
 		<widget name="InfoPixmap" pixmap="icons/input_info.svg" position="10*f,0" size="53*f,53*f" alphatest="on"/>
 		<widget name="WarningPixmap" pixmap="icons/input_warning.svg" position="10*f,0*f" size="53*f,53*f" alphatest="on"/>
-		<widget name="list" position="15*f,60*f" size="0,0" font="Regular;22*f" itemHeight="30*f"/>
+		<widget name="list" position="15*f,60*f" size="0,0" font="Regular;22*f" itemHeight="30*f" scrollbarMode="showOnDemand"/>
 		<applet type="onLayoutFinish">
-from enigma import eSize, ePoint
+from enigma import eLabel, eSize, ePoint, gFont
 from skin import getSkinFactor
 f = getSkinFactor()
 textsize = self["text"].getSize()
-textsize = (int(textsize[0] * 1.03), int(textsize[1] * 1.03))
 wsizex = textsize[0] + 86 * f
 wsizey = textsize[1] + 15 * f
 if 65 * f > wsizey:
@@ -286,17 +285,25 @@ if self.type == self.TYPE_YESNO:
 	if listlen > 125 * f:
 		listlen = 125 * f
 	wsizey += listlen + 10 * f
-elif 230 * f > wsizex:
+	listtext = ""
+	for x in self.list:
+		if len(x[0]) > 5 > len(listtext):
+			listtext = x[0]
+	if listtext:
+		listwith = eLabel.calculateTextSize(gFont("Regular", int(22 * f)), listtext, eSize(int(600 * f), int(30 * f))).width() + 60 * f
+		if listwith > wsizex:
+			wsizex = listwith
+if 230 * f > wsizex:
 	wsizex = 230 * f
 if self.type == self.TYPE_MESSAGE:
-	self["text"].instance.move(ePoint(int(15 * f), 0))
+	self["text"].move(int(15 * f), 0)
 	wsizex -= 56 * f
 elif 50 * f > textsize[1]:
-	self["text"].instance.move(ePoint(int(71 * f), int(14 * f)))
-self["text"].instance.resize(eSize(*textsize))
+	self["text"].move(int(71 * f), int(14 * f))
+self["text"].resize(*textsize)
 if self.type == self.TYPE_YESNO:
-	self["list"].instance.move(ePoint(int(15 * f), int(wsizey - listlen - 10 * f)))
-	self["list"].instance.resize(eSize(int(wsizex - 30 * f), int(listlen)))
+	self["list"].move(int(15 * f), int(wsizey - listlen - 10 * f))
+	self["list"].resize(int(wsizex - 30 * f), int(listlen))
 self.instance.move(ePoint(int((1280 * f - wsizex) // 2), int((690  * f - wsizey) // 2)))
 self.instance.resize(eSize(int(wsizex), int(wsizey)))
 		</applet>
