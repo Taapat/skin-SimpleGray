@@ -23,6 +23,10 @@
 	<parameters>
 		<parameter name="AboutHddSplit" value="1"/>
 		<parameter name="AutoscaleSVG" value="1"/>
+		<parameter name="ChoicelistButtonIcon" value="3*f,2*f,35*f,25*f"/>
+		<parameter name="ChoicelistIcon" value="3*f,2*f,35*f,25*f"/>
+		<parameter name="ChoicelistName" value="45*f,2*f,800*f,25*f"/>
+		<parameter name="ChoicelistNameSingle" value="5*f,2*f,800*f,25*f"/>
 	</parameters>
 
 	<windowstyle type="skinned" id="0">
@@ -303,9 +307,8 @@ from enigma import eLabel, eSize, ePoint, gFont
 from skin import getSkinFactor
 f = getSkinFactor()
 textsize = self["text"].getSize()
-textsize = (int(textsize[0] * 1.03), int(textsize[1] * 1.03))
 wsizex = textsize[0] + 30 * f
-wsizey = textsize[1] + 25 * f
+wsizey = textsize[1] + 30 * f
 if 350 * f > wsizex:
 	wsizex = 350 * f
 listlen = len(self.list)
@@ -332,7 +335,7 @@ if descr:
 	textsize = int(self["description"].instance.calculateSize().height())
 	self["description"].resize(int(wsizex - 30 * f), textsize)
 	self["description"].move(int(15 * f), int(wsizey + 5 * f))
-	wsizey += textsize + 10 * f
+	wsizey += textsize + 15 * f
 self.instance.resize(eSize(int(wsizex), int(wsizey)))
 self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) / 2)))
 		</applet>
