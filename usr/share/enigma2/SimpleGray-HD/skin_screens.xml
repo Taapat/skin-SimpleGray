@@ -326,7 +326,7 @@ listlen = listlen * 30 * f
 if listlen > 300 * f:
 	listlen = 300 * f
 wsizey += listlen
-self["text"].resize(*textsize)
+self["text"].resize(int(wsizex), textsize[1])
 self["list"].move(int(3 * f), int(wsizey - listlen - 5 * f))
 self["list"].resize(int(wsizex), int(listlen))
 if descr:
