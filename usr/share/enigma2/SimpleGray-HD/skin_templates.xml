@@ -276,7 +276,7 @@ from enigma import eSize, ePoint
 from skin import getSkinFactor
 f = getSkinFactor()
 textsize = self["text"].getSize()
-textsize = (textsize[0] + 2, textsize[1])
+textsize = (int(textsize[0] * 1.03), textsize[1])
 wsizex = textsize[0] + 86 * f
 wsizey = textsize[1] + 15 * f
 if 65 * f > wsizey:
