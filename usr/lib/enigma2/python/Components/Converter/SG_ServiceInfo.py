@@ -18,13 +18,14 @@ class SG_ServiceInfo(Converter):
 		info = service and service.info()
 		if not info:
 			return ""
-		audio = service.audioTracks()
 		ret = ""
+		audio = service.audioTracks()
 		if audio:
 			for i in range(audio.getNumberOfTracks()):
 				description = audio.getTrackInfo(i).getDescription()
 				if description and description.split()[0] in ("AC4", "AAC+", "AC3", "AC3+", "Dolby", "DTS", "DTS-HD", "HE-AAC", "WMA"):
-					ret += "DOLBY"
+					ret = "DOLBY"
+					break
 		if info.getInfo(iServiceInformation.sTXTPID) != -1:
 			ret = self.add_str(ret, _("TEXT"))
 		if service.subtitle().getSubtitleList():
