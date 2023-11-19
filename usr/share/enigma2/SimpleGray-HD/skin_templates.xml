@@ -84,18 +84,10 @@ self.onShown.append(boundFunction(resize_button_text, self))
 	</screen>
 
 	<screen name="InfoBarTemplate">
-		<widget source="session.CurrentService" render="Label" position="15*f,e-147*f" size="720*f,45*f" font="Replacement;30*f" noWrap="1">
+		<widget source="session.CurrentService" render="Label" position="15*f,e-147*f" size="650*f,45*f" font="Replacement;30*f" noWrap="1">
 			<convert type="SG_ServiceName"/>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="DOLBY" position="735*f,e-126*f" size="52*f,18*f" font="Regular;15*f">
-				<convert type="ServiceInfo">IsMultichannel</convert>
-				<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="TEXT" position="788*f,e-126*f" size="40*f,18*f" font="Regular;15*f">
-				<convert type="ServiceInfo">HasTelext</convert>
-				<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.RecordState" render="FixedLabel" text="REC" position="829*f,e-130*f" size="35*f,25*f" font="Regular;20*f" foregroundColor="red">
+		<widget source="session.RecordState" render="FixedLabel" text="REC" position="989*f,e-130*f" size="35*f,25*f" font="Regular;20*f" foregroundColor="red">
 				<convert type="ConditionalShowHide"/>
 		</widget>
 
@@ -140,7 +132,7 @@ self.onShown.append(boundFunction(resize_button_text, self))
 			<convert type="EventTime">Duration</convert>
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
-	
+
 		<eLabel text="SNR:" position="1075*f,e-93*f" size="50*f,20*f" font="Regular;18*f" foregroundColor="grey" halign="right"/>
 		<widget source="session.FrontendStatus" render="Label" position="1130*f,e-93*f" size="50*f,20*f" font="Regular;18*f">
 			<convert type="FrontendInfo">SNRdB</convert>
@@ -168,23 +160,9 @@ self.onShown.append(boundFunction(resize_button_text, self))
 		<widget source="session.CurrentService" render="Picon" position="15*f,e-103*f" size="150*f,90*f" transparent="1" alphatest="blend">
 			<convert type="ServiceName">Reference</convert>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="  4K" position="865*f,e-130*f" size="40*f,25*f" font="Regular;20*f">
-				<convert type="ServiceInfo">Is4K</convert>
-				<convert type="ConditionalShowHide"/>
+		<widget source="session.CurrentService" render="Label" position="665*f,e-130*f" size="317*f,25*f" font="Regular;20*f" halign="right" noWrap="1">
+			<convert type="SG_ServiceInfo"/>
 		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="  HD" position="865*f,e-130*f" size="40*f,25*f" font="Regular;20*f">
-				<convert type="ServiceInfo">IsHD</convert>
-				<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="16:9" position="865*f,e-130*f" size="40*f,25*f" font="Regular;20*f">
-				<convert type="ServiceInfo">IsSDAndWidescreen</convert>
-				<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget source="session.CurrentService" render="FixedLabel" text="4:3" position="865*f,e-130*f" size="40*f,25*f" font="Regular;20*f">
-				<convert type="ServiceInfo">IsSDAndNotWidescreen</convert>
-				<convert type="ConditionalShowHide"/>
-		</widget>
-		<widget render="VideoSize" source="session.CurrentService" position="910*f,e-130*f" size="110*f,25*f" font="Regular;20*f"/>
 	</screen>
 
 	<screen name="LeftButtonsTemplate">
