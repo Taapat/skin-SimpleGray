@@ -42,7 +42,7 @@ jobs:
           python -O -m compileall ./usr/lib/enigma2/python/Components/
       - name: Check code with flake8
         run: |
-          flake8 --ignore=W191,E128,E131,E117,E501
+          flake8 --ignore=E501,W191 --show-source
   test-skin:
     needs: test-python
     runs-on: ubuntu-20.04

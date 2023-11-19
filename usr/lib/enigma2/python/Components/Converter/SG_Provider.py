@@ -10,7 +10,7 @@ from Components.Element import cached
 from Screens.ChannelSelection import service_types_radio, service_types_tv
 
 
-class SG_Provider(Converter, object):
+class SG_Provider(Converter):
 	def __init__(self, type):
 		Converter.__init__(self, type)
 
@@ -24,8 +24,8 @@ class SG_Provider(Converter, object):
 				typestr = service_types_tv
 			serviceHandler = eServiceCenter.getInstance()
 			providerlist = serviceHandler.list(eServiceReference(
-				'%s (channelID == %08x%04x%04x) && %s FROM PROVIDERS ORDER BY name' %
-					(typestr[:20],
+				"%s (channelID == %08x%04x%04x) && %s FROM PROVIDERS ORDER BY name" % (
+					typestr[:20],
 					ref.getUnsignedData(4),  # NAMESPACE
 					ref.getUnsignedData(2),  # TSID
 					ref.getUnsignedData(3),  # ONID
@@ -46,11 +46,11 @@ class SG_Provider(Converter, object):
 									info = serviceHandler.info(provider)
 									if info:
 										return info.getName(provider)
-									return ''
-		return ''
+									return ""
+		return ""
 
 	text = property(getText)
 
 	def changed(self, what):
-		if what[0] is not self.CHANGED_SPECIFIC:
+		if what[0] == self.CHANGED_ALL:
 			Converter.changed(self, what)
