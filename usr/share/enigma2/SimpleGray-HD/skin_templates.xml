@@ -84,12 +84,8 @@ self.onShown.append(boundFunction(resize_button_text, self))
 	</screen>
 
 	<screen name="InfoBarTemplate">
-		<widget source="session.CurrentService" render="Label" position="0,e-142*f" size="295*f,35*f" font="Replacement;25*f" foregroundColor="grey" noWrap="1" halign="right">
-			<convert type="ServiceName">Provider</convert>
-		</widget>
-		<widget source="session.CurrentService" render="ChannelNumber" position="295*f,e-147*f" size="70*f,45*f" font="Replacement;30*f" foregroundColor="grey" halign="right"/>
-		<widget source="session.CurrentService" render="Label" position="375*f,e-147*f" size="360*f,45*f" font="Replacement;30*f" foregroundColor="grey" noWrap="1">
-			<convert type="ServiceName">Name</convert>
+		<widget source="session.CurrentService" render="Label" position="15*f,e-147*f" size="720*f,45*f" font="Replacement;30*f" noWrap="1">
+			<convert type="SG_ServiceName"/>
 		</widget>
 		<widget source="session.CurrentService" render="FixedLabel" text="DOLBY" position="735*f,e-126*f" size="52*f,18*f" font="Regular;15*f">
 				<convert type="ServiceInfo">IsMultichannel</convert>
