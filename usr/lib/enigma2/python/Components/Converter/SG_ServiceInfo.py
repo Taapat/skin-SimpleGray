@@ -8,12 +8,12 @@ class SG_ServiceInfo(Converter):
 	def __init__(self, type):
 		Converter.__init__(self, type)
 
-	@staticmethod
-	def add_str(ret, text):
-		return "%s %s" % (ret, text) if ret else text
-
 	@cached
 	def get_text(self):
+
+		def add_str(ret, text):
+			return "%s %s" % (ret, text) if ret else text
+
 		service = self.source.service
 		info = service and service.info()
 		if not info:
@@ -27,18 +27,18 @@ class SG_ServiceInfo(Converter):
 					ret = "DOLBY"
 					break
 		if info.getInfo(iServiceInformation.sTXTPID) != -1:
-			ret = self.add_str(ret, _("TEXT"))
+			ret = add_str(ret, _("TEXT"))
 		if service.subtitle().getSubtitleList():
-			ret = self.add_str(ret, "SUB")
+			ret = add_str(ret, "SUB")
 		video_height = info.getInfo(iServiceInformation.sVideoHeight)
 		if video_height > 0:
 			if video_height < 720:
-				ret = self.add_str(ret, "SD")
+				ret = add_str(ret, "SD")
 			elif video_height >= 1500:
-				ret = self.add_str(ret, "4K")
+				ret = add_str(ret, "4K")
 			else:
-				ret = self.add_str(ret, "HD")
-			ret = self.add_str(ret, "%sx%s" % (str(info.getInfo(iServiceInformation.sVideoWidth)), str(video_height)))
+				ret = add_str(ret, "HD")
+			ret = add_str(ret, "%sx%s" % (str(info.getInfo(iServiceInformation.sVideoWidth)), str(video_height)))
 		return ret
 
 	text = property(get_text)
