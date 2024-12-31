@@ -647,10 +647,35 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	<!--before import Components.InputDevice-->
 	<!--before session.open(HelpMenu, [(None, 'InputActions', [('right', 'help')])])-->
 	<!--Screens.HelpMenu-->
-	<screen name="HelpMenu" position="center,center" size="740*f,565*f">
-		<panel name="RCTemplate"/>
-		<widget name="list" position="170,15*f" size="e-140-40*f,480*f" scrollbarMode="showOnDemand" itemHeight="30*f" font="Regular;20*f"/>
-		<widget name="long_key" position="170,510*f" size="e-140-40*f,30*f" font="Regular;24*f"/>
+	<screen name="HelpMenu" position="center,center" size="740*f,520*f">
+		<widget name="list" conditional="arrowdown" position="170,15*f" size="e-140-40*f,480*f" scrollbarMode="showOnDemand" itemHeight="30*f" font="Regular;20*f"/>
+		<widget name="long_key" conditional="long_key" position="170,510*f" size="e-140-40*f,30*f" font="Regular;24*f"/>
+		<panel position="15,15" size="231,500">
+			<panel name="RCHeplpTemplate"/>
+		</panel>
+		<widget source="list" conditional="indicatorU0" render="Listbox" position="170,15*f" size="e-140-40*f,420*f" transparent="0" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+					{
+					"templates": {
+						"default": [38*f, [MultiContentEntryText(pos=(0, 3*f), size=(730*f, 38*f), font=1, text=1)]],
+						"default+headings": [ 38*f, [
+							MultiContentEntryText(pos=(0, 3*f), size=(730*f, 38*f), font=0, text=1),
+							MultiContentEntryText(pos=(20*f, 3*f), size=(713*f, 38*f), font=1, text=2)]],
+						"extended": [57*f, [
+							MultiContentEntryText(pos=(0, 0), size=(730*f, 30*f), font=2, text=1),
+							MultiContentEntryText(pos=(0, 40*f), size=(730*f, 26*f), color=0x009e9fa4, font=3, text=2)]],
+						"extended+headings": [57*f, [
+							MultiContentEntryText(pos=(0, 9*f), size=(730*f, 32*f), font=0, text=1),
+							MultiContentEntryText(pos=(20*f, 0), size=(713*f, 30*f), font=2, text=2),
+							MultiContentEntryText(pos=(20*f, 30*f), size=(713*f, 26*f), color=0x009e9fa4, font=3, text=3)]],
+						},
+					"fonts": [gFont("Regular", 26*f), gFont("Regular", 24*f), gFont("Regular", 25*f), gFont("Regular", 25*f)],
+					"itemHeight": 38*f
+					}
+			</convert>
+		</widget>
+		<widget name="longshift_key0" conditional="longshift_key1" position="170,440*f" size="e-140-40*f,30*f" font="Regular;24*f" foregroundColor="grey"/>
+		<widget name="longshift_key1" conditional="longshift_key1" position="170,480*f" size="e-140-40*f,30*f" font="Regular;24*f" foregroundColor="grey"/>
 	</screen>
 
 	<!--from Screens.Hotkey-->
