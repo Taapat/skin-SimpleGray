@@ -656,17 +656,17 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget source="list" conditional="indicatorU0" render="Listbox" position="170,15*f" size="e-140-40*f,420*f" transparent="0" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"templates": {
-					"default": [30*f, [MultiContentEntryText(pos=(0, 0), size=(730*f, 30*f), font=0, text=1)]],
+					"default": [30*f, [MultiContentEntryText(pos=(10*f, 0), size=(730*f, 30*f), font=0, text=1)]],
 					"default+headings": [ 30*f, [
 						MultiContentEntryText(pos=(0, 0), size=(730*f, 30*f), font=0, text=1),
-						MultiContentEntryText(pos=(10*f, 0), size=(710*f, 30*f), font=0, text=2)]],
+						MultiContentEntryText(pos=(10*f, 0), size=(720*f, 30*f), font=0, text=2)]],
 					"extended": [60*f, [
-						MultiContentEntryText(pos=(0, 0), size=(730*f, 30*f), font=0, text=1),
-						MultiContentEntryText(pos=(0, 30*f), size=(730*f, 30*f), color=0x008f8f8f, font=0, text=2)]],
+						MultiContentEntryText(pos=(10*f, 0), size=(720*f, 30*f), font=0, text=1),
+						MultiContentEntryText(pos=(10*f, 30*f), size=(720*f, 30*f), font=0, text=2)]],
 					"extended+headings": [60*f, [
-						MultiContentEntryText(pos=(0, 10*f), size=(730*f, 30*f), font=0, text=1),
-						MultiContentEntryText(pos=(10*f, 0), size=(710*f, 30*f), font=0, text=2),
-						MultiContentEntryText(pos=(10*f, 30*f), size=(710*f, 30*f), color=0x008f8f8f, font=0, text=3)]]
+						MultiContentEntryText(pos=(0, 0), size=(730*f, 30*f), font=0, text=1),
+						MultiContentEntryText(pos=(10*f, 0), size=(720*f, 30*f), font=0, text=2),
+						MultiContentEntryText(pos=(10*f, 30*f), size=(720*f, 30*f), font=0, text=3)]]
 					},
 				"fonts": [gFont("Regular", 24*f)],
 				"itemHeight": 30*f}
