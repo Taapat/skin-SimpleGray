@@ -41,7 +41,13 @@ class SG_ServiceInfo(Converter):
 			ret = add_str(ret, "%sx%s" % (str(info.getInfo(iServiceInformation.sVideoWidth)), str(video_height)))
 		return ret
 
+	@cached
+	def get_length(self):
+		return len(self.text)
+
 	text = property(get_text)
+	value = property(get_length)
+	range = 25
 
 	def changed(self, what):
 		if what[0] == self.CHANGED_SPECIFIC and what[1] in (iPlayableService.evUpdatedInfo, iPlayableService.evVideoSizeChanged):

@@ -84,7 +84,7 @@ self.onShown.append(boundFunction(resize_button_text, self))
 	</screen>
 
 	<screen name="InfoBarTemplate">
-		<widget source="session.CurrentService" render="Label" position="15*f,e-147*f" size="650*f,45*f" font="Replacement;30*f" noWrap="1">
+		<widget source="session.CurrentService" render="Label" position="15*f,e-147*f" size="930*f,45*f" font="Replacement;30*f" noWrap="1">
 			<convert type="SG_ServiceName"/>
 		</widget>
 		<widget source="session.RecordState" render="FixedLabel" text="REC" position="989*f,e-130*f" size="35*f,25*f" font="Regular;20*f" foregroundColor="red">
@@ -160,9 +160,13 @@ self.onShown.append(boundFunction(resize_button_text, self))
 		<widget source="session.CurrentService" render="Picon" position="15*f,e-103*f" size="150*f,90*f" transparent="1" alphatest="blend">
 			<convert type="ServiceName">Reference</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Label" position="665*f,e-130*f" size="317*f,25*f" font="Regular;20*f" halign="right" noWrap="1">
+		<widget source="session.CurrentService" render="Progress" position="682*f,e-147*f" size="300*f,45*f" orientation="orRightToLeft"  foregroundColor="back" transparent="1">
 			<convert type="SG_ServiceInfo"/>
 		</widget>
+		<widget source="session.CurrentService" render="Label" position="682*f,e-130*f" size="300*f,25*f" font="Regular;20*f" halign="right" noWrap="1" transparent="1">
+			<convert type="SG_ServiceInfo"/>
+		</widget>
+
 	</screen>
 
 	<screen name="LeftButtonsTemplate">
@@ -299,11 +303,17 @@ self.instance.resize(eSize(int(wsizex), int(wsizey)))
 	</screen>
 
 	<screen name="PlayerTemplate">
-		<widget source="session.CurrentService" render="Label" position="10*f,e-107*f" size="760*f,40*f" font="Replacement;30*f" foregroundColor="grey" halign="center" noWrap="1">
+		<widget source="session.CurrentService" render="Label" position="10*f,e-107*f" size="950*f,40*f" font="Replacement;30*f" foregroundColor="grey" noWrap="1">
 			<convert type="ServiceName">Name</convert>
 		</widget>
-		<widget source="session.CurrentService" render="Label" position="770*f,e-90*f" size="230*f,25*f" font="Regular;20*f" halign="right" noWrap="1">
+		<widget source="session.CurrentService" render="Progress" position="660*f,e-107*f" size="300*f,40*f" orientation="orRightToLeft"  foregroundColor="back" transparent="1">
 			<convert type="SG_ServiceInfo"/>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="660*f,e-90*f" size="300*f,25*f" font="Regular;20*f" halign="right" noWrap="1" transparent="1">
+			<convert type="SG_ServiceInfo"/>
+		</widget>
+		<widget source="session.RecordState" render="FixedLabel" text="REC" position="965*f,e-90*f" size="35*f,25*f" font="Regular;20*f" foregroundColor="red">
+				<convert type="ConditionalShowHide"/>
 		</widget>
 		<widget source="global.CurrentTime" render="Label" position="1010*f,e-90*f" size="104*f,25*f" font="Regular;20*f" foregroundColor="grey">
 			<convert type="ClockToText">Format:%d.%m.%Y</convert>
@@ -311,7 +321,6 @@ self.instance.resize(eSize(int(wsizex), int(wsizey)))
 		<widget source="global.CurrentTime" render="Label" position="1120*f,e-102*f" size="140*f,45*f" font="Replacement;30*f">
 			<convert type="ClockToText">Format:%H:%M:%S</convert>
 		</widget>
-
 		<widget source="session.CurrentService" render="Label" position="200*f,e-60*f" size="200*f,25*f" font="Replacement;20*f">
 			<convert type="ServicePosition">Position</convert>
 		</widget>

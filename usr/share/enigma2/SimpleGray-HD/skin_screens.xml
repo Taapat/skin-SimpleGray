@@ -1240,7 +1240,7 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 		<widget source="RdsDecoder" render="Label" position="center,e-192*f" size="1260*f,45*f" font="LCD;30*f" foregroundColor="grey" noWrap="1">
 			<convert type="RdsInfo">RadioText</convert>
 		</widget>
-		<widget source="RdsDecoder" render="FixedLabel" text="RASS" position="860*f,e-130*f" size="40*f,25*f" font="Regular;20*f">
+		<widget source="RdsDecoder" render="FixedLabel" text="RASS" position="939*f,e-130*f" size="40*f,25*f" font="Regular;20*f">
 				<convert type="RdsInfo">RasInteractiveAvailable</convert>
 				<convert type="ConditionalShowHide"/>
 		</widget>
