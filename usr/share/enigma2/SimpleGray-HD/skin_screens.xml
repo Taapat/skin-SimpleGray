@@ -1145,9 +1145,10 @@ self.instance.move(ePoint(int((1280 * f - wsizex) / 2), int((740 * f - wsizey) /
 	</screen>
 
 	<!--from Screens.PluginBrowser-->
-	<screen name="PluginDownloadBrowser" position="center,center" size="620*f,380*f">
-		<widget name="text" position="15*f,10*f" size="590*f,50*f" zPosition="2" font="Regular;24*f"/>
-		<widget name="list" position="0,10*f" size="610*f,350*f" zPosition="3" scrollbarMode="showOnDemand" itemHeight="50*f"/>
+	<screen name="PluginDownloadBrowser" position="center,center" size="720*f,440*f">
+		<widget name="text" position="15*f,10*f" size="690*f,50*f" zPosition="2" font="Regular;24*f"/>
+		<widget name="list" position="0,10*f" size="710*f,350*f" zPosition="3" scrollbarMode="showOnDemand" itemHeight="50*f"/>
+		<panel name="DynamicButtonsTemplate"/>
 	</screen>
 
 	<!--from Plugins.SystemPlugins.SoftwareManager.plugin-->
